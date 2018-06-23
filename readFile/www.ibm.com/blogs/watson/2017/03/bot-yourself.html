@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+
+        
+
+        <!-- IBM: BASE -->
+
+        <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+
+        
+<!-- This site is optimized with the Yoast SEO plugin v5.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Create a bot of yourself with Watson - Watson</title>
+<meta name="description" content="Co-authors: Adam Benvie , Zach Eslami, Nada Zaher and Nathan Robinson Want to create your own bot but too busy to read the full tutorial? You can import our workspace! Signup for a Bluemix account, create your conversation instance, import the workspace. Keep reading below for full details. What do chatbots do? Whether it&#8217;s answering questions for online shoppers, assisting customers file their taxes, or helping people understand their insurance policies, chatbots are enhancing experiences today more than ever. But the experiences that you choose to enhance is entirely up to you. To see how easy it is to build your chatbot and enhance those experiences, keep reading&#8230; My not so technical background When I started with IBM Watson as a recent undergrad in August of 2016, if I had been asked to build a bot, it would have been the end of the line for me – I don’t code, and I’m not super technical. Today though is… "/>
+<link rel="canonical" href="https://www.ibm.com/blogs/watson/2017/03/bot-yourself/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Create a bot of yourself with Watson - Watson" />
+<meta property="og:description" content="Co-authors: Adam Benvie , Zach Eslami, Nada Zaher and Nathan Robinson Want to create your own bot but too busy to read the full tutorial? You can import our workspace! Signup for a Bluemix account, create your conversation instance, import the workspace. Keep reading below for full details. What do chatbots do? Whether it&#8217;s answering questions for online shoppers, assisting customers file their taxes, or helping people understand their insurance policies, chatbots are enhancing experiences today more than ever. But the experiences that you choose to enhance is entirely up to you. To see how easy it is to build your chatbot and enhance those experiences, keep reading&#8230; My not so technical background When I started with IBM Watson as a recent undergrad in August of 2016, if I had been asked to build a bot, it would have been the end of the line for me – I don’t code, and I’m not super technical. Today though is…" />
+<meta property="og:url" content="https://www.ibm.com/blogs/watson/2017/03/bot-yourself/" />
+<meta property="og:site_name" content="Watson" />
+<meta property="article:section" content="Conversational Services" />
+<meta property="article:published_time" content="2017-03-16T12:06:08+00:00" />
+<meta property="article:modified_time" content="2018-01-03T21:00:41+00:00" />
+<meta property="og:updated_time" content="2018-01-03T21:00:41+00:00" />
+<meta property="og:image" content="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/0712-2.png" />
+<meta property="og:image:width" content="5001" />
+<meta property="og:image:height" content="2500" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Co-authors: Adam Benvie , Zach Eslami, Nada Zaher and Nathan Robinson Want to create your own bot but too busy to read the full tutorial? You can import our workspace! Signup for a Bluemix account, create your conversation instance, import the workspace. Keep reading below for full details. What do chatbots do? Whether it&#8217;s answering questions for online shoppers, assisting customers file their taxes, or helping people understand their insurance policies, chatbots are enhancing experiences today more than ever. But the experiences that you choose to enhance is entirely up to you. To see how easy it is to build your chatbot and enhance those experiences, keep reading&#8230; My not so technical background When I started with IBM Watson as a recent undergrad in August of 2016, if I had been asked to build a bot, it would have been the end of the line for me – I don’t code, and I’m not super technical. Today though is…" />
+<meta name="twitter:title" content="Create a bot of yourself with Watson - Watson" />
+<meta name="twitter:image" content="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/0712-2.png" />
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='site_css-css'  href='https://www.ibm.com/blogs/watson/wp-content/themes/ibmNorthstar/assets/css/style.css' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='https://www.ibm.com/blogs/watson/wp-json/' />
+<link rel='shortlink' href='https://www.ibm.com/blogs/watson/?p=2037' />
+<link rel="alternate" type="application/json+oembed" href="https://www.ibm.com/blogs/watson/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2017%2F03%2Fbot-yourself%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.ibm.com/blogs/watson/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2017%2F03%2Fbot-yourself%2F&#038;format=xml" />
+
+        <!-- ============================================================ -->
+        <!-- START: v18_head -->
+        
+        <link rel="alternate" type="application/atom+xml" title="Watson" href="https://www.ibm.com/blogs/watson/feed/atom/" />
+
+        
+        <link rel="icon" href="//www.ibm.com/favicon.ico">
+
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="geo.country" content="US" />
+        <meta name="dcterms.date" content="2017-03-16" />
+        <meta name="dcterms.rights" content="© Copyright IBM Corp. 2018" />
+                <meta property="fb:pages" content="" />
+                       <script>
+            digitalData = {
+                page: {
+                    category: {
+                        primaryCategory: '',
+                        ibm: {
+                                globalBrandTableL10: '',
+                                gbt10: '',
+                                globalBrandTableL17: '',
+                                gbt17: '',
+                                globalBrandTableL20: '',
+                                gbt20: '',
+                                globalBrandTableL30: '',
+                                gbt30: '',
+                              }
+                    },
+                    pageInfo: {
+                        effectiveDate: '2017-03-16',
+                        expiryDate: '2022-03-15',
+                        language: 'en-US',
+                        publishDate: '2017-03-16',
+                        publisher: 'IBM Corporation',
+                        version: 'v18',
+                        ibm: {
+                            contentDelivery: 'ibm.com/blogs',
+                            contentProducer: 'ibmNorthstar 1.7.8.2',
+                            country: 'US',
+                            ibmDynamicCm: false,
+                            industry: 'ZZ',
+                            owner: 'Jeremy Hodge/New York/IBM',
+                            siteID: '',
+                            subject: 'IBM000',
+                            type: 'CT915',
+                            }
+                        }
+                    }
+                };
+        </script>
+
+        <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+        <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet" />
+        <link href="//1.www.s81c.com/common/v18/css/tables.css" rel="stylesheet" />
+
+        
+        <script type="text/javascript">
+            IBMCore.common.util.config.set({
+                survey: { global_percent: 5 },
+                footer: {
+                  type: "alternate",
+                  socialLinks: { enabled:false }
+                },
+                masthead: {
+                    type: 'alternate'                }
+            });
+        </script>
+
+        <!-- IBM: FORMS -->
+
+        <script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+
+        <!-- IBM: TABLES -->
+
+        <script src="//1.www.s81c.com/common/v18/js/tables.js"></script>
+
+        <!-- IBM: METRICS -->
+        <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+
+
+        <script src='//1.www.s81c.com/common/v18/js/masonry.js'></script>
+
+
+
+       
+       
+       
+                 <!-- END: v18_head -->
+        <!-- ============================================================ -->
+
+    </head>
+
+    <body  id="ibm-com" class="post-template-default single single-post postid-2037 single-format-standard ibm-type" itemscope itemtype="http://schema.org/WebPage">
+
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <div id="ibm-top" class="ibm-landing-page page">
+
+                                      <div id="ibm-masthead" role="banner" aria-label="IBM">
+                  <div id="ibm-mast-options">
+                      <ul role="toolbar" aria-labelledby="ibm-masthead">
+                          <li id="ibm-geo" role="presentation"><a href="//www.ibm.com/planetwide/select/selector.html" role="button" aria-label="United states selected - Choose a country">United States</a> </li>
+                      </ul>
+                  </div>
+                  <div id="ibm-universal-nav">
+                      <nav role="navigation" aria-label="IBM">
+
+                          <div id="ibm-home"><a href="//www.ibm.com/us/en/">IBM®</a></div>
+                          <ul id="ibm-menu-links" role="toolbar" aria-label="Site map">
+                              <li><a href="//www.ibm.com/sitemap/us/en/">Site map</a></li>
+                          </ul>
+                      </nav>
+                      <div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+                          <form id="ibm-search-form" action="//www.ibm.com/Search/" method="get">
+                              <label for="q"></label>
+                              <input type="text" maxlength="100" value="" placeholder="Search" name="q" id="q" aria-label="Search" />
+                              <input type="hidden" value="18" name="v" />
+                              <input type="hidden" value="utf" name="en" />
+                              <input type="hidden" value="en" name="lang" />
+                              <input type="hidden" value="us" name="cc" />
+                              <span class="ibm-search-scope"><input type="checkbox" name="s" value="customsearch" checked id="scopeoption"> <label for="scopeoption">Search within Watson</span>
+                              <input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit" />
+                          </form>
+                          <form class="ibm-hide" id="customSearchForm" action="https://www.ibm.com/blogs/watson/" method="get">
+                              <input type="text" name="s">
+                          </form>
+                      </div>
+                  </div>
+              </div>
+                          <header role="banner" aria-labelledby="ibm-pagetitle-h1">
+              
+                            <div class="ibm-sitenav-menu-container">
+                   <!-- The code below is where you edit the blog title that appears in menu navigation -->
+                   <div class="ibm-sitenav-menu-name"><a class="ibm-bold" href="https://www.ibm.com/blogs/watson/">Watson</a></div>
+                    <div class="ibm-sitenav-menu-list">
+
+                        <ul role="menubar">
+
+                                                                    <li role="presentation"><a role="menuitem" href="https://www.ibm.com/watson/ai-stories/">Stories</a></li>
+                                                                        <li role="presentation"><a role="menuitem" href="https://www.ibm.com/watson/about/">About</a></li>
+                                                                      <li role="presentation" class="ibm-haschildlist"><span role="menuitem">Developers</span>
+                                        <ul role="menu">
+
+                                                                          <li><a href="https://www.ibm.com/watson/developer/">Overview</a></li>
+                                                                          <li><a href="https://www.ibm.com/watson/developercloud/doc/index.html">Documentation</a></li>
+                                                                          <li><a href="https://www.ibm.com/watson/developer-resources/">Developer tools</a></li>
+                                                                        </ul>
+                                      </li>
+                                                                        <li role="presentation"><a role="menuitem" href="https://www.ibm.com/watson/products-services/">Products and Services</a></li>
+                                                                      <li role="presentation" class="ibm-haschildlist"><span role="menuitem">Use cases</span>
+                                        <ul role="menu">
+
+                                                                          <li><a href="https://www.ibm.com/watson/call-center-ai/">Transform your call center</a></li>
+                                                                          <li><a href="https://www.ibm.com/watson/how-to-build-a-chatbot/">Build a chatbot</a></li>
+                                                                          <li><a href="https://www.ibm.com/watson/insight-engine/">Create an insight engine</a></li>
+                                                                        </ul>
+                                      </li>
+                                                        </ul>
+                    </div>
+                </div>
+              
+          <nav role="navigation" aria-labelledby="ibm-pagetitle-h1">
+
+          </nav>
+          <!-- CONTENT_NAV_END -->
+                </header>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery("#commentform #submit").attr('onClick','IBMCore.common.widget.overlay.show("overlayExampleAlert"); return false;')
+        jQuery("#comments-agree").click(function(){
+            IBMCore.common.widget.overlay.hide('overlayExampleAlert',true);
+            jQuery("#commentform #submit").removeAttr('onClick');
+            jQuery("#commentform #submit").trigger('click');
+        });
+        jQuery("#comments-disagree").click(function(){
+            IBMCore.common.widget.overlay.hide('overlayExampleAlert',true);
+        });
+    });
+</script>
+            <main role="main" aria-labelledby="ibm-pagetitle-h1">
+        <div id="ibm-pcon">
+            <div id="ibm-content">
+                <div id="ibm-content-body ibm-padding-top-0">
+                    <div id="ibm-content-main">
+    <!-- The Loop -->
+    
+        
+        <div class="ibm-blog__article ibm-padding-bottom-0" data-post-id-2037>
+
+                <div id="ibm-leadspace-head" class="ibm-alternate ibm-textcolor-white-core"
+                        data-desktop-lg-retina="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-2880x1334.png"
+                        data-desktop-lg="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-1440x1334.png"
+                        data-desktop-retina="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-2400x1334.png"
+                        data-desktop="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-1200x1200.png"
+                        data-tablet-retina="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-1200x1200.png"
+                        data-tablet="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-780x780.png"
+                        data-mobile-retina="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-780x780.png"
+                        data-mobile="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-380x380.png"
+                        style="background: url(https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/F_Header1-1440x1334.png) no-repeat 0 0 / cover #fff;">                        
+
+                    <div id="ibm-leadspace-body"
+                     class="">
+                        <div class="ibm-columns">
+                            <div class="ibm-col-2-1 ">
+                                                                   <a href="https://www.ibm.com/blogs/watson/category/conversational-services/">                                    <h4 class="ibm-blog__category ibm-textcolor-white-core">
+                                    Conversational Services</h4></a>                                    
+                            <h1 class="ibm-h1 ibm-light" itemprop="headline" rel="bookmark">
+                            Create a bot of yourself with Watson</h1>
+
+
+                            
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+
+    <div class="ibm-columns">
+        <div class="ibm-col-6-4 ibm-padding-top-2">
+        <div class="ibm-blog__article-main">
+            <div class="ibm-blog__article-date"><p class="ibm-date-time ibm-textcolor-gray-40">
+            March 16, 2017 | Written by: <a href="https://www.ibm.com/blogs/watson/author/adambenvine/" title="Posts by Adam Benvie" rel="author">Adam Benvie</a></p>
+            <p>
+    Categorized: <a href="https://www.ibm.com/blogs/watson/category/conversational-services/">Conversational Services</a> | <a href="https://www.ibm.com/blogs/watson/category/developers/">Developers</a>            </p>
+                 </div>
+
+                    <!--<div class="ibm-blog__article-content">-->
+                        <p class="ibm-bold">Share this post:</p><div class="ibm-clear"></div><p id="sharespacing" class="ibm-icononly ibm-shareiconspaceing"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2017%2F03%2Fbot-yourself%2F" target="_blank" class="ibm-facebook-encircled-link">  <span class="ibm-textcolor-gray-40 sharecount-font-size nh-facebook-count-2037"></span></a><a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2017%2F03%2Fbot-yourself%2F" target="_blank" class="ibm-googleplus-encircled-link">  </a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2017%2F03%2Fbot-yourself%2F&title=Create a bot of yourself with Watson&summary=Co-authors%3A+Adam+Benvie+%2C+Zach+Eslami%2C+Nada+Zaher+and+Nathan+Robinson+Want+to+create+your+own+bot+but+too+busy+to+read+the+full+tutorial%3F+You+can+import+our+workspace%21+Signup+for+a+Bluemix+account%2C+create+your+conversation+instance%2C+import+the+workspace.+Keep+reading+below+for+full+details.+What+do+chatbots+do%3F+Whether+it%26%238217%3Bs+answering+%5B%26hellip%3B%5D&source=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson" target="_blank" class="ibm-linkedin-encircled-link">  <span class="ibm-textcolor-gray-40 sharecount-font-size nh-linkedin-count-2037"></span></a><a href="https://twitter.com/share?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2017%2F03%2Fbot-yourself%2F&text=Create a bot of yourself with Watson"target="_blank" class="ibm-twitter-encircled-link">  </a></p>
+                        <p><a href="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/0712-2.png"><img class="ibm-downsize " src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/0712-2.png" alt="" width="5001" height="2500" /></a></p>
+<p>Co-authors: Adam Benvie , Zach Eslami, Nada Zaher and Nathan Robinson</p>
+<p><em>Want to create your own bot but too busy to read the full tutorial? You can import our workspace! <a href="https://console.ng.bluemix.net/login?state=/catalog/%3Fcategory=watson" target="_blank" rel="noopener noreferrer">Signup for a Bluemix account</a>, <a href="https://console.bluemix.net/catalog/services/conversation/" target="_blank" rel="noopener noreferrer">create your conversation instance</a>, <a href="https://github.com/mitchmason/conversation-simple/blob/master/training/Adam%20the%20Chatbot.json" target="_blank" rel="noopener noreferrer">import the workspace</a>. Keep reading below for full details.</em></p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/nathan-1.png"><img class="alignleft wp-image-2063 size-thumbnail" style="padding: 0px 10px 0px 0px;" src="/blogs/watson/wp-content/uploads/2017/03/nathan-1-150x150.png" alt="" width="140" height="140" srcset="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nathan-1-150x150.png 150w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nathan-1-300x300.png 300w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nathan-1-768x768.png 768w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nathan-1-600x600.png 600w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nathan-1.png 972w" sizes="(max-width: 140px) 100vw, 140px" /></a><strong>What do chatbots do? </strong><br />
+Whether it&#8217;s answering questions for online shoppers, assisting customers file their taxes, or helping people understand their insurance policies, chatbots are <a href="https://blog.exponea.com/full-guide-chatbot-use-cases-brands/" target="_blank" rel="noopener noreferrer">enhancing experiences today</a> more than ever. But the experiences that <em>you </em>choose to enhance is entirely up to you. To see how easy it is to build your chatbot and enhance those experiences, keep reading&#8230;<br />
+<a href="/blogs/watson/wp-content/uploads/2017/03/zach_headshot.png"><img class="alignleft wp-image-2071" src="/blogs/watson/wp-content/uploads/2017/03/zach_headshot.png" alt="zach_headshot" width="133" height="133" srcset="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/zach_headshot.png 972w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/zach_headshot-150x150.png 150w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/zach_headshot-300x300.png 300w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/zach_headshot-768x768.png 768w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/zach_headshot-600x600.png 600w" sizes="(max-width: 133px) 100vw, 133px" /></a><strong>My not so technical background</strong><br />
+When I started with IBM Watson as a recent undergrad in August of 2016, if I had been asked to build a bot, it would have been the end of the line for me – I don’t code, and I’m not super technical. Today though is a different story. This is the story of how someone &#8211; with no experience building chatbots &#8211; can “bot themselves” using the <a href="https://www.ibm.com/watson/developercloud/conversation.html" target="_blank" rel="noopener noreferrer">IBM Watson Conversation API</a>.<strong>          </strong></p>
+<p><strong>            </strong></p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/nada_headshot-1.png"><img class="alignleft wp-image-2065 size-thumbnail" style="padding: 0px 10px 0px 0px;" src="/blogs/watson/wp-content/uploads/2017/03/nada_headshot-1-150x150.png" alt="" width="150" height="150" srcset="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nada_headshot-1-150x150.png 150w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nada_headshot-1-300x300.png 300w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nada_headshot-1-768x768.png 768w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nada_headshot-1-600x600.png 600w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/nada_headshot-1.png 972w" sizes="(max-width: 150px) 100vw, 150px" /></a></p>
+<p><strong>What does it mean to bot yourself?<br />
+</strong>Exactly what it sounds like. The idea is to create a chatbot that can answer questions about <em>you,</em> as if it were <em>you</em>, without actually being <em>you</em>. So, it could answer questions about where you’re from, what you do for work, and when you graduated college. And if you’re ambitious, it can even talk to your mom for you when you’re “busy”.</p>
+<p>&nbsp;</p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/chat2.png"><img class="ibm-downsize " src="/blogs/watson/wp-content/uploads/2017/03/chat2-809x1024.png" alt="chat2" width="558" height="707" /></a></p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/adam_headshot.png"><img class="alignleft wp-image-2064 size-thumbnail" style="padding: 0px 10px 0px 0px;" src="/blogs/watson/wp-content/uploads/2017/03/adam_headshot-150x150.png" alt="" width="150" height="150" srcset="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/adam_headshot-150x150.png 150w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/adam_headshot-300x300.png 300w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/adam_headshot-768x769.png 768w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/adam_headshot-600x600.png 600w, https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/adam_headshot.png 971w" sizes="(max-width: 150px) 100vw, 150px" /></a></p>
+<p>Myself along with three other new IBMers-Zach Eslami, Nathan Robinson, and Nada Zaher-,who also had no experience building chatbots, set out to “bot myself” – and so now we give you, <a href="https://www.facebook.com/AdamTheChatbot/" target="_blank" rel="noopener noreferrer">Adam the Chatbot</a> (if you don’t have Facebook use <a href="http://bot-yourself.mybluemix.net/" target="_blank" rel="noopener noreferrer">this</a>). Feel free to shoot some questions his way to learn more about yours truly. He&#8217;s a pretty simple chat bot, but the more question he gets, the more he learns and improves!</p>
+<p><strong>Four Simple Steps to Bot Yourself<br />
+</strong><em>Prerequisites:<br />
+</em><a href="https://console.ng.bluemix.net/registration/?target=/catalog/services/conversation/" target="_blank" rel="noopener noreferrer">Create a Bluemix account<br />
+</a><a href="https://console.ng.bluemix.net/services/77cdc18d-dbdd-4a31-911a-d3b55a236015?paneId=manage" target="_blank" rel="noopener noreferrer">Create a conversation instance</a></p>
+<p><strong>Step 1: Define Intents</strong></p>
+<p><strong>Intents</strong> are the objectives of every bot. If a chatbot helps users handle expenses, the intents would be things like “view x (amount due)”, “pay y (bill)”, and “cancel z (account)”.</p>
+<p>A chatbot that answers questions about you has the broad objective of providing information about a human being. Therefore, it helps to think of this information as it pertains to where, what, and when. In other words, the intents would answer “where did you x”, “what is your y” and “when did you z”. The actual intents would simply be “where”, “what”, and “when” (or location, general info, and time).</p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/blogpic2.png"><img class="ibm-downsize " src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/blogpic2.png" alt="blogpic2" width="583" height="465" /></a></p>
+<p>After you have your intents, the next step is to add <strong>utterances</strong>. Utterances in the Conversation API refer to the different questions your end users ask your bot. Under each intent, add questions that would pertain to them. Under the “where” intent you would add phrases like “where did you go to college” and “where do you live.&#8221;</p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/blogpic3.png"><img class="ibm-downsize " src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/blogpic3.png" alt="" width="536" height="397" /></a></p>
+<p>Not only would you want to add as many “where did you [insert noun and/or action here]” as you can, but you would want to add the different ways each of these questions could be phrased. So, not only would you want to create the utterance “where did you go to college” but you would also want to add “did you graduate from a school in the U.S.”, “in what state did you go to university” etc. The more utterances you add the better.</p>
+<p><strong>Step 2: Define Entities</strong></p>
+<p>When we were building Adam the Chatbot, understanding the difference between intents and <strong>entities</strong> was our biggest challenge.</p>
+<p><strong>The best way to think about entities is that they are the SUBJECTS of intents.</strong></p>
+<p>So, in “where did you go to college” the intent would be “where” and the entity would be “college”. This allows single entities to apply to multiple intents. In this example “college” could apply to both the “where” and “when” intents.</p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/blogpic4.png"><img class="ibm-downsize " src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/blogpic4.png" alt="blogpic4" width="975" height="425" /></a></p>
+<p>Under each entity, you will also want to add <strong>values</strong>. Values are sub-subjects of entities. So, under college, you would have things like major, YOG, and classes, along with <strong>synonyms</strong> for each of these. The more synonyms you add for each entity value the better. That way someone can ask “what was your major” and “what did you study” and get the same correct answer.</p>
+<p>Another tip here is to add descriptive words before certain entity values that could have more than one meaning. In this example “study” could be the verb or the noun. So, to help clarify the meaning in the context that it’s being used, you could add “you study” as a synonym for major, and “a study” as a synonym for home library.</p>
+<p><strong>Step 3: Creating Your Dialog</strong></p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/blogpic5.png"><img class="ibm-downsize " src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/blogpic5-e1494009520728.png" alt="" width="729" height="486" /></a></p>
+<p>You’ve got intents, you’ve got utterances, you’ve got entities, and you’ve got entity values and synonyms. Now it’s time to build exactly how your bot is going to interact with users. In the Watson Conversation API this part is your <strong>dialog</strong>.</p>
+<p>Setting up your dialog flow is all about logic. The dialog in the Conversation API is set up like a logic tree with many “if then” conditions. Each intent begins a node on the left and the logic flows from the top down through your intents. If a certain intent is triggered by an utterance, its node is opened and the logic continues to entities.</p>
+<p>The logic within each node (i.e. through entities) also flows from top to bottom. A specific combination of #Intent and @Entity:value triggers a certain response to a question – this combination is referred to as the <strong>response condition</strong>. So, for “what was your major” the “what” intent would be triggered and then the response associated with the response condition #what and @college:major would be returned.</p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/blogpic6.png"><img class="ibm-downsize " src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/blogpic6.png" alt="" width="975" height="373" /></a></p>
+<p>After you set up each “#what and @Entity:value” response condition, you can start having fun with <strong>responses</strong>. Here is where you can give your bot a personality. You can make your bot of yourself sassy, sarcastic, or whatever attitude the REAL you has. Zach and Nathan really went wild here with Adam the Chatbot which made him a lot more fun for people to play with.</p>
+<p>You can also get clever with how you craft your responses so that single responses can answer multiple question. So, for “where did you go to college” you could have a response that says “I went to x, where I studied y, before I graduating in z”. This way you can nail “where” “what” and “when” in a single response.</p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/chat1.png"><img class="ibm-downsize " src="/blogs/watson/wp-content/uploads/2017/03/chat1-1024x710.png" alt="chat1" width="582" height="403" /></a></p>
+<p><strong>Step 4: Training and Improving</strong></p>
+<p>Now it’s time to <a href="https://www.ibm.com/watson/developercloud/doc/conversation/develop-app.html" target="_blank" rel="noopener noreferrer">deploy your bot</a> to some friends and family to see how it does. I can’t stress enough how important it is to deploy your bot ASAP so you can see how your bot handles questions. In our experience, we didn’t deploy our bot to real people until we thought it looked GREAT. Then, about 30 seconds after deploying it, people had our bot in a pretzel. Below is a real screenshot from my friend after he tried the bot for the first time….</p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/blogpic8.png"><img class="ibm-downsize " src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/blogpic8.png" alt="blogpic8" width="555" height="532" /></a></p>
+<p>After your bot has gotten a healthy amount of utterances from end users, you can use the <strong>Improve </strong>section of the Conversation API to improve and train your bot. For questions that didn’t trigger the correct intent you can add them so that they do. More importantly, you can start to see what types of questions are being asked that you may not have thought of. For example, with our bot, we didn’t anticipate how many questions we were going to get about my “favorite” color, book, sport etc. until after we deployed it.</p>
+<p><a href="/blogs/watson/wp-content/uploads/2017/03/blogpic9.png"><img class="ibm-downsize " src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/blogpic9.png" alt="" width="703" height="446" /></a></p>
+<p>After you’ve deployed the bot and improved on the results, re-deploy to even more people and improve again. Repeat this process as many times as you’d like. Through each iteration the bot will continue to improve as you train it to better answer questions. Sooner or later you’ll have your friends thinking you’re an A.I. wiz. And who knows, maybe it’ll help you get on better terms with your mom 😉</p>
+<p><strong>Building Your Own (without the work)</strong></p>
+<p>To use the intents, entities, and dialog we used for Adam the Chatbot, <a href="https://console.ng.bluemix.net/registration/?target=/catalog/services/conversation/">sign-up for a free Bluemix account</a>, <a href="https://console.ng.bluemix.net/services/77cdc18d-dbdd-4a31-911a-d3b55a236015?paneId=manage">create your free Conversation instance</a>, and <a href="https://github.com/mitchmason/conversation-simple/blob/master/training/Adam%20the%20Chatbot.json" target="_blank" rel="noopener noreferrer">import our workspace</a> . Change the bot responses to be about you, and you’re off!</p>
+<p><strong>Resources</strong></p>
+<p><a href="https://console.ng.bluemix.net/registration/?target=/catalog/services/conversation/">Sign-up for a Bluemix free trial</a></p>
+<p><a href="https://console.ng.bluemix.net/catalog/services/conversation/">Create your Conversation instance</a></p>
+<p><a href="https://github.com/mitchmason/conversation-simple/blob/master/training/Adam%20the%20Chatbot.json" target="_blank" rel="noopener noreferrer">Import Adam the Chatbot Workspace </a></p>
+<p><a href="https://github.com/watson-developer-cloud/botkit-middleware/tree/master/examples/multi-bot">Integrating with Facebook messenger</a></p>
+<p><a href="https://www.ibm.com/watson/developercloud/conversation.html">Additional reference material</a></p>
+<p>&nbsp;</p>
+<div class="ibm-alternate-background ibm-background-blue-70 ibm-padding-top-r1">
+<p class=" ibm-h3 ibm-center ibm-textcolor-white-core">Start building a bot with a free Watson trial!</p>
+<p class="ibm-button-link ibm-padding-bottom-1 ibm-center"><a class="ibm-btn-pri ibm-btn-green-30" href="https://console.ng.bluemix.net/registration/?target=/catalog/services/conversation/">Get started</a></p>
+<p class="ibm-button-link ibm-padding-bottom-1 ibm-center">
+</div>
+<p>&nbsp;</p>
+                        </div>
+                                                  <div class="ibm-columns">
+                              <div class="ibm-col-6-3">
+                                  <div class="ibm-mo">
+                                      <div class="ibm-mo__image"><img class="ibm-circle" src="https://www.ibm.com/blogs/watson/wp-content/uploads/2017/03/Adam-Pic-for-Blog.jpg" width="118" height="118" alt=""/></div>
+                                      <div class="ibm-mo__body">
+                                          <strong><a href="https://www.ibm.com/blogs/watson/author/adambenvine/" title="Posts by Adam Benvie" rel="author">Adam Benvie</a></strong>
+                                          <p>Associate Offering Manager, IBM Watson</p>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                                                                                <div class="ibm-padding-top-1">
+                        <script type="text/javascript">
+    jQuery(document).ready(function($){
+              
+//       
+    var shareUrl = "https://www.ibm.com/blogs/watson/2017/03/bot-yourself/";
+    var postID = "2037";
+    $('.nh-facebook-count-'+postID).text();
+    //$('.nh-linkedin-count-'+postID).text();
+
+  
+});
+
+</script>
+                        <!--</div>-->
+                        <div class="ibm-blog__article-tags">
+            <p class='ibm-button-link ibm-btn-row'></p>
+               </div>
+
+
+                    <!--- <div class="ibm-blog__article-date">
+                        <p class="ibm-date-time ibm-textcolor-gray-40"></p>
+                    </div>
+
+                    <div class="ibm-rule ibm-alternate ibm-gray-30"> </div> -->
+
+                    </div>
+                                       <div class="ibm-columns">
+                    <div class="ibm-col-4-1">
+                                                                                                        <p><a href="https://www.ibm.com/blogs/watson/2017/03/biggest-trends-sxsw-interactive-ai-chatbots/" class="ibm-previous-link ibm-inlinelink">Previous Post</a></p>
+                            <h6 class="nav-title"><a href="https://www.ibm.com/blogs/watson/2017/03/biggest-trends-sxsw-interactive-ai-chatbots/">The biggest trends of SXSW Interactive: AI and Chatbots</a></h6>
+                                            </div>
+
+                    <div class="ibm-col-4-1 ibm-right ibm-fright">
+                                                                                                        <p><a href="https://www.ibm.com/blogs/watson/2017/03/im-finally-learning-code/" class="ibm-next-link ibm-inlinelink ibm-icon-after">Next Post</a></p>
+                            <h6 class="nav-title"><a href="https://www.ibm.com/blogs/watson/2017/03/im-finally-learning-code/">I’m finally learning how to code</a></h6>
+                                            </div>
+                    </div>
+
+                    <!--<div class="ibm-padding-top-1">
+                                        </div>-->
+
+
+                </div>
+
+
+                <div class="ibm-col-6-2 ibm-blog__article-side ibm-padding-top-2">
+                     <div class="ibm-blog__share">
+
+<!--                         <div class="facebook">
+                            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="200" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+                        </div> -->
+
+
+                      <div class='ibm-widgets ibm-padding-top-0 ibm-padding-bottom-1'><form role="search" method="get" id="searchform" class="searchform" action="https://www.ibm.com/blogs/watson/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form><div class="ibm-rule ibm-alternate ibm-padding-bottom-0 ibm-gray-30"><hr></div></div>		<div class='ibm-widgets ibm-padding-top-0 ibm-padding-bottom-1'>				<h4 class="ibm-h3">Recent Posts</h4>		<ul>
+					<li>
+				<a href="https://www.ibm.com/blogs/watson/2018/06/augmenting-autodesks-procurement-with-ai/">How AI is helping Autodesk transform their procurement processes</a>
+						</li>
+					<li>
+				<a href="https://www.ibm.com/blogs/watson/2018/06/box-and-ibm-watson-unveil-new-skills-to-power-intelligent-enterprise-cloud-content-management/">Box and IBM Watson unveil new skills to power intelligent enterprise cloud content management</a>
+						</li>
+					<li>
+				<a href="https://www.ibm.com/blogs/watson/2018/06/ibm-watson-studio-named-winner-for-best-innovation-in-deep-learning/">IBM Watson Studio named winner for best innovation in deep learning</a>
+						</li>
+					<li>
+				<a href="https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/">How to prepare and clean data through quick operations, data profiles and visualization</a>
+						</li>
+					<li>
+				<a href="https://www.ibm.com/blogs/watson/2018/06/journey-ai-three-lessons-learned-effective-implementation/">Journey to AI &#8211; Three lessons we learned about effective implementation</a>
+						</li>
+				</ul>
+				<div class="ibm-rule ibm-alternate ibm-padding-bottom-0 ibm-gray-30"><hr></div></div><div class='ibm-widgets ibm-padding-top-0 ibm-padding-bottom-1'><h4 class="ibm-h3">Categories</h4>		<ul>
+	<li class="cat-item cat-item-76"><a href="https://www.ibm.com/blogs/watson/category/ai/" >AI</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="https://www.ibm.com/blogs/watson/category/cognitive-enterprise/" >AI for the Enterprise</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="https://www.ibm.com/blogs/watson/category/archive/" >Archive</a>
+</li>
+	<li class="cat-item cat-item-46"><a href="https://www.ibm.com/blogs/watson/category/cloud/" >Cloud</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="https://www.ibm.com/blogs/watson/category/conversational-services/" >Conversational Services</a>
+</li>
+	<li class="cat-item cat-item-85"><a href="https://www.ibm.com/blogs/watson/category/data-science/" >Data Science</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="https://www.ibm.com/blogs/watson/category/developers/" >Developers</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="https://www.ibm.com/blogs/watson/category/discovery-and-exploration/" >Discovery and Exploration</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="https://www.ibm.com/blogs/watson/category/events/" >Events</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="https://www.ibm.com/blogs/watson/category/news-and-updates/" >News and Updates</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="https://www.ibm.com/blogs/watson/category/research/" >Research</a>
+</li>
+	<li class="cat-item cat-item-78"><a href="https://www.ibm.com/blogs/watson/category/think/" >THINK</a>
+</li>
+	<li class="cat-item cat-item-21"><a href="https://www.ibm.com/blogs/watson/category/trends-and-profiles/" >Trends and Profiles</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="https://www.ibm.com/blogs/watson/category/watson-apis/" >Watson APIs</a>
+</li>
+	<li class="cat-item cat-item-84"><a href="https://www.ibm.com/blogs/watson/category/with-watson/" title="Accelerate your AI vision through exclusive access to Watson experts and education">With Watson</a>
+</li>
+		</ul>
+<div class="ibm-rule ibm-alternate ibm-padding-bottom-0 ibm-gray-30"><hr></div></div><div class='ibm-widgets ibm-padding-top-0 ibm-padding-bottom-1'><h4 class="ibm-h3">Archives</h4>		<label class="screen-reader-text" for="archives-dropdown-2">Archives</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Select Month</option>
+				<option value='https://www.ibm.com/blogs/watson/2018/06/'> June 2018 </option>
+	<option value='https://www.ibm.com/blogs/watson/2018/05/'> May 2018 </option>
+	<option value='https://www.ibm.com/blogs/watson/2018/04/'> April 2018 </option>
+	<option value='https://www.ibm.com/blogs/watson/2018/03/'> March 2018 </option>
+	<option value='https://www.ibm.com/blogs/watson/2018/02/'> February 2018 </option>
+	<option value='https://www.ibm.com/blogs/watson/2018/01/'> January 2018 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/12/'> December 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/11/'> November 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/10/'> October 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/09/'> September 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/08/'> August 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/07/'> July 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/06/'> June 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/05/'> May 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/04/'> April 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/03/'> March 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/02/'> February 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2017/01/'> January 2017 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/12/'> December 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/11/'> November 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/10/'> October 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/09/'> September 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/08/'> August 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/07/'> July 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/06/'> June 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/05/'> May 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/04/'> April 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/03/'> March 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/02/'> February 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2016/01/'> January 2016 </option>
+	<option value='https://www.ibm.com/blogs/watson/2015/12/'> December 2015 </option>
+
+		</select>
+		<div class="ibm-rule ibm-alternate ibm-padding-bottom-0 ibm-gray-30"><hr></div></div>                    </div>
+                </div>
+
+        </div>
+        
+
+                <div class="ibm-article-band ibm-blog__postgrid ibm-padding-top-0">
+            <div class="ibm-columns ibm-padding-bottom-0">
+                <div class="ibm-col-1-1 ibm-padding-top-2 ibm-padding-bottom-2">
+                        <span class="ibm-h2">More Conversational Services stories  </span>
+                </div>
+            </div>
+            <div class="ibm-columns" data-items=".ibm-blog__postgrid-item-link">
+                                    
+ <div class="ibm-col-6-2 ibm-col-medium-6-3 post post" data-post-id-"5749">
+    <div class="ibm-card">
+
+        <div class="ibm-card__heading"><p>
+    <a href="https://www.ibm.com/blogs/watson/category/data-science/">    Data Science    </a></p></div>
+    
+    
+      <div class="ibm-card__image"><a href="https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/"><img class="ibm-resize" src="https://www.ibm.com/blogs/watson/wp-content/uploads/2018/06/Clean_Data_Blog.jpg" alt="" /></a></div>
+      <div class="ibm-card__content">
+
+              <div class="ibm-padding-bottom-1">
+                  <div class="ibm-left ibm-fleft">
+            June 8, 2018          </div>
+                  <div class="ibm-clear"></div>
+        </div>
+        
+
+
+    <h3 class="ibm-h3"><a class="ibm-blog__header-link" href= "https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/"><span class="ibm-textcolor-default">How to prepare and clean data through quick operations, data profiles and visualization</span></a></h3>
+    <p>IBM Watson Studio and Watson Knowledge Catalog include Data Refinery for self-service data preparation. Data Refinery puts data pre-processing and feature engineering in the hands of data scientists, enabling faster data insights.</p>
+    </div>
+    <div class="ibm-card__bottom ibm-padding-bottom-0 ibm-padding-top-0"  onmouseleave="socialCardHide(5749)">
+    <p style="max-width: calc(100% - 36px);"><a class="ibm-forward-link ibm-inlinelink ibm-fleft" href="https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/">Continue reading</a></p>
+
+          <p class="ibm-icon-nolink ibm-icononly ibm-inlinelink ibm-fright ibm-share-encircled-link" onclick="socialCardDisplayClick(5749)" onmouseenter="socialCardDisplayClick(5749)"></p>
+    
+
+  <div id='5749_social' style="display: none;">
+    <div>
+      <p class="ibm-icononly">
+
+        <p class="ibm-bold">Share this post:</p><div class="ibm-clear"></div><p id="sharespacing" class="ibm-icononly ibm-shareiconspaceing"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F06%2Fprepare-and-clean-data-through-quick-operations-data-profiles-and-visualization%2F" target="_blank" class="ibm-facebook-encircled-link">  <span class="ibm-textcolor-gray-40 sharecount-font-size nh-facebook-count-5749"></span></a><a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F06%2Fprepare-and-clean-data-through-quick-operations-data-profiles-and-visualization%2F" target="_blank" class="ibm-googleplus-encircled-link">  </a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F06%2Fprepare-and-clean-data-through-quick-operations-data-profiles-and-visualization%2F&title=How to prepare and clean data through quick operations, data profiles and visualization&summary=IBM+Watson+Studio+and+Watson+Knowledge+Catalog+include+Data+Refinery+for+self-service+data+preparation.+Data+Refinery+puts+data+pre-processing+and+feature+engineering+in+the+hands+of+data+scientists%2C+enabling+faster+data+insights.&source=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson" target="_blank" class="ibm-linkedin-encircled-link">  <span class="ibm-textcolor-gray-40 sharecount-font-size nh-linkedin-count-5749"></span></a><a href="https://twitter.com/share?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F06%2Fprepare-and-clean-data-through-quick-operations-data-profiles-and-visualization%2F&text=How to prepare and clean data through quick operations, data profiles and visualization"target="_blank" class="ibm-twitter-encircled-link">  </a></p>
+      </p>
+    </div>
+    <!-- <p class="ibm-icononly"><a href="http://www.facebook.com/sharer.php?u=https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/&amp;t=How to prepare and clean data through quick operations, data profiles and visualization" target="_blank" class="ibm-facebook-encircled-link">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?original_referer=https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/&amp;text=How to prepare and clean data through quick operations, data profiles and visualization&amp;tw_p=tweetbutton&amp;url=https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/" target="_blank" class="ibm-twitter-encircled-link">Twitter</a>
+    <a class="ibm-linkedin-encircled-link" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/&amp;title=How to prepare and clean data through quick operations, data profiles and visualization&amp;source=Watson" target="_blank">LinkedIn</a>
+    <a class="ibm-googleplus-encircled-link" href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=https://www.ibm.com/blogs/watson/2018/06/prepare-and-clean-data-through-quick-operations-data-profiles-and-visualization/" target="_blank">LinkedIn</a></p> -->
+</div>
+    </div>
+    </div>
+  </div>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('.nh-facebook-count-'+5749).text();
+        //$('.nh-linkedin-count-'+5749).text();
+
+
+  
+});
+
+</script>                    
+ <div class="ibm-col-6-2 ibm-col-medium-6-3 post post" data-post-id-"5724">
+    <div class="ibm-card">
+
+        <div class="ibm-card__heading"><p>
+    <a href="https://www.ibm.com/blogs/watson/category/conversational-services/">    Conversational Services    </a></p></div>
+    
+    
+      <div class="ibm-card__image"><a href="https://www.ibm.com/blogs/watson/2018/05/ibm-watson-topcoder-building-cost-effective-chatbots/"><img class="ibm-resize" src="https://www.ibm.com/blogs/watson/wp-content/uploads/2018/05/Cost-effective-chatbots-1200x600-1024x512.jpeg" alt="" /></a></div>
+      <div class="ibm-card__content">
+
+              <div class="ibm-padding-bottom-1">
+                  <div class="ibm-left ibm-fleft">
+            May 31, 2018          </div>
+                  <div class="ibm-clear"></div>
+        </div>
+        
+
+
+    <h3 class="ibm-h3"><a class="ibm-blog__header-link" href= "https://www.ibm.com/blogs/watson/2018/05/ibm-watson-topcoder-building-cost-effective-chatbots/"><span class="ibm-textcolor-default">IBM Watson and Topcoder &#8211; Building cost effective chatbots for your business</span></a></h3>
+    <p>Topcoder is home to the world’s largest network of designers, developers, and data scientists. Working with IBM and Topcoder, you can get a business ready low cost chatbot built with Watson Assistant for just $10,000 in just 2-6 weeks</p>
+    </div>
+    <div class="ibm-card__bottom ibm-padding-bottom-0 ibm-padding-top-0"  onmouseleave="socialCardHide(5724)">
+    <p style="max-width: calc(100% - 36px);"><a class="ibm-forward-link ibm-inlinelink ibm-fleft" href="https://www.ibm.com/blogs/watson/2018/05/ibm-watson-topcoder-building-cost-effective-chatbots/">Continue reading</a></p>
+
+          <p class="ibm-icon-nolink ibm-icononly ibm-inlinelink ibm-fright ibm-share-encircled-link" onclick="socialCardDisplayClick(5724)" onmouseenter="socialCardDisplayClick(5724)"></p>
+    
+
+  <div id='5724_social' style="display: none;">
+    <div>
+      <p class="ibm-icononly">
+
+        <p class="ibm-bold">Share this post:</p><div class="ibm-clear"></div><p id="sharespacing" class="ibm-icononly ibm-shareiconspaceing"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F05%2Fibm-watson-topcoder-building-cost-effective-chatbots%2F" target="_blank" class="ibm-facebook-encircled-link">  <span class="ibm-textcolor-gray-40 sharecount-font-size nh-facebook-count-5724"></span></a><a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F05%2Fibm-watson-topcoder-building-cost-effective-chatbots%2F" target="_blank" class="ibm-googleplus-encircled-link">  </a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F05%2Fibm-watson-topcoder-building-cost-effective-chatbots%2F&title=IBM Watson and Topcoder &#8211; Building cost effective chatbots for your business&summary=Topcoder+is+home+to+the+world%E2%80%99s+largest+network+of+designers%2C+developers%2C+and+data+scientists.+Working+with+IBM+and+Topcoder%2C+you+can+get+a+business+ready+low+cost+chatbot+built+with+Watson+Assistant+for+just+%2410%2C000+in+just+2-6+weeks&source=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson" target="_blank" class="ibm-linkedin-encircled-link">  <span class="ibm-textcolor-gray-40 sharecount-font-size nh-linkedin-count-5724"></span></a><a href="https://twitter.com/share?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F05%2Fibm-watson-topcoder-building-cost-effective-chatbots%2F&text=IBM Watson and Topcoder &%25238211; Building cost effective chatbots for your business"target="_blank" class="ibm-twitter-encircled-link">  </a></p>
+      </p>
+    </div>
+    <!-- <p class="ibm-icononly"><a href="http://www.facebook.com/sharer.php?u=https://www.ibm.com/blogs/watson/2018/05/ibm-watson-topcoder-building-cost-effective-chatbots/&amp;t=IBM Watson and Topcoder &#8211; Building cost effective chatbots for your business" target="_blank" class="ibm-facebook-encircled-link">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?original_referer=https://www.ibm.com/blogs/watson/2018/05/ibm-watson-topcoder-building-cost-effective-chatbots/&amp;text=IBM Watson and Topcoder &#8211; Building cost effective chatbots for your business&amp;tw_p=tweetbutton&amp;url=https://www.ibm.com/blogs/watson/2018/05/ibm-watson-topcoder-building-cost-effective-chatbots/" target="_blank" class="ibm-twitter-encircled-link">Twitter</a>
+    <a class="ibm-linkedin-encircled-link" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.ibm.com/blogs/watson/2018/05/ibm-watson-topcoder-building-cost-effective-chatbots/&amp;title=IBM Watson and Topcoder &#8211; Building cost effective chatbots for your business&amp;source=Watson" target="_blank">LinkedIn</a>
+    <a class="ibm-googleplus-encircled-link" href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=https://www.ibm.com/blogs/watson/2018/05/ibm-watson-topcoder-building-cost-effective-chatbots/" target="_blank">LinkedIn</a></p> -->
+</div>
+    </div>
+    </div>
+  </div>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('.nh-facebook-count-'+5724).text();
+        //$('.nh-linkedin-count-'+5724).text();
+
+
+  
+});
+
+</script>                    
+ <div class="ibm-col-6-2 ibm-col-medium-6-3 post post" data-post-id-"5704">
+    <div class="ibm-card">
+
+        <div class="ibm-card__heading"><p>
+    <a href="https://www.ibm.com/blogs/watson/category/conversational-services/">    Conversational Services    </a></p></div>
+    
+    
+      <div class="ibm-card__image"><a href="https://www.ibm.com/blogs/watson/2018/05/new-watson-assistant-updates-to-provide-gdpr-support/"><img class="ibm-resize" src="https://www.ibm.com/blogs/watson/wp-content/uploads/2018/05/Data-Privacy_1200x600-1024x512.jpg" alt="" /></a></div>
+      <div class="ibm-card__content">
+
+              <div class="ibm-padding-bottom-1">
+                  <div class="ibm-left ibm-fleft">
+            May 24, 2018          </div>
+                  <div class="ibm-clear"></div>
+        </div>
+        
+
+
+    <h3 class="ibm-h3"><a class="ibm-blog__header-link" href= "https://www.ibm.com/blogs/watson/2018/05/new-watson-assistant-updates-to-provide-gdpr-support/"><span class="ibm-textcolor-default">New Watson Assistant updates to provide GDPR support</span></a></h3>
+    <p>IBM is committed to providing our clients and partners with data privacy, security and governance solutions to assist you on your journey to become GDPR ready. To that end, learn how Watson Assistant has introduced a few new capabilities to help our clients along their GDPR compliance journey.</p>
+    </div>
+    <div class="ibm-card__bottom ibm-padding-bottom-0 ibm-padding-top-0"  onmouseleave="socialCardHide(5704)">
+    <p style="max-width: calc(100% - 36px);"><a class="ibm-forward-link ibm-inlinelink ibm-fleft" href="https://www.ibm.com/blogs/watson/2018/05/new-watson-assistant-updates-to-provide-gdpr-support/">Continue reading</a></p>
+
+          <p class="ibm-icon-nolink ibm-icononly ibm-inlinelink ibm-fright ibm-share-encircled-link" onclick="socialCardDisplayClick(5704)" onmouseenter="socialCardDisplayClick(5704)"></p>
+    
+
+  <div id='5704_social' style="display: none;">
+    <div>
+      <p class="ibm-icononly">
+
+        <p class="ibm-bold">Share this post:</p><div class="ibm-clear"></div><p id="sharespacing" class="ibm-icononly ibm-shareiconspaceing"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F05%2Fnew-watson-assistant-updates-to-provide-gdpr-support%2F" target="_blank" class="ibm-facebook-encircled-link">  <span class="ibm-textcolor-gray-40 sharecount-font-size nh-facebook-count-5704"></span></a><a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F05%2Fnew-watson-assistant-updates-to-provide-gdpr-support%2F" target="_blank" class="ibm-googleplus-encircled-link">  </a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F05%2Fnew-watson-assistant-updates-to-provide-gdpr-support%2F&title=New Watson Assistant updates to provide GDPR support&summary=IBM+is+committed+to+providing+our+clients+and+partners+with+data+privacy%2C+security+and+governance+solutions+to+assist+you+on+your+journey+to+become+GDPR+ready.+To+that+end%2C+learn+how+Watson+Assistant+has+introduced+a+few+new+capabilities+to+help+our+clients+along+their+GDPR+compliance+journey.&source=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson" target="_blank" class="ibm-linkedin-encircled-link">  <span class="ibm-textcolor-gray-40 sharecount-font-size nh-linkedin-count-5704"></span></a><a href="https://twitter.com/share?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fwatson%2F2018%2F05%2Fnew-watson-assistant-updates-to-provide-gdpr-support%2F&text=New Watson Assistant updates to provide GDPR support"target="_blank" class="ibm-twitter-encircled-link">  </a></p>
+      </p>
+    </div>
+    <!-- <p class="ibm-icononly"><a href="http://www.facebook.com/sharer.php?u=https://www.ibm.com/blogs/watson/2018/05/new-watson-assistant-updates-to-provide-gdpr-support/&amp;t=New Watson Assistant updates to provide GDPR support" target="_blank" class="ibm-facebook-encircled-link">Facebook</a>
+    <a href="https://twitter.com/intent/tweet?original_referer=https://www.ibm.com/blogs/watson/2018/05/new-watson-assistant-updates-to-provide-gdpr-support/&amp;text=New Watson Assistant updates to provide GDPR support&amp;tw_p=tweetbutton&amp;url=https://www.ibm.com/blogs/watson/2018/05/new-watson-assistant-updates-to-provide-gdpr-support/" target="_blank" class="ibm-twitter-encircled-link">Twitter</a>
+    <a class="ibm-linkedin-encircled-link" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.ibm.com/blogs/watson/2018/05/new-watson-assistant-updates-to-provide-gdpr-support/&amp;title=New Watson Assistant updates to provide GDPR support&amp;source=Watson" target="_blank">LinkedIn</a>
+    <a class="ibm-googleplus-encircled-link" href="https://plusone.google.com/_/+1/confirm?hl=en-US&amp;url=https://www.ibm.com/blogs/watson/2018/05/new-watson-assistant-updates-to-provide-gdpr-support/" target="_blank">LinkedIn</a></p> -->
+</div>
+    </div>
+    </div>
+  </div>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('.nh-facebook-count-'+5704).text();
+        //$('.nh-linkedin-count-'+5704).text();
+
+
+  
+});
+
+</script>
+            </div> <!-- .ibm-columns -->
+
+        </div>  <!-- .ibm-blog__postgrid -->
+    
+    </div>
+
+                            </div>
+                    </div>
+              </div>
+            </div>
+        </main>
+
+            
+  
+                                                    <div class="ibm-band scene known-footer ibm-background-white-core" id="known-footer">
+
+                                        <div class="ibm-columns ibm-padding-top-1 ibm-padding-bottom-2">
+                            <div class="ibm-col-1-1">
+                                <div class="social-share">
+                                    <h4>Connect with us</h4>
+                                    <p class="ibm-icononly ibm-padding-top-1">
+                                                                           <a class="ibm-facebook-encircled-link" href="https://www.facebook.com/ibmwatson?cm_mc_uid=49849646643814920326519&cm_mc_sid_50200000=1493647150" target="_blank"></a>
+                                                                                                                <a class="ibm-twitter-encircled-link" href="https://twitter.com/IBMWatson?cm_mc_uid=49849646643814920326519&cm_mc_sid_50200000=1493647150" target="_blank"></a>
+                                                                                                                <a class="ibm-linkedin-encircled-link" href="https://www.linkedin.com/start/join?trk=login_reg_redirect&session_redirect=%2Fshowcase%2F9249740%2F%3Fcm_mc_uid%3D49849646643814920326519%26cm_mc_sid_50200000%3D1493647150" target="_blank"></a>
+                                                                                                                <a class="ibm-youtube-encircled-link" href="https://www.youtube.com/user/IBMWatsonSolutions" target="_blank"></a>
+                                                                                                                                                </p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+            <!-- IBM: FOOTER_BEGIN -->
+            <div id="ibm-footer-module"></div>
+            <footer role="contentinfo" aria-label="IBM">
+                <div id="ibm-footer">
+                    <ul>
+                        <li><a href="//www.ibm.com/contact/us/en/">Contact</a></li>
+                        <li><a href="//www.ibm.com/privacy/us/en/">Privacy</a></li>
+                        <li><a href="//www.ibm.com/legal/us/en/">Terms of use</a></li>
+                        <li><a href="//www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+                    </ul>
+                </div>
+            </footer>
+
+            <!-- IBM: METRICS -->
+        <script type="text/javascript" src="//www.ibm.com/software/info/js/tactic.js"></script>
+        <script type="text/javascript" src="//www.ibm.com/software/info/js/tacticbindlinks.js"></script>
+     
+<script type="text/javascript">
+ (function(){
+   function initInsights() {
+     if (!window._contently) {
+       var _contently = { siteId: "86a2de10796017c97f06f16a9c11849c" }
+       _contently.insights = new ContentlyInsights({site_id: _contently.siteId});
+       window._contently = _contently
+     }
+   }
+    var s = document.createElement('script');
+   s.setAttribute('type', 'text/javascript');
+   s.setAttribute('src', '//s3.amazonaws.com/assets.contently.com/insights/insights.js')
+   s.onreadystatechange = function() {
+     if (this.readyState == 'complete' || this.readyState == 'loaded') {
+       initInsights();
+     }
+   };
+   s.onload = initInsights;
+   document.body.appendChild(s);
+ })();
+</script><script type="text/javascript">
+	jQuery(document).ready(function(){
+	
+		jQuery('.ibm-blog__article-main > h1').addClass("ibm-h1");
+		jQuery('.ibm-blog__article-main > h3').addClass("ibm-h3");
+		jQuery('.ibm-blog__article-main h2').each(function(i){
+
+			if(jQuery(this).closest('.ibm-show-hide').length == 0)
+			{
+				jQuery(this).addClass("ibm-h2");
+			}
+		});
+		
+		
+
+
+		jQuery('#ibm-content-main').find('h1').addClass("ibm-h1");
+		jQuery('#ibm-content-main').find('h3').addClass("ibm-h3");
+
+		jQuery('#ibm-content-main h2').each(function(i){
+
+			if(jQuery(this).closest('.ibm-show-hide').length == 0)
+			{
+				jQuery(this).addClass("ibm-h2");
+			}
+		});
+
+		/* JQUERY TO REMOVE FIRST WIDGETS TOP LINE */
+	   if(jQuery('.ibm-blog__share').children().first().hasClass('ibm-widgets'))
+	   {
+	   	//jQuery('.ibm-widgets').eq(0).find('.ibm-rule').remove();
+	   }
+		
+		//
+	});
+</script>
+<script type='text/javascript' src='https://www.ibm.com/blogs/watson/wp-content/themes/ibmNorthstar/assets/js/site.js'></script>
+<script type='text/javascript' src='https://www.ibm.com/blogs/watson/wp-includes/js/wp-embed.min.js'></script>
+	</body>
+
+</html>

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" >
+<head>
+<meta name="IBM.WTMSite" content="BLOGS"/>
+<meta name="IBM.WTMCategory" content="socialbusiness" />
+<script src="//ibm.com/common/stats/ida_production.js" type="text/javascript">//</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="pingback" href="https://www.ibm.com/blogs/research/xmlrpc.php">
+	<!--[if lt IE 9]>
+	<script src="https://www.ibm.com/blogs/research/wp-content/themes/IBM-RESEARCH-0.5/js/html5.js"></script>
+	<![endif]-->
+
+    <!--IBM V18 PATTERN-->
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="https://www.ibm.com/blogs/research/wp-content/themes/IBM-RESEARCH-0.5/style.css" media="screen" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+
+	<link rel="canonical" href="https://www.ibm.com/blogs/research/2018/06/ai-debate/" />
+	<meta name="geo.country" content="US" />
+	<meta property='og:type' content='website' />
+	<meta name="dcterms.rights" content="© Copyright IBM Corp. 2016" />
+	<meta name="dcterms.date" content="2016-05-16" />
+	<meta property="og:title" content="AI Learns the Art of Debate with IBM Project Debater" />
+    <meta property="og:url" content="http://www.ibm.comhttps://www.ibm.com/blogs/research/2018/06/ai-debate/" />
+    <!--<meta property="og:image" content="http://www.ibm.comhttps://www.ibm.com/blogs/research/wp-content/themes/IBM-RESEARCH-0.5/images/thumbnail-default.jpg" />-->
+	<meta name="keywords" content=" Research, Blog, IBM," />
+	<meta name="robots" content="index, follow" />
+
+    <title>AI Learns the Art of Debate with IBM Project Debater</title>
+
+
+	        <!-- START: v18_head -->
+
+        <meta http-equiv="x-ua-compatible" content="IE=Edge">
+        <link rel="shortcut icon" href="//www.ibm.com/favicon.ico" />
+        <!-- link rel="IBM.Mobile.redirect" href="https://www.ibm.com/blogs/research/" -->
+
+        <!-- title>IBM - Research</title -->
+
+        <!-- meta name="abstract" content="No matter where discovery takes place, IBM researchers push the boundaries of science, technology and business to make the world work better." / -->
+        <!-- meta name="description" content="No matter where discovery takes place, IBM researchers push the boundaries of science, technology and business to make the world work better." / -->
+        <!-- meta name="keywords" content="IBM Research" / -->
+        <meta name="dc.date" content="2015-10-20" scheme="iso8601" />
+        <meta name="dc.language" content="en-US" scheme="rfc1766" />
+        <meta name="dc.publisher" content="IBM Corporation" />
+        <meta name="dc.rights" content="© Copyright IBM Corp. 2015, 2012" />
+        <meta name="dc.subject" content="BA.0022" scheme="IBM_SubjectTaxonomy" />
+        <meta name="dc.type" content="CT400" scheme="IBM_ContentClassTaxonomy" />
+        <meta name="dcterms.date" content="2015-09-23" />
+        <meta name="dcterms.rights" content="© Copyright IBM Corp. 2015" />
+        <meta name="geo.country" content="US" />
+        <meta name="ibm.country" content="US" />
+        <meta name="ibm.effective" content="2016-05-16" scheme="W3CDTF" />
+        <meta name="ibm.expires" content="2050-05-16" scheme="W3CDTF" />
+        <meta name="ibm.industry" content="Technology" scheme="IBM_IndustryTaxonomy" />
+        <meta name="owner" content="cnay@us.ibm.com" />
+        <meta name="robots" content="index,follow" />
+        <meta name="security" content="public" />
+
+        <script>
+            digitalData = {
+                page : {
+                    category : {
+                        primaryCategory : 'science, technology'
+                    },
+                    pageInfo : {
+                        effectiveDate : '2016-05-16',
+                        expiryDate : '2050-05-16',
+                        language : 'en-CA',
+                        publishDate : '2016-05-16',
+                        publisher : 'IBM Corporation',
+                        version : 'v18',
+                        ibm : {
+                            contentDelivery : 'Hand coded',
+                            contentProducer : 'Joan Renner',
+                            country : 'US',
+                            ibmDynamicCm : false,
+                            industry : 'Technology',
+                            owner : 'cnay@us.ibm.com',
+                            siteID : 'GLOBAL',
+                            subject : 'IBM000',
+                            type : 'CT052'
+                        },
+                        maxymiser : {
+                            synchronous : true
+                        },
+                        //              liveperson:{
+                        //                enabled: true,
+                        //                routing: 'storage-english'
+                        //              },
+                        keywords : "IBM Research Blog",
+                        description : "No matter where discovery takes place, IBM researchers push the boundaries of science, technology and business to make the world work better."
+                    }
+                }
+            };
+        </script>
+    <script src="//www.ibm.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+		<link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+		<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+		<script src="//1.www.s81c.com/common/v18/js/masonry.js"></script>
+		<script src="/blogs/research/wp-content/themes/IBM-RESEARCH-0.5/js/site.js"></script>
+
+	<script type="text/javascript">
+		 IBMCore.common.util.config.set({
+		  "footer":{
+		    "type":"alternate"
+		  },
+			"masthead":{
+				"type":"alternate"
+			},
+		  "sbs":{
+		    "enabled":false
+		  }
+		});
+	 </script>
+
+<script type="text/javascript">
+
+	jQuery( document ).ready(function($) {
+    		$( ".menu-item-has-children" ).addClass( "ibm-haschildlist" );
+	});
+
+</script>
+	
+<!-- This site is optimized with the Yoast SEO plugin v5.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="An AI system that can engage in debate with humans, Project Debater moves us closer to one of the great boundaries in AI: mastering language."/>
+<link rel="canonical" href="https://www.ibm.com/blogs/research/2018/06/ai-debate/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AI Learns the Art of Debate with IBM Project Debater" />
+<meta property="og:description" content="An AI system that can engage in debate with humans, Project Debater moves us closer to one of the great boundaries in AI: mastering language." />
+<meta property="og:url" content="https://www.ibm.com/blogs/research/2018/06/ai-debate/" />
+<meta property="og:site_name" content="IBM Blog Research" />
+<meta property="article:publisher" content="https://www.facebook.com/IBMResearch/" />
+<meta property="article:tag" content="AI" />
+<meta property="article:tag" content="Artificial Intelligence" />
+<meta property="article:tag" content="IBM Research - Haifa" />
+<meta property="article:section" content="AI" />
+<meta property="article:published_time" content="2018-06-18T22:00:06-04:00" />
+<meta property="og:image" content="https://www.ibm.com/blogs/research/wp-content/uploads/2018/06/Project-Debater-with-human-professional_wp.jpg" />
+<meta property="og:image:secure_url" content="https://www.ibm.com/blogs/research/wp-content/uploads/2018/06/Project-Debater-with-human-professional_wp.jpg" />
+<meta property="og:image:width" content="2858" />
+<meta property="og:image:height" content="1905" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="An AI system that can engage in debate with humans, Project Debater moves us closer to one of the great boundaries in AI: mastering language." />
+<meta name="twitter:title" content="AI Learns the Art of Debate with IBM Project Debater" />
+<meta name="twitter:site" content="@ibmresearch" />
+<meta name="twitter:image" content="https://www.ibm.com/blogs/research/wp-content/uploads/2018/06/Project-Debater-with-human-professional_wp.jpg" />
+<meta name="twitter:creator" content="@ibmresearch" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.ibm.com\/blogs\/research\/","name":"IBM Blog Research","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.ibm.com\/blogs\/research\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="IBM Blog Research &raquo; AI Learns the Art of Debate Comments Feed" href="https://www.ibm.com/blogs/research/2018/06/ai-debate/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.ibm.com\/blogs\/research\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.6"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='https://api.w.org/' href='https://www.ibm.com/blogs/research/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ibm.com/blogs/research/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.ibm.com/blogs/research/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.8.6" />
+<link rel='shortlink' href='https://www.ibm.com/blogs/research/?p=24187' />
+<link rel="alternate" type="application/json+oembed" href="https://www.ibm.com/blogs/research/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fresearch%2F2018%2F06%2Fai-debate%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.ibm.com/blogs/research/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ibm.com%2Fblogs%2Fresearch%2F2018%2F06%2Fai-debate%2F&#038;format=xml" />
+</head>
+
+<body class="post-template-default single single-post postid-24187 single-format-standard">
+
+
+<!-- MASTHEAD_BEGIN -->
+      <div id="ibm-masthead" role="banner" aria-label="IBM">
+        <div id="ibm-mast-options">
+          <ul role="toolbar" aria-labelledby="ibm-masthead">
+            <li id="ibm-geo" role="presentation"><a href="http://www.ibm.com/planetwide/select/selector.html" role="button" aria-label="United States selected - Choose a country">United States</a></li>
+            <li id="ibm-language" role="presentation"><span class="ibm-active" role="button" aria-disabled="true">English</span> <a href="http://www.ibm.com/us-en/" lang="en-US" role="button">English</a></li>
+          </ul>
+        </div>
+        <div id="ibm-universal-nav">
+
+          <nav role="navigation" aria-label="IBM">
+            <div id="ibm-home"><a href="http://www.ibm.com/us-en/">IBM®</a></div>
+            <ul id="ibm-menu-links" role="toolbar" aria-label="Site map">
+              <li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+            </ul>
+          </nav>
+
+					<div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+            <form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+              <p>
+                <label for="q">IBM</label>
+                <input type="text" maxlength="100" value="" placeholder="Search" name="q" id="q" aria-label="Search"/>
+                <input type="hidden" value="18" name="v"/>
+                <input type="hidden" value="utf" name="en"/>
+                <input type="hidden" value="en" name="lang"/>
+                <input type="hidden" value="us" name="cc"/>
+		            <span class="ibm-search-scope"><input type="checkbox" name="sn" value="__REPLACE_ME__" checked id="scopeoption"> <label for="scopeoption">Search within Blog</span>
+                <input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+              </p>
+            </form>
+						<form class="ibm-hide" id="someCustomForm" action="https://www.ibm.com/blogs/research" method="get">
+							<p><input type="text" name="s" /></p>
+						</form>
+          </div>
+        </div>
+      </div>
+      <!-- MASTHEAD_END -->
+
+    <!--MENU-->
+    <div class="ibm-sitenav-menu-container">
+                <div class="ibm-sitenav-menu-name"><a href="https://www.ibm.com/blogs/research/"><span class="ibm-bold">IBM</span> Research</a></div>
+                <div class="ibm-sitenav-menu-list">
+                    <!--<ul role="menubar">
+                        <li role="presentation">
+                            <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/what-is-watson.html" role="menuitem" tabindex="0">What is Watson?</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/watson-cloud.html" role="menuitem" tabindex="-1">Watson Developer Cloud</a>
+                        </li>
+                        <li class="ibm-haschildlist" role="presentation">
+                            <button role="menuitem" tabindex="-1">Offerings</button>
+                            <ul role="menu" class="">
+                                <li role="presentation"><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/engagement_advisor.html" role="menuitem">Watson Engagement Advisor</a></li>
+                                <li role="presentation"><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/explorer.html" role="menuitem">Watson Explorer</a></li>
+                                <li role="presentation"><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/discovery-advisor.html" role="menuitem">Watson Discovery Advisor</a></li>
+                                <li role="presentation"><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/watson-oncology.html" role="menuitem">Watson for Oncology</a></li>
+                                <li role="presentation"><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/clinical-trial-matching.html" role="menuitem">Watson for Clinical Trial Matching</a></li>
+                                <li role="presentation"><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/knowledge-studio.html" role="menuitem">Watson Knowledge Studio</a></li>
+                            </ul>
+                        </li>
+                       <li class="ibm-haschildlist" role="presentation">
+                            <button role="menuitem" tabindex="-1">Partnerships</button>
+                            <ul role="menu" class="">
+                                <li role="presentation"><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/ecosystem.html" role="menuitem">Watson Ecosystem</a></li>
+                                <li role="presentation"><a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/watson-university.html" role="menuitem">University Programs</a></li>
+                            </ul>
+                        </li>
+                        <li role="presentation">
+                            <a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/careers.html" role="menuitem" tabindex="-1">Careers</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="https://www.ibm.com/blogs/watson" role="menuitem" tabindex="-1">Blog</a>
+                        </li>
+
+                    </ul>-->
+                    <ul role="menubar"><li id="menu-item-18366" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-18366"><a href="#">Topics</a>
+<ul  class="sub-menu">
+	<li id="menu-item-18369" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-18369"><a href="https://www.ibm.com/blogs/research/category/ai/">AI</a></li>
+	<li id="menu-item-18372" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18372"><a href="https://www.ibm.com/blogs/research/category/blockchain/">Blockchain</a></li>
+	<li id="menu-item-18375" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18375"><a href="https://www.ibm.com/blogs/research/category/healthcare/">Healthcare</a></li>
+	<li id="menu-item-18378" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18378"><a href="https://www.ibm.com/blogs/research/category/quantcomp/">Quantum Computing</a></li>
+</ul>
+</li>
+<li id="menu-item-18381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-parent-item menu-item-18381"><a href="#">Labs</a>
+<ul  class="sub-menu">
+	<li id="menu-item-18384" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18384"><a href="https://www.ibm.com/blogs/research/category/ibmres-af/">IBM Research-Africa</a></li>
+	<li id="menu-item-18387" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18387"><a href="https://www.ibm.com/blogs/research/category/ibmres-alm/">IBM Research-Almaden</a></li>
+	<li id="menu-item-18390" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18390"><a href="https://www.ibm.com/blogs/research/category/ibmres-aus/">IBM Research-Austin</a></li>
+	<li id="menu-item-18393" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18393"><a href="https://www.ibm.com/blogs/research/category/ibmres-mel/">IBM Research-Australia</a></li>
+	<li id="menu-item-18396" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18396"><a href="https://www.ibm.com/blogs/research/category/ibmres-bra/">IBM Research-Brazil</a></li>
+	<li id="menu-item-18399" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18399"><a href="https://www.ibm.com/blogs/research/category/ibmres-china/">IBM Research-China</a></li>
+	<li id="menu-item-18402" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18402"><a href="https://www.ibm.com/blogs/research/category/ibmres-haifa/">IBM Research-Haifa</a></li>
+	<li id="menu-item-18405" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18405"><a href="https://www.ibm.com/blogs/research/category/ibmres-india/">IBM Research-India</a></li>
+	<li id="menu-item-18408" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18408"><a href="https://www.ibm.com/blogs/research/category/ibmres-ire/">IBM Research-Ireland</a></li>
+	<li id="menu-item-18411" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18411"><a href="https://www.ibm.com/blogs/research/category/ibmres-tokyo/">IBM Research-Tokyo</a></li>
+	<li id="menu-item-18414" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18414"><a href="https://www.ibm.com/blogs/research/category/ibmres-zur/">IBM Research-Zurich</a></li>
+	<li id="menu-item-18417" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18417"><a href="https://www.ibm.com/blogs/research/category/ibmres-tjw/">Thomas J Watson Research Center</a></li>
+</ul>
+</li>
+<li id="menu-item-18420" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18420"><a href="http://research.ibm.com/">About</a></li>
+<li id="menu-item-18423" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18423"><a href="https://www.ibm.com/blogs/research/feed/researchfeed">Subscribe</a></li>
+</ul>                </div>
+            </div>
+    <!--MENU_END-->
+
+
+    <form role="search" method="get" class="search-form-header" action="https://www.ibm.com/blogs/research/">
+
+        <a class="ibm-search-link">
+            <input type="submit" class="ibm-search-link" value="" />
+        </a>
+
+    <label>
+        <span class="screen-reader-text"></span>
+        <input type="search" class="search-field"
+            placeholder="What are you looking for"
+            value="" name="s"
+            title="" />
+    </label>
+</form>
+
+<!--
+<div id="ibm-leadspace-head" class="ibm-alternate-background">
+
+     <div id="ibm-leadspace-body" class="has_intro ibm-center ibm-top-centerh" style="padding-top:px!important; padding-bottom:px!important;">
+
+			 					 	<a href="https://www.ibm.com/blogs/research/" class="logo"><img src="/blogs/research/wp-content/uploads/2016/03/hexabenzocoronene_molecule.jpg"></a>
+				
+				 		  <h1 class="name ibm-h1"><a href="https://www.ibm.com/blogs/research/">IBM Research Blog</a></h1>
+		
+					 			<p class="intro">The world is our lab.</p>
+			
+     </div>
+
+</div> -->
+
+
+<main role="main">
+          <div id="ibm-pcon">
+            <div id="ibm-content">
+              <div id="ibm-content-body">
+
+                <div id="ibm-content-main">
+
+<!--BLOG ARTICLE-->
+<div class="ibm-columns ibm-blog__article" id="ibm-blog-single-content">
+
+	<div class="ibm-col-6-4 ibm-col-medium-1-1 ibm-blog__article-main">
+
+		<div class="ibm-blog__article-date ibm-textcolor-gray-40">
+			June 18, 2018		</div>
+
+		<div class="ibm-blog__article-categories ibm-textcolor-gray-40">
+        	Posted in: <a href="https://www.ibm.com/blogs/research/category/ai/" rel="category tag">AI</a>		</div>
+
+		<h1 class="ibm-h1 ibm-bold" itemprop="headline" rel="bookmark">
+			AI Learns the Art of Debate		</h1>
+
+		<div class="ibm-blog__article-content">
+			<p>Today, an <a href="http://www.research.ibm.com/artificial-intelligence/">artificial intelligence </a>(AI) system engaged in the first ever live, public debates with humans. At an event held at IBM’s Watson West site in San Francisco, a champion debater and IBM’s AI system, <a href="http://www.research.ibm.com/artificial-intelligence/project-debater/">Project Debater</a>, began by preparing arguments for and against the statement: “We should subsidize space exploration.” Both sides then delivered a four-minute opening statement, a four-minute rebuttal, and a two-minute summary.</p>
+<p>Project Debater made an opening argument that supported the statement with facts, including the points that space exploration benefits human kind because it can help advance scientific discoveries and it inspires young people to think beyond themselves. Noa Ovadia, the 2016 Israeli national debate champion, opposed the statement, arguing that there are better applications for government subsidies, including subsidies for scientific research here on Earth. After listening to Noa’s argument, Project Debater delivered a rebuttal speech, countering with the view that potential technological and economic benefits from space exploration outweigh other government spending. Following closing summaries from both sides, a snap poll showed that a majority of audience members thought Project Debater enriched their knowledge more than its human counterpart.</p>
+<p>Just think about that for a moment. An AI system engaged with an expert human debater, listened to her argument, and responded convincingly with its own, unscripted reasoning to persuade an audience to consider its position on a controversial topic. Later, we held a second debate between the system and another Israeli debate expert, Dan Zafrir, that featured opposing arguments on the statement: “We should increase the use of telemedicine.”</p>
+<p><img class="alignleft wp-image-24235" src="https://www.ibm.com/blogs/research/wp-content/uploads/2018/06/Project-Debater-with-human-professional_wp-300x200.jpg" alt="AI" width="500" height="333" srcset="https://www.ibm.com/blogs/research/wp-content/uploads/2018/06/Project-Debater-with-human-professional_wp-300x200.jpg 300w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/06/Project-Debater-with-human-professional_wp-768x512.jpg 768w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/06/Project-Debater-with-human-professional_wp-1024x683.jpg 1024w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<p>For the initial demonstrations of this new technology, we selected from a curated list of topics to ensure a meaningful debate. But Project Debater was never trained on the topics. Over time, and in relevant business applications, we will naturally move toward using the system for issues that haven’t been screened.</p>
+<p>Project Debater moves us a big step closer to one of the great boundaries in AI: mastering language. It is the latest in a long line of major AI innovations at IBM, which also include “Deep Blue,” the IBM system that took on chess world champion Garry Kasparov in 1997, and <a href="https://www.ibm.com/watson/">IBM Watson</a>, which beat the top human champions on Jeopardy! in 2011.</p>
+<p>Project Debater reflects the mission of IBM Research today to develop broad AI that learns across different disciplines to augment human intelligence. AI assistants have become highly useful to us through their ability to conduct sophisticated keyword searches and respond to simple questions or requests (such as “how many ounces in a liter?” or “call Mom”). Project Debater explores new territory: it absorbs massive and diverse sets of information and perspectives to help people build persuasive arguments and make well-informed decisions.</p>
+<p>This technology will expand upon the capabilities of IBM Watson, which is being used today by dozens of companies to mine massive, internal data sets for new business insights. The system already uses Watson Speech to Text API, and it will contribute to enhancing Watson’s advanced language and dialogue features. Project Debater’s underlying technologies will also be commercialized in IBM Cloud and IBM Watson in the future.</p>
+<p>Building the system was a remarkably difficult and complex challenge.  Over the past six years, a global IBM Research team led by our Haifa, Israel lab endowed Project Debater with three capabilities, each breaking new ground in AI: first, data-driven speech writing and delivery; second, listening comprehension that can identify key claims hidden within long continuous spoken language; and third, modelling human dilemmas in a unique knowledge graph to enable principled arguments <i>(read more about the technical details in the 30+ published papers with access to the training data sets <a href="https://www.research.ibm.com/haifa/dept/vst/debating_data.shtml">here</a>)</i>.</p>
+<p>The debate format offers the ideal testing ground for these capabilities. Debate rules stem from a human culture of discussion and are not arbitrary, and the value of arguments is often inherently subjective. Project Debater must adapt to human rationale and propose lines of argument that people can follow. In debate, AI must learn to navigate our messy, unstructured human world as it is – not by using a pre-defined set of rules, as in a board game.</p>
+<p>For this reason, Project Debater sometimes makes mistakes, just like people. Though work on this technology is far from complete, it has the potential to assist with thousands of complicated human decisions. For example, by helping to identify financial facts that either support or oppose a financial thesis, or by presenting pro and con arguments related to public policies. Project Debater could be the ultimate fact-based sounding board without the bias that often comes from humans.</p>
+<p>That’s a very positive development for AI. The more transparent and explainable we can make this transformative technology, the more we can trust it. And the more we can trust it, the more it will help us make the best, most informed decisions in an increasingly complex world.</p>
+<p><iframe width="500" height="281" src="https://www.youtube.com/embed/UeF_N1r91RQ?feature=oembed" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+		</div>
+
+
+        <div class="ibm-columns">
+<div class="ibm-blog__article-nextprev">
+                    <div class="ibm-col-6-2 ibm-blog__article-nextprev-prev">
+                                                                                                        <p><a href="https://www.ibm.com/blogs/research/2018/06/machine-learning-analog-accelerators/" class="ibm-previous-link ibm-inlinelink">Previous Post</a></p>
+                            <h6 class="nav-title"><a href="https://www.ibm.com/blogs/research/2018/06/machine-learning-analog-accelerators/">Machine Learning for Analog Accelerators</a></h6>
+                                            </div>
+
+                    <div class="ibm-col-6-2 ibm-blog__article-nextprev-next ibm-right">   
+                                                                                                        <p><a href="https://www.ibm.com/blogs/research/2018/06/stereo-vision/" class="ibm-next-link ibm-inlinelink ibm-icon-after">Next Post</a></p>
+                            <h6 class="nav-title"><a href="https://www.ibm.com/blogs/research/2018/06/stereo-vision/">Stereo Vision Using Computing Architecture Inspired by the Brain</a></h6>
+                                            </div>
+</div>
+</div>
+
+		<!--
+		<div id="coment-area" data-widget="showhide" data-type="panel" class="ibm-show-hide">
+			<h2 class="comments-title">
+				Comments			</h2>
+			<div class="ibm-container-body">
+				
+
+<div id="comments" class="comments-area">
+
+	
+
+
+
+
+</div>
+
+			</div>
+        	</div>
+			-->
+
+	</div>
+
+	<div class="ibm-col-6-2 ibm-col-medium-1-1 ibm-blog__article-side"><!--COL SIDEBAR-->
+
+		<!--AUTHOR -->
+		<div class="author-block">
+
+            <div class="author-img ibm-txtcenter">
+                					                     <!--<img src="" alt="" width="" height="" />-->
+
+                                                                  <img src="https://www.ibm.com/blogs/research/wp-content/uploads/2017/05/ArvindKrishna.png" alt="5 in 5" />
+                      
+                
+            </div>
+
+            <div class="author-title ibm-txtcenter">
+                                                                                <p class="author-work"><a href="https://www.ibm.com/blogs/research/custom_author/akrishna/" >Arvind Krishna</a></p>
+                          <p class="title-work">                                Director, IBM Research                              </p>
+                                                </div>
+
+            <div class="share-blocks ibm-txtcenter">
+                 <div class="ibm-icononly">
+                    <div class="ibm-blog__share">
+
+
+                        <h4 class="ibm-h4">Share</h4>
+
+
+
+<a target="_blank" class="ibm-twitter-encircled-link share_twitter" href="http://twitter.com/home/?status=AI Learns the Art of Debate - www.ibm.com/blogs/research/2018/06/ai-debate/?lnk=ushpv18l1&lnk2=learn" title="Tweet this!" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span></span></a>
+
+
+<a target="_blank" class="ibm-facebook-encircled-link share_facebook" href="http://www.facebook.com/sharer.php?u=www.ibm.com/blogs/research/2018/06/ai-debate/?lnk=ushpv18l1&lnk2=learn&amp;t=AI Learns the Art of Debate" title="Share on Facebook." onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span></span></a>
+
+
+<a target="_blank" class="ibm-linkedin-encircled-link share_linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.ibm.com/blogs/research/https://www.ibm.com/blogs/research/2018/06/ai-debate/&amp;title=AI Learns the Art of Debate&amp;source=" title="Share on LinkedIn"  onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" ><span></span></a>
+
+
+<a title="Share on GooglePlus" target="_blank" class="ibm-googleplus-encircled-link share_googleplus" href="https://plus.google.com/share?url=https://www.ibm.com/blogs/research/https://www.ibm.com/blogs/research/2018/06/ai-debate/" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><span></span></a>
+
+
+
+                        <a href="mailto:Monica.Harrington@ibm.com" class="ibm-email-link share_email"><span></span></a>
+
+
+                    </div>
+                 </div>
+            </div>
+
+        </div>
+		<!--end author-->
+
+		<!-- FEATURED -->
+		                        <div class="related-post-area">
+                        <div class="ibm-featured-side-title">
+                            <h4 class="ibm-h4 ibm-bold">Related articles</h2>
+                        </div>
+                                                                                                    <div class="ibm-featured-side">
+
+                                            <div class="ibm-img-featured-single">
+                                                <img width="78" height="78" src="https://www.ibm.com/blogs/research/wp-content/uploads/2018/05/Bob-speaking-78x78.jpg" class="alignleft bg-team wp-post-image" alt="AI" srcset="https://www.ibm.com/blogs/research/wp-content/uploads/2018/05/Bob-speaking-78x78.jpg 78w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/05/Bob-speaking-150x150.jpg 150w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/05/Bob-speaking-674x674.jpg 674w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/05/Bob-speaking-200x200.jpg 200w" sizes="(max-width: 78px) 100vw, 78px" />                                            </div>
+
+                                            <div class="ibm-title-featured-single">
+                                                <a class="ibm-title-card" href="https://www.ibm.com/blogs/research/2018/05/ai-natural-language-falls-short/">
+                                                    <p>May 7, 2018</p>
+                                                    <h3 class="ibm-h3">Talking to AI – Where natural language falls short</h3>
+													<p>
+														User interfaces to artificial intelligence (AI) applications are increasingly using natural language. But while today&#8217;s chatbots and AI agents can...													</p>
+                                                    <br class="clear">
+                                                </a>
+                                            </div>
+
+                                            <br class="clear">
+
+                                        </div>
+                                                                                                    <div class="ibm-featured-side">
+
+                                            <div class="ibm-img-featured-single">
+                                                <img width="78" height="78" src="https://www.ibm.com/blogs/research/wp-content/uploads/2018/04/FastGCNFig2-78x78.png" class="alignleft bg-team wp-post-image" alt="Figure 2" srcset="https://www.ibm.com/blogs/research/wp-content/uploads/2018/04/FastGCNFig2-78x78.png 78w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/04/FastGCNFig2-150x150.png 150w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/04/FastGCNFig2-200x200.png 200w" sizes="(max-width: 78px) 100vw, 78px" />                                            </div>
+
+                                            <div class="ibm-title-featured-single">
+                                                <a class="ibm-title-card" href="https://www.ibm.com/blogs/research/2018/04/deep-learning-graphs/">
+                                                    <p>April 27, 2018</p>
+                                                    <h3 class="ibm-h3">A Scalable Deep Learning Approach for Massive Graphs</h3>
+													<p>
+														A graph structure is extremely useful for predicting properties of its constituents. The most successful way of performing this prediction...													</p>
+                                                    <br class="clear">
+                                                </a>
+                                            </div>
+
+                                            <br class="clear">
+
+                                        </div>
+                                                                                                    <div class="ibm-featured-side">
+
+                                            <div class="ibm-img-featured-single">
+                                                <img width="78" height="78" src="https://www.ibm.com/blogs/research/wp-content/uploads/2018/03/Pasted-image-at-2018_03_19-10_50-AM-78x78.png" class="alignleft bg-team wp-post-image" alt="deep learning" srcset="https://www.ibm.com/blogs/research/wp-content/uploads/2018/03/Pasted-image-at-2018_03_19-10_50-AM-78x78.png 78w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/03/Pasted-image-at-2018_03_19-10_50-AM-150x150.png 150w, https://www.ibm.com/blogs/research/wp-content/uploads/2018/03/Pasted-image-at-2018_03_19-10_50-AM-200x200.png 200w" sizes="(max-width: 78px) 100vw, 78px" />                                            </div>
+
+                                            <div class="ibm-title-featured-single">
+                                                <a class="ibm-title-card" href="https://www.ibm.com/blogs/research/2018/03/deep-learning-advances/">
+                                                    <p>March 20, 2018</p>
+                                                    <h3 class="ibm-h3">Deep Learning Advances from IBM Research</h3>
+													<p>
+														Today, with contributions made by IBM scientists, IBM introduces Deep Learning as a Service within Watson Studio, a rich set...													</p>
+                                                    <br class="clear">
+                                                </a>
+                                            </div>
+
+                                            <br class="clear">
+
+                                        </div>
+                            
+                                                    </div>
+                        		<!--END FEATURED-->
+
+
+		<div id="sidebar-search" class="sidebar ibm-column-form">
+			<form>
+			
+					<div id="archives-3" class="widget-title-li widget_archive ibm-featured-side-title"><h4 class="ibm-h4  ibm-bold  ibm-sidebar-article">Archive</h2>		<label class="screen-reader-text" for="archives-dropdown-3">Archive</label>
+		<select id="archives-dropdown-3" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Select Month</option>
+				<option value='https://www.ibm.com/blogs/research/2018/06/'> June 2018 </option>
+	<option value='https://www.ibm.com/blogs/research/2018/05/'> May 2018 </option>
+	<option value='https://www.ibm.com/blogs/research/2018/04/'> April 2018 </option>
+	<option value='https://www.ibm.com/blogs/research/2018/03/'> March 2018 </option>
+	<option value='https://www.ibm.com/blogs/research/2018/02/'> February 2018 </option>
+	<option value='https://www.ibm.com/blogs/research/2018/01/'> January 2018 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/12/'> December 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/11/'> November 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/10/'> October 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/09/'> September 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/08/'> August 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/07/'> July 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/06/'> June 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/05/'> May 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/04/'> April 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/03/'> March 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/02/'> February 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2017/01/'> January 2017 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/12/'> December 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/11/'> November 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/10/'> October 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/09/'> September 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/08/'> August 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/07/'> July 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/06/'> June 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/05/'> May 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/04/'> April 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/03/'> March 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/02/'> February 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2016/01/'> January 2016 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/12/'> December 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/11/'> November 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/10/'> October 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/09/'> September 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/08/'> August 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/07/'> July 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/06/'> June 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/05/'> May 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/04/'> April 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/03/'> March 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/02/'> February 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2015/01/'> January 2015 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/12/'> December 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/11/'> November 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/10/'> October 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/09/'> September 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/08/'> August 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/07/'> July 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/06/'> June 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/05/'> May 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/04/'> April 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/03/'> March 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/02/'> February 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2014/01/'> January 2014 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/12/'> December 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/11/'> November 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/10/'> October 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/09/'> September 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/08/'> August 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/07/'> July 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/06/'> June 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/05/'> May 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/04/'> April 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/03/'> March 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/02/'> February 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2013/01/'> January 2013 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/12/'> December 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/11/'> November 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/10/'> October 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/09/'> September 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/08/'> August 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/07/'> July 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/06/'> June 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/05/'> May 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/04/'> April 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/03/'> March 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/02/'> February 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2012/01/'> January 2012 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/12/'> December 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/11/'> November 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/10/'> October 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/09/'> September 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/08/'> August 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/07/'> July 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/06/'> June 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/05/'> May 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/04/'> April 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/03/'> March 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/02/'> February 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2011/01/'> January 2011 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/12/'> December 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/11/'> November 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/10/'> October 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/09/'> September 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/08/'> August 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/07/'> July 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/06/'> June 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/05/'> May 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/04/'> April 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/03/'> March 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/02/'> February 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2010/01/'> January 2010 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/12/'> December 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/11/'> November 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/10/'> October 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/09/'> September 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/08/'> August 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/07/'> July 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/06/'> June 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/05/'> May 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/04/'> April 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/03/'> March 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/02/'> February 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2009/01/'> January 2009 </option>
+	<option value='https://www.ibm.com/blogs/research/2008/12/'> December 2008 </option>
+	<option value='https://www.ibm.com/blogs/research/2008/11/'> November 2008 </option>
+	<option value='https://www.ibm.com/blogs/research/2008/10/'> October 2008 </option>
+	<option value='https://www.ibm.com/blogs/research/2008/09/'> September 2008 </option>
+
+		</select>
+		</div>
+						</form>
+		</div>
+		<div class="sidebar">
+					</div>
+
+
+	</div><!--END COL SIDEBAR-->
+
+</div><!--END BLOG ARTICLE-->
+
+
+</div>
+</div>
+</div>
+</div>
+</main>
+<!--CORE END-->
+<!-- FOOTER_BEGIN -->
+      <div id="ibm-footer-module"><!-- Dynamic footer links inserted here inside a <section> --></div>
+      
+      
+      <footer role="contentinfo" aria-label="IBM">
+        <div id="ibm-footer">
+         
+        </div>
+      </footer>
+      <!-- FOOTER_END -->
+
+<script type='text/javascript' src='https://www.ibm.com/blogs/research/wp-includes/js/wp-embed.min.js?ver=4.8.6'></script>
+
+</body>
+</html>

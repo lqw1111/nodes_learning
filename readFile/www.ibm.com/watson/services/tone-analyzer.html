@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="geo.country" content="US">
+    <meta name="dcterms.rights" content="© Copyright IBM Corp. 2017">
+    <meta name="dcterms.date" content="2016-11-28">
+    <meta name="description" content="Understand emotions, social tendencies and perceived writing style.">
+    <meta name="keywords" content="tone analyzer, emotional analysis">
+    <meta name="robots" content="index, follow">
+    <meta name="generator" content="v18.1.0 IBM Template Generator">
+    <link href="https://www.ibm.com/watson/services/tone-analyzer/" rel="canonical"/>
+    <title>Watson Tone Analyzer</title>
+    <script>
+      digitalData = {
+        page: {
+          category: {
+            primaryCategory: "Watson"
+          },
+          pageInfo: {
+            effectiveDate: "",
+            expiryDate: "",
+            language: "en-US",
+            publishDate: "",
+            publisher: "IBM Corporation",
+            version: "v18",
+            analytics: {
+              category: "Service Landing Page (Watson Platform)",
+            } ,
+            ibm:{
+            contentDelivery:"HTML",
+            contentProducer:"IBM Northstar Template Generator 2.0",
+            contactModuleConfiguration: {
+              contactInformationBundleKey: {
+                 focusArea: "WCP - Watson Data and AI SaaS",
+                 languageCode: "en",
+                 regionCode: "US"
+              },
+              contactModuleTranslationKey: {
+                 languageCode: "en",
+                 regionCode: "US"
+              }
+            },
+            country:"US",
+            industry:"ZZ",
+            owner:"Jeremy Hodge/New York/IBM",
+            siteID:"IBM_Watson",
+            subject:"",
+            type:""
+            },
+            pageID: "www.ibm.com/watson/services/tone-analyzer/",
+            description: "Understand emotions, social tendencies and perceived writing style.",
+            pageName: "Watson Tone Analyzer",
+            keywords: "tone analyzer, emotional analysis"
+          }
+        }
+      };
+
+    </script>
+
+    <script src="https://www.ibm.com/common/stats/ida_stats.js"></script>
+    <link href="https://1.www.s81c.com/common/v18/css/www.css" rel="stylesheet">
+    <script src="https://1.www.s81c.com/common/v18/js/www.js"></script>
+    <script src="https://1.www.s81c.com/common/v18/js/dyntabs.js"></script>
+    <link href="https://1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+    <link href="https://www.ibm.com/standards/web/brands/watson/web-assets/watson_northstar-v2_latest.css" rel="stylesheet">
+    <link href="../../assets-watson/css/overrides.min.css" rel="stylesheet">
+    <script src="../../assets-watson/js/mega-menu.js"></script>
+    <link href="../../assets-watson/css/mega-menu.min.css" rel="stylesheet">
+    <script src="https://www.ibm.com/common/digitaladvisor/cm-app/latest/cm-app.min.js" defer></script>
+    <script>
+      IBMCore.common.util.config.set({
+        masthead: {
+          type: "alternate"
+        },
+        footer: {
+          type: "alternate"
+        },
+      });
+    </script>
+
+
+  </head>
+
+<body id="ibm-com" class="ibm-type">
+
+    <!-- MASTHEAD_BEGIN -->
+            <div id="ibm-masthead" role="banner" aria-label="IBM">
+        <div id="ibm-mast-options">
+          <ul role="toolbar" aria-labelledby="ibm-masthead">
+            <li id="ibm-geo" role="presentation"><a href="http://www.ibm.com/planetwide/select/selector.html" role="button" aria-label="United States selected - Choose a country">United States</a></li>
+            <li id="ibm-language" role="presentation"><span class="ibm-active" role="button" aria-disabled="true">English</span> <a href="http://www.ibm.com/" lang="en-US" role="button">English</a></li>
+          </ul>
+        </div>
+        <div id="ibm-universal-nav">
+          <nav role="navigation" aria-label="IBM">
+            <div id="ibm-home"><a href="http://www.ibm.com/">IBM®</a></div>
+            <ul id="ibm-menu-links" role="toolbar" aria-label="Site map">
+              <li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+            </ul>
+          </nav>
+          <div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+            <form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+              <p>
+                <label for="q">IBM</label>
+                <input type="text" maxlength="100" value="" placeholder="Search" name="q" id="q" aria-label="Search">
+                <input type="hidden" value="18" name="v">
+                <input type="hidden" value="utf" name="en">
+                <input type="hidden" value="en" name="lang">
+                <input type="hidden" value="us" name="cc">
+                <input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit">
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    <!-- MASTHEAD_END --><div id="ibm-content-wrapper">
+    <header role="banner" aria-labelledby="ibm-pagetitle-h1">
+     <div class="ibm-sitenav-menu-container">
+        <div class="ibm-sitenav-menu-name"><a href="/watson/" class="ibm-bold">Watson</a></div>
+        <!-- local navigation -->
+        <div class="ibm-sitenav-menu-list">
+            <ul role="menubar">
+              <li role="presentation">
+                  <a role="menuitem" href="/watson/ai-stories/">Stories</a>
+              </li>
+              <li role="presentation">
+                  <a role="menuitem" href="/watson/about/">About</a>
+              </li>
+                <li role="presentation" class="ibm-haschildlist">
+                    <span role="menuitem">Developers</span>
+                    <ul role="menu">
+                        <li role="presentation"><a role="menuitem" href="/watson/developer/">Overview</a></li>
+                        <li role="presentation"><a role="menuitem" target="_blank" href="https://console.bluemix.net/developer/watson/documentation">Documentation</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/developer-resources/">Developer Tools</a></li>
+                    </ul>
+                </li>
+                <li role="presentation" class="ibm-highlight">
+                    <a role="menuitem" href="/watson/products-services/">Products and Services</a>
+                </li>
+                <li role="presentation" class="ibm-haschildlist">
+                    <span role="menuitem">Use Cases</span>
+                    <ul role="menu">
+                        <li role="presentation"><a role="menuitem" target="_blank" href="/watson/call-center-ai/">Transform your call center</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/how-to-build-a-chatbot/">Build a chatbot</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/insight-engine/">Create an insight engine</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/sales-intelligence/">Scale expertise</a></li>
+                    </ul>
+                </li>
+                <li class="ibm-sitenav-menu-item-right">
+                    <a href="https://console.bluemix.net/registration?target=%2Fcatalog%2Fservices%2Ftone-analyzer%3FhideTours%3Dtrue%26cm_mmc%3DOSocial_Tumblr-_-Watson%2BCore_Watson%2BCore%2B-%2BPlatform-_-WW_WW-_-wdc-ref%26cm_mmc%3DOSocial_Tumblr-_-Watson%2BCore_Watson%2BCore%2B-%2BPlatform-_-WW_WW-_-wdc-ref%26cm_mmca1%3D000000OF%26cm_mmca2%3D10000409" class="ibm-btn-pri ibm-btn-small rounded-btn ibm-btn-blue-with-watson" tabindex="0">Get Started Free</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    </header>
+
+    
+<div id="ibm-leadspace-head" class="ibm-leadspace-fluid ibm-background-white-core" style="background-image: url('../../assets-watson/images/tone-analyzer/tone-analyzer-leadspace.png');">
+    <div id="ibm-leadspace-body" class="ibm-padding-top-0 ibm-padding-bottom-0">
+        <div class="ibm-fluid ibm-padding-bottom-0">
+            <div class="ibm-col-12-12">
+                <div class="ibm-padding-content ibm-padding-bottom-0">
+                    <nav role="navigation" aria-label="Breadcrumb">
+                        <ul id="ibm-navigation-trail" class="navigation-custom">
+                            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                                <p class="ibm-ind-link ibm-small ibm-padding-bottom-0"><a class="ibm-chevron-left-regular-link watson-small-icon" href="/watson/products-services/" itemprop="url"><span itemprop="title">Products and Services</span></a></p>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="ibm-fluid ibm-padding-bottom-0">
+            <div class="ibm-col-12-4 ibm-col-medium-12-6">
+                <div class="ibm-padding-content ibm-padding-bottom-0">
+                    <img class="watson-padding-bottom-r1" style="vertical-alignment: bottom;" src="../../assets-watson/images/tone-analyzer/tone_analyzer.svg" width="66" height="66" alt="Conversation">
+                    <h1 class="ibm-h1 ibm-padding-bottom-1">Tone Analyzer</h1>
+                    <p class="ibm-padding-bottom-2">
+                        Understand emotions and communication style in text.
+                    </p>
+                    <p class="ibm-btn-row ibm-padding-bottom-2">
+                        <a class="ibm-btn-pri ibm-btn-blue-50" href="https://console.bluemix.net/registration/?target=%2Fcatalog%2Fservices%2Ftone-analyzer%3FhideTours%3Dtrue%26cm_mmc%3D-_-Watson%2BCore_Watson%2BCore%2B-%2BPlatform-_-WW_WW-_-wdc-ref%26cm_mmc%3D-_-Watson%2BCore_Watson%2BCore%2B-%2BPlatform-_-WW_WW-_-wdc-ref%26cm_mmca1%3D000000OF%26cm_mmca2%3D10000409" target="_blank">Get started free</a>
+                        <a class="ibm-btn-sec ibm-btn-blue-50" href="https://tone-analyzer-demo.mybluemix.net/" target="_blank">View demo</a>
+                    </p>
+                    <p class="ibm-small watson-padding-bottom-r1">
+                        Already using Tone Analyzer? <a class="ibm-btn-keylink" href="https://console.bluemix.net/login?state=/catalog/?category=watson" target="_blank">Log in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header> <!-- LEADSPACE_END -->
+
+            <main role="main" aria-labelledby="ibm-pagetitle-h1">
+                <div id="ibm-pcon">
+                    <div id="ibm-content">
+                        <div id="ibm-content-body" class="ibm-padding-top-0">
+                            <div id="ibm-content-main" class="ibm-padding-top-0">
+
+                                <section>
+                                    <div class="ibm-fluid ibm-padding-top-0 ibm-padding-bottom-0">
+                                        <div class="ibm-col-12-12">
+                                            <div class="ibm-padding-content ibm-padding-bottom-0">
+                                                <p class="ibm-textcolor-gray-50 ibm-small ibm-padding-bottom-0">Features</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ibm-fluid" data-widget="setsameheight" data-items=".ibm-col-12-3">
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6">
+                                            <div class="ibm-padding-content">
+                                                <p class="ibm-h2 ibm-padding-bottom-r1">Conduct social listening</p>
+                                                <p>
+                                                    Analyze emotions and tones in what people write online, like tweets or reviews. Predict whether they are happy, sad, confident, and more.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6">
+                                            <div class="ibm-padding-content">
+                                                <p class="ibm-h2 ibm-padding-bottom-r1">Enhance customer service</p>
+                                                <p>
+                                                   Monitor customer service and support conversations so you can respond to your customers appropriately and at scale. See if customers are satisfied or frustrated, and if agents are polite and sympathetic.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6">
+                                            <div class="ibm-padding-content">
+                                                <p class="ibm-h2 ibm-padding-bottom-r1">Integrate with chatbots</p>
+                                                <p>
+                                                    Enable your chatbot to detect customer tones so you can build dialog strategies to adjust the conversation accordingly.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="ibm-band ibm-padding-bottom-0 ibm-padding-top-0">
+                                    <div class="ibm-fluid ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-col-12-6">
+                                        <div class="ibm-col-12-6 ibm-alternate-background ibm-background-gray-90">
+                                            <div class="ibm-padding-content">
+                                                <p class="ibm-small watson-padding-bottom-r1" style="opacity: 0.7;">Case study</p>
+                                                <p class="ibm-h2 ibm-padding-bottom-r1 ibm-alternate-background">Revolutionizing call centers</p>
+                                                <p class="watson-padding-bottom-r1 ibm-alternate-background">
+                                                    Using Tone Analyzer, iQventures can detect each caller’s mood, whether happy, angry or disgusted. Using agent, keyword and other filters, businesses can quickly identify and address issues or determine and share best practices.
+                                                </p>
+                                                <p class="ibm-button-link watson-padding-bottom-r1">
+                                                    <a class="ibm-btn-keylink ibm-btn-blue-20" href="http://ecc.ibm.com/case-study/us-en/ECCF-ASC12427USEN" target="_blank">Read more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-6 ibm-hidden-small" style="background: url('../../assets-watson/images/tone-analyzer/tone-analyzer-call-center.jpg'); background-size: cover;">
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <div class="ibm-fluid ibm-padding-bottom-0">
+                                        <div class="ibm-col-12-12">
+                                            <div class="ibm-padding-content ibm-padding-bottom-0">
+                                                <p class="ibm-textcolor-gray-50 ibm-small ibm-padding-bottom-0">Start Building with Tone Analyzer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ibm-fluid ibm-padding-bottom-0" data-widget="setsameheight" data-items=".sameheight">
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6 sameheight">
+                                            <div class="ibm-padding-content">
+                                                <p class="ibm-h2 ibm-padding-bottom-r1"><strong>Get started with Watson</strong></p>
+                                                <p class="watson-padding-bottom-r1">
+                                                    Access Watson services on the IBM Cloud.
+                                                </p>
+                                                <p class="ibm-button-link">
+                                                    <a class="ibm-btn-pri ibm-btn-blue-50" href="https://console.bluemix.net/registration?target=%2Fcatalog%2Fservices%2Ftone-analyzer%3FhideTours%3Dtrue%26cm_mmc%3DOSocial_Tumblr-_-Watson%2BCore_Watson%2BCore%2B-%2BPlatform-_-WW_WW-_-wdc-ref%26cm_mmc%3DOSocial_Tumblr-_-Watson%2BCore_Watson%2BCore%2B-%2BPlatform-_-WW_WW-_-wdc-ref%26cm_mmca1%3D000000OF%26cm_mmca2%3D10000409" target="_blank">Get started free</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6 sameheight">
+                                            <div class="ibm-padding-content">
+                                                <p class="ibm-h2 ibm-padding-bottom-r1"><strong>Developer tools</strong></p>
+                                                <p class="watson-padding-bottom-r1">Everything you need to start building with Watson.</p>
+                                                <ul class="ibm-link-list">
+                                                    <li><a class="ibm-forward-link watson-small-icon" href="https://console.bluemix.net/docs/services/tone-analyzer/index.html" target="_blank">Documentation</a></li>
+                                                    <li><a class="ibm-forward-link watson-small-icon" href="https://www.ibm.com/watson/developercloud/tone-analyzer/api" target="_blank">API Reference</a></li>
+                                                    <li><a class="ibm-forward-link watson-small-icon" href="https://watson-api-explorer.mybluemix.net/apis/tone-analyzer-v3" target="_blank">Test an API call</a></li>
+                                                    <li><a class="ibm-forward-link watson-small-icon" href="https://github.com/watson-developer-cloud" target="_blank">Download SDKs</a></li>
+                                                    <li><a class="ibm-forward-link watson-small-icon" href="https://console.bluemix.net/docs/services/watson/index.html" target="_blank">Getting started on IBM Cloud</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-6 ibm-hidden-medium ibm-hidden-small sameheight" style="position: relative;">
+                                            <img class="ibm-resize start-build-image" src="../../assets-watson/images/cropped_bluemix.png" alt="">
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section class="ibm-band ibm-background-blue-30 ibm-padding-0">
+                                    <div class="ibm-fluid ibm-padding-bottom-0">
+                                        <div class="ibm-col-12-12">
+                                            <div class="ibm-padding-content ibm-padding-bottom-0">
+                                                <p class="ibm-small ibm-padding-bottom-0 ibm-alternate-background" style="opacity: 0.7;">Learn more about Tone Analyzer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ibm-fluid watson-padding-bottom-r1" data-widget="setsameheight" data-items=".ibm-col-medium-12-6">
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6">
+                                            <div class="ibm-padding-content">
+                                                <p class="ibm-h2 watson-padding-bottom-r1 ibm-alternate-background"><strong>Videos</strong></p>
+                                                <ul class="ibm-link-list">
+                                                    <li><a class="ibm-forward-link watson-small-icon ibm-textcolor-black-core" href="https://www.youtube.com/watch?v=GHHRuxQN75k" target="_blank">Building with Watson: Social Media Monitoring</a></li>
+                                                    <li class="ibm-padding-top-r1"><a class="ibm-forward-link watson-small-icon ibm-textcolor-black-core" href="https://www.youtube.com/watch?v=y10h_BLtla0" target="_blank">From Science Fiction to Science Fact by Rama Akkiraju</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6">
+                                            <div class="ibm-padding-content ibm-padding-bottom-0">
+                                                <p class="ibm-h2 watson-padding-bottom-r1 ibm-alternate-background"><strong>Blogs</strong></p>
+                                                <ul class="ibm-link-list">
+                                                    <li><a class="ibm-forward-link watson-small-icon ibm-textcolor-black-core" href="https://www.ibm.com/blogs/watson/2017/04/watson-tone-analyzer-7-new-tones-help-understand-customers-feeling/" target="_blank">Watson Tone Analyzer: 7 new tones to help understand how your customers are feeling</a></li>
+                                                    <li class="ibm-padding-top-r1"><a class="ibm-forward-link watson-small-icon ibm-textcolor-black-core" href="https://www.ibm.com/blogs/bluemix/2017/04/ibm-watsons-tone-analyzer-service-aims-disrupt-customer-engagement/" target="_blank">IBM Watson’s Tone Analyzer Service Aims to Disrupt Customer Engagement</a></li>
+                                                    <li class="ibm-padding-top-r1"><a class="ibm-forward-link watson-small-icon ibm-textcolor-black-core" href="https://www.ibm.com/blogs/bluemix/2017/01/tjbot-chatbot-watson/" target="_blank">Thanks to Watson, This Cardboard Box Knows if You’re Naughty or Nice</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6">
+                                            <div class="ibm-padding-content ibm-padding-top-0">
+                                                <p class="ibm-h2 watson-padding-r1 ibm-alternate-background ibm-hidden-small">&nbsp;</p>
+                                                <ul class="ibm-link-list">
+                                                    <li><a class="ibm-forward-link watson-small-icon ibm-textcolor-black-core" href="https://www.ibm.com/blogs/bluemix/2016/10/watson-has-more-accurate-emotion-detection/" target="_blank">IBM Watson just got more accurate at detecting emotions</a></li>
+                                                    <li class="ibm-padding-top-r1"><a class="ibm-forward-link watson-small-icon ibm-textcolor-black-core" href="https://www.ibm.com/blogs/bluemix/2016/08/watson-services-and-google-docs/" target="_blank">Using Watson services with Google Docs</a></li>
+                                                    <li class="ibm-padding-top-r1"><a class="ibm-forward-link watson-small-icon ibm-textcolor-black-core" href="https://www.ibm.com/blogs/bluemix/2016/05/analyzing-customer-emotions-using-bluemix-and-twilio-voice/" target="_blank">Analyzing Customer Emotions Using IBM Bluemix, Watson, and Twilio Voice</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-12 ibm-show-small">
+                                             <div class="ibm-padding-content">
+                                                <div class="ibm-rule ibm-alternate ibm-black-core"><hr></div>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6">
+                                            <div class="ibm-padding-content">
+                                                <div class="ibm-border-black-core border-left watson-padding-left-small">
+                                                    <img src="../../assets-watson/images/community_pictogram.svg" width="40" height="46" alt="">
+                                                    <p class="ibm-small ibm-alternate-background">Be part of the Community</p>
+                                                    <p class="ibm-small">
+                                                        <a class="ibm-btn-keylink ibm-textcolor-black-core" href="https://developer.ibm.com/answers/topics/watson/" target="_blank">DeveloperWorks forums</a>
+                                                    </p>
+                                                    <p class="ibm-small">
+                                                        <a class="ibm-btn-keylink ibm-textcolor-black-core" href="https://stackoverflow.com/questions/tagged/ibm-watson-cognitive" target="_blank">Stack Overflow</a>
+                                                    </p>
+                                                    <p class="ibm-small">
+                                                        <a class="ibm-btn-keylink ibm-textcolor-black-core" href="http://wdc-slack-inviter.mybluemix.net/" target="_blank">Join the Slack Community</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section id="pricing-block" class="ibm-band ibm-background-warm-gray-90 ibm-padding-top-1 watson-padding-bottom-0">
+                                    <div class="ibm-fluid ibm-padding-bottom-0">
+                                        <div class="ibm-col-12-12 ibm-alternate-background">
+                                            <div class="ibm-padding-content ibm-padding-bottom-0">
+                                                <p class="ibm-small ibm-padding-bottom-0" style="opacity: 0.7;">Pricing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ibm-fluid ibm-paddding-bottom-0">
+                                      <div class="ibm-col-12-3 ibm-col-medium-12-6 ibm-alternate-background">
+                                          <div class="ibm-padding-content">
+                                              <p class="watson-padding-bottom-r1"><span class="ibm-h2">Lite</span><br/></p>
+                                              <ul class="ibm-plain-list">
+                                                  <li>– 2,500 API calls per month at no cost</li>
+                                                  <li>– Lite plan services are deleted after 30 days of inactivity.</li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6 ibm-alternate-background">
+                                            <div class="ibm-padding-content">
+                                                <p class="watson-padding-bottom-r1"><span class="ibm-h2">Standard</span><br/></p>
+                                                <ul class="ibm-plain-list">
+                                                    <li>– First thousand API calls per month are FREE</li>
+                                                    <li>– Additional 1 -250,000 calls are $0.0088 per call</li>
+                                                    <li>– 250,001 -5,000,000 calls are $0.0013 per call</li>
+                                                    <li>– 5,000,000+ calls are $0.0008 per call</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6 ibm-alternate-background">
+                                            <div class="ibm-padding-content">
+                                                <p class="watson-padding-bottom-r1"><span class="ibm-h2">Premium</span></p>
+                                                <p>
+                                                    Watson Premium plans offer a higher level of security and isolation to help customers with sensitive data requirements.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="ibm-col-12-3 ibm-col-medium-12-6">
+                                            <div class="ibm-padding-content">
+                                                <div class="ibm-border-white-core border-left watson-padding-left-small">
+                                                    <p class="ibm-button-link">
+                                                        <a class="ibm-btn-pri ibm-btn-blue-50 ibm-fullwidth" href="https://console.bluemix.net/registration?target=%2Fcatalog%2Fservices%2Ftone-analyzer%3FhideTours%3Dtrue%26cm_mmc%3DOSocial_Tumblr-_-Watson%2BCore_Watson%2BCore%2B-%2BPlatform-_-WW_WW-_-wdc-ref%26cm_mmc%3DOSocial_Tumblr-_-Watson%2BCore_Watson%2BCore%2B-%2BPlatform-_-WW_WW-_-wdc-ref%26cm_mmca1%3D000000OF%26cm_mmca2%3D10000409" target="_blank">Get started free</a>
+                                                    </p>
+                                                    <p class="ibm-button-link">
+                                                        <a class="ibm-btn-sec ibm-btn-blue-50 ibm-fullwidth" href="https://www-01.ibm.com/marketing/iwm/dre/signup?source=MAIL-watson" target="_blank">Contact sales</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </div> <!-- #ibm-content-main -->
+                        </div> <!-- #ibm-content-body -->
+                    </div> <!-- #ibm-content -->
+                </div> <!-- #ibm-pcon -->
+            </main>
+
+        <div id="ibm-related-content">
+            <div id="ibm-merchandising-module">
+                <!-- MTE will generate this -->
+                <!-- <aside role="complementary" aria-label="Related content"> MTE dynamic modules populate in here. <aside> -->
+                <!-- /MTE -->
+            </div>
+        </div>
+        </div> <!-- #ibm-content-wrapper -->
+
+
+    <section id="watson-footer" class="ibm-band ibm-padding-top-2">
+        <div class="ibm-fluid">
+            <div class="ibm-col-12-3 ibm-hidden-medium">
+                <div class="ibm-padding-content">
+                    <img class="ibm-downsize" src="../../assets-watson/images/avatar_blueteal_01.png" alt="ibm watson avatar">
+                </div>
+            </div>
+            <div class="ibm-col-12-12 ibm-show-medium">
+                <div class="ibm-fluid">
+                    <div class="ibm-col-12-3">
+                        <div class="ibm-padding-content">
+                            <img class="ibm-downsize" src="../../assets-watson/images/avatar_blueteal_01.png" alt="ibm watson avatar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibm-col-12-3 ibm-hidden-small">
+                <div class="ibm-padding-content">
+                    <p class="ibm-bold">Focus areas</p>
+                    <ul class="ibm-plain-list">
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/customer-engagement/">Customer Engagement</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/education/">Education</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/watson/financial-services/">Financial Service</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/watson/health/">Health</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/internet-of-things/">IoT</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/watson/talent/">Talent</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/watson/work/">Work</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ibm-col-12-2 ibm-col-medium-12-3 ibm-hidden-small">
+                <div class="ibm-padding-content">
+                    <p class="ibm-bold">Developer</p>
+                    <ul class="ibm-plain-list">
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://console.bluemix.net/developer/watson/documentation">Documentation</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/developer-resources/">Developer Tools</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://watson-api-explorer.mybluemix.net/">API Explorer</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://console.ng.bluemix.net/">IBM Cloud Console</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://developer.ibm.com/answers/topics/watson/">developerWorks</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://stackoverflow.com/questions/tagged/ibm-watson-cognitive">Stack Overflow</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://wdc-slack-inviter.mybluemix.net/">Slack</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ibm-col-12-2 ibm-col-medium-12-3 ibm-hidden-small">
+                <div class="ibm-padding-content">
+                    <p class="ibm-bold">About</p>
+                    <ul class="ibm-plain-list">
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/with-watson/">With Watson Program</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/blogs/watson/">Blog</a></li>
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/webinars/">Webinars</a></li>
+                    </ul>
+                </div>
+            </div>
+                <div class="ibm-col-12-2 ibm-col-medium-12-3 ibm-hidden-small">
+                <div class="ibm-padding-content">
+                    <p class="ibm-bold">Contact</p>
+                    <ul class="ibm-plain-list">
+                        <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www-01.ibm.com/marketing/iwm/dre/signup?source=MAIL-watson">Talk to sales</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ibm-col-12-12 ibm-show-small">
+                <div class="ibm-padding-content">
+                    <div data-widget="showhide" data-type="panel" class="ibm-show-hide">
+                        <h2>Focus areas</h2>
+                        <div class="ibm-container-body">
+                            <ul class="ibm-plain-list">
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/customer-engagement/">Customer Engagement</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/education/">Education</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/watson/financial-services/">Financial Service</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/watson/health/">Health</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/internet-of-things/">IoT</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/watson/talent/">Talent</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://www.ibm.com/watson/work/">Work</a></li>
+                            </ul>
+                        </div>
+                        <h2>Developer</h2>
+                        <div class="ibm-container-body">
+                            <ul class="ibm-plain-list">
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://console.bluemix.net/developer/watson/documentation">Documentation</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://watson-api-explorer.mybluemix.net/">API Explorer</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://console.ng.bluemix.net/">IBM Cloud Console</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://developer.ibm.com/answers/topics/watson/">developerWorks</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://stackoverflow.com/questions/tagged/ibm-watson-cognitive">Stack Overflow</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="http://wdc-slack-inviter.mybluemix.net/">Slack</a></li>
+                            </ul>
+                        </div>
+                        <h2>About</h2>
+                        <div class="ibm-container-body">
+                            <ul class="ibm-plain-list">
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/with-watson/">With Watson Program</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/blogs/watson/">Blog</a></li>
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www.ibm.com/watson/webinars/">Webinars</a></li>
+                            </ul>
+                        </div>
+                        <h2>Contact</h2>
+                        <div class="ibm-container-body">
+                            <ul class="ibm-plain-list">
+                                <li class="ibm-padding-top-0"><a class="ibm-textcolor-default" href="https://www-01.ibm.com/marketing/iwm/dre/signup?source=MAIL-watson">Talk to sales</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER_BEGIN -->
+    <div id="ibm-footer-module"></div>
+    <footer role="contentinfo" aria-label="IBM">
+      <div id="ibm-footer">
+        <ul>
+          <li><a href="http://www.ibm.com/contact/us/en/">Contact</a></li>
+          <li><a href="http://www.ibm.com/privacy/us/en/">Privacy</a></li>
+          <li><a href="http://www.ibm.com/legal/us/en/">Terms of use</a></li>
+          <li><a href="http://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+        </ul>
+      </div>
+    </footer>
+    <!-- FOOTER_END -->
+</div>
+
+</body>
+</html>

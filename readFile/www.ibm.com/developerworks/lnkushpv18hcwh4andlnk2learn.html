@@ -1,0 +1,1400 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>	
+<meta name="viewport" content="width=device-width, initial-scale=1"/>      
+<link rel="icon" href="//www.ibm.com/favicon.ico"/>
+<link rel="canonical" href="http://www.ibm.com/developerworks/index.html"/>
+<meta name="geo.country" content="ZZ"/>
+<meta name="dcterms.rights" content="© Copyright IBM Corporation 2015, 2018"/>
+<meta name="dcterms.date" content="2018-05-29"/>
+<meta name="description" content="IBM's official developer program offers tutorials and training, trials and downloads, and access to expert answers on IBM and open standards technologies."/>	
+<meta name="keywords" content="premium, developer, download, trial software, article, tutorial, community, forum, technology, open standards, big data, analytics, Bluemix, IBM Bluemix, cloud computing, cognitive computing, Internet of Things, IoT, mobile development, security, open source development, Java, web development, DevOps, continuous engineering, middleware, operating systems, IT infrastructure, data management, social, social collaboration, compilers, WebSphere, Rational, Linux"/>
+<meta name="robots" content="index,follow"/>
+<title>IBM developerWorks : IBM's resource for developers and IT professionals</title>
+    
+<script> 
+    digitalData = {
+        "page":{
+            "category":{
+                "primaryCategory":"SOFDCHPGZZ"
+            },
+            "pageInfo":{
+                "effectiveDate":"2015-12-11",
+                "language":"en",
+                "publishDate":"2018-05-29",
+                "publisher":"IBM Corporation",
+                "version":"v18",
+                "ibm":{ 
+                    "contentDelivery":"IBM developerWorks template",
+                    "contentProducer":"IBM developerWorks",
+                    "country":"ZZ",
+                    "owner":"developerWorks Content/Raleigh/IBM",
+                    "siteID":"DEVWRKS",
+                    "subject":"ZZ999",
+                    "type":"CT900",
+                    "topic":"Cloud computing",
+                    "topicId":"953",
+                    "contentArea":"dwhome",
+                    "contentAreaId":"39",
+                },
+                "keywords":"premium, developer, download, trial software, article, tutorial, community, forum, technology, open standards, big data, analytics, Bluemix, IBM Bluemix, cloud computing, cognitive computing, Internet of Things, IoT, mobile development, security, open source development, Java, web development, DevOps, continuous engineering, middleware, operating systems, IT infrastructure, data management, social, social collaboration, compilers, WebSphere, Rational, Linux",
+                "description":"IBM's official developer program offers tutorials and training, trials and downloads, and access to expert answers on IBM and open standards technologies."
+            }
+        }
+    };
+    window._analytics = {
+        "coremetrics": false,
+        "optimizely": false,
+        "googleAddServices": false,
+        "addRoll": false,
+        "intercom": false,
+        "fullStory": false,
+        "hotjar": false,
+        "tealeaf": false,
+        "nps": false,
+        "segment_key": 'HU3dbkAG5wE0F1IkRf9S1RexlAqo3jby'
+    };
+</script>
+	
+<!-- Segment meta tag -->
+<meta name="segment" property="developerWorks (developerWorks)" productTitle="developerWorks" value="Home English (developerWorks)"/>      
+<!-- SITE MON : START (DO NOT DELETE) -->
+<!-- developerWorks monitoring token -->
+<!-- SITE MON : END (DO NOT DELETE) -->
+
+<!-- HEADER_SCRIPTS_AND_CSS_INCLUDE -->
+<!-- <script src="//cdn.optimizely.com/js/5399420604.js"></script> -->
+<!-- BEGIN: Use this section to set page specific variables for the Page Tag -->
+<script language="JavaScript">var NTPT_PGEXTRA="ibmSkillLevel=-&ibmCmaId=801209&ibmContentAreas=dwhome";</script>
+<!--END -->
+<script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+<link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+<link href="//dw1.s81c.com/developerworks/css/dw-mf/v18/dw-mf-v18.css?v=050618" rel="stylesheet" />
+<!-- <link href="//dw1.s81c.com/developerworks/css/dw-mf/v18/alt-signedin-ux.css" rel="stylesheet" /> -->
+<!--[if lt IE 9]>
+	<link href="//dw1.s81c.com/developerworks/css/dw-mf/v18/dw-mf-ie8fix.css?v=022216" rel="stylesheet" />
+<![endif]-->
+<link href="//dw1.s81c.com/developerworks/css/v18/dw-home-alt.css?v=081717" rel="stylesheet" />
+<script src="//1.www.s81c.com/common/v18/js/www.js"></script> 
+<script src="//dw1.s81c.com/developerworks/js/v18/dw-include.js"></script> 
+<script src="//dw1.s81c.com/developerworks/js/v18/dw-auth-properties.js?v=112817"></script>
+<script src="//dw1.s81c.com/developerworks/js/v18/dw-auth.js?v=020618"></script>
+<script src="//dw1.s81c.com/developerworks/js/dw-mf/v18/dw-mf.js?v=050618"></script> 
+<script src="//www.ibm.com/software/info/js/tactic.js"></script>
+<script src="//dw1.s81c.com/developerworks/js/v18/dw-auto-links.js?v=121217"></script>  
+<script src="//www.ibm.com/software/info/js/tacticbindlinks.js"></script>
+<link href='https://plus.google.com/108822932610995774195' rel='publisher'/><script> 
+$(document).ready(function(){
+    var scrollPosition = $("#dw-home-subscribe-bar").offset().top;       
+    subscribeTabInitTimeout = null;
+    subscribeTabScrollTimeout = null;
+    subscribeTabInitTimeout = setTimeout(function () {
+        $("#dw-home-subscribe-bar").css("transform","translateX(0%)");
+    }, 750);
+    $(window).scroll(function() {
+        if( $('#dw-home-subscribe-bar .dhsb-minimized').css('display') == 'none' ) {
+            $("#dw-home-subscribe-bar .dhsb-link").css("display","none");
+            $("#dw-home-subscribe-bar .dhsb-minimized").css("display","block");
+        }        
+    });
+    $("#dw-home-subscribe-bar .dhsb-minimized").click(function() {
+        $("#dw-home-subscribe-bar .dhsb-link").css("display","block");
+        $("#dw-home-subscribe-bar .dhsb-minimized").css("display","none");        
+    });
+});
+</script>
+<script>
+$(document).ready(function(){ 
+    var homeOverlay = localStorage.dwhomesawoverlay;
+    if (homeOverlay !== 'no') {
+        IBMCore.common.widget.overlay.show('overlayHomeTakeover');
+        var homeOverlay = localStorage.setItem("dwhomesawoverlay", "no");
+    } 
+
+    // console.log("homeOverlay value: " + homeOverlay);
+    // console.log("Final local storage value: " + localStorage.dwhomesawoverlay);
+    
+});
+</script>
+<style>
+.dwhomeoverlay.ibm-common-overlay { padding-bottom: 0 !important; background: url(//dw1.s81c.com/developerworks/i/dw-home-callforcode-takeover-bkg.jpg) no-repeat center 0 / cover #747474; }
+.dwhomeoverlay.ibm-common-overlay { -webkit-transform: translate3d(-50%, -50%, 0); }
+.dwhomeoverlay .ibm-overlay-heading-con { height: 0 !important; }
+.dwhomeoverlay.ibm-common-overlay .content { padding-top: 24px !important; }
+/* .dwhomeoverlay.ibm-common-overlay h2, .dwhomeoverlay.ibm-common-overlay h3 { text-align: center; color: #fff; }
+.dwhomeoverlay.ibm-common-overlay h3 { padding-top: 16px !important; } */
+.dwhomeoverlay-btn.ibm-btn-pri {
+    /* background: #009cde none repeat scroll 0 0;
+    border-color: #009cde; */
+    background: #92c1e9 none repeat scroll 0 0;
+    border-color: #92c1e9;
+    /* box-shadow: 6px 6px 0 #c67502; */
+    color: #000000;
+    font-size: 1.875rem;
+    line-height: 2.1875rem; 
+}
+.dwhomeoverlay.ibm-common-overlay .ibm-overlay-heading-con a.ibm-close-link::before { color: #fff; font-size: 2.6em; left: -8px; }
+.dwhomeoverlay.ibm-common-overlay .ibm-overlay-heading-con a.ibm-close-link:hover::before, .dwhomeoverlay.ibm-common-overlay .ibm-overlay-heading-con a.ibm-close-link:active::before { color: #fff; }
+.dwhomeoverlay.ibm-common-overlay .ibm-ind-link.ibm-icononly.dwhomeoverlay-mobile a { display: none; }
+.dwhomeoverlay.ibm-common-overlay p.ibm-h2 { color: #efefef; font-family: ibm-plex-sans-semibold, "Helvetica Neue", Arial, sans-serif; line-height: 1.5em; }
+@media only screen and (max-width:1650px) { .dwhomeoverlay.ibm-common-overlay .content { padding-top: 30px !important; } }
+@media only screen and (max-width:1500px) { .dwhomeoverlay.ibm-common-overlay .content { padding-top: 60px !important; } }
+@media only screen and (max-width:1024px) {
+    .ibm-overlay-heading-con a.ibm-close-link { display: none; }
+    .dwhomeoverlay.ibm-common-overlay .ibm-ind-link.ibm-icononly.dwhomeoverlay-mobile { padding: 0; margin: 0; }
+    .dwhomeoverlay.ibm-common-overlay .ibm-ind-link.ibm-icononly.dwhomeoverlay-mobile a { display: block; color: #fff; font-size: 1.6rem; padding: 0; margin: 0; right: -30px; top: -2em; }
+}
+@media only screen and (max-width:999px) {
+    .dwhomeoverlay.ibm-common-overlay h2 { font-size: 2.5rem; }
+    .dwhomeoverlay.ibm-common-overlay h3 { padding-top: 8px !important; }   
+}
+@media only screen and (max-width:759px) {
+.dwhomeoverlay.ibm-common-overlay .ibm-ind-link.ibm-icononly.dwhomeoverlay-mobile a { right: -20px }
+.dwhomeoverlay.ibm-common-overlay p.ibm-h2 { font-size: 1.5rem; }
+}
+@media only screen and (max-width:414px) {
+.dwhomeoverlay.ibm-common-overlay p.ibm-h2 { font-size: 1.25rem; line-height: 1.25em; }
+    .dwhomeoverlay.ibm-common-overlay .content { padding-top: 30px !important; }
+    .dwhomeoverlay.ibm-common-overlay { background: #747474 url(//dw1.s81c.com/developerworks/i/dw-home-callforcode-takeover-bkg.jpg) no-repeat 60% 30%; }
+    .dwhomeoverlay.ibm-common-overlay h2.ibm-padding-top-r3 { padding-top: 2vw !important; }
+    .dwhomeoverlay.ibm-common-overlay .ibm-ind-link.ibm-icononly.dwhomeoverlay-mobile a { top: -1em; right: -1em; }
+}
+@media only screen and (max-width:375px) {
+    /* .dwhomeoverlay.ibm-common-overlay p.ibm-h2 { font-size: 1.25rem; } */
+    .dwhomeoverlay.ibm-common-overlay h2 { font-size: 2.0rem; }
+    .dwhomeoverlay.ibm-common-overlay h3 { font-size: 1.5rem; }
+}
+/* IE10+ CSS styles go here */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+    .dwhomeoverlay.ibm-common-overlay .ibm-overlay-heading-con a.ibm-close-link::before { font-size: 2rem !important; }    
+}
+</style>
+<div class="dwhomeoverlay ibm-common-overlay ibm-overlay-alt-three" data-widget="overlay" id="overlayHomeTakeover">
+    <p class="ibm-ind-link ibm-icononly dwhomeoverlay-mobile"><a class="ibm-close-link ibm-fright" onclick="IBMCore.common.widget.overlay.hide('overlayHomeTakeover',true);" href="javascript:void(0);" role="button">Close</a></p>
+    <p class="ibm-h1 ibm-medium ibm-light ibm-center-block ibm-padding-top-r1">
+        <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/dw-home-callforcode-takeover-wordmark.png" alt="Call for Code"/>
+    </p>
+    <p class="ibm-h2 ibm-center-block ibm-center ibm-padding-top-r1 ibm-padding-bottom-r1">The Call for Code Challenge for 2018 asks developers to outthink natural disasters
+        and build the solutions that will significantly improve the current state of disaster preparedness in their community and around the world.</p>
+    <p class="ibm-button-link ibm-padding-top-r1 ibm-padding-bottom-r2 ibm-center">
+        <a href="https://developer.ibm.com/callforcode/?cm_sp=dw-callforcode-_-homepage-_-overlay" class="dwhomeoverlay-btn ibm-btn-pri"><strong>Start building</strong></a>
+    </p>            
+</div>
+
+</head>
+<body id="ibm-com" class="ibm-type dw-js-disabled">
+	
+<div id="ibm-top" class="ibm-landing-page">
+
+<!-- MASTHEAD_BEGIN -->
+<div id="ibm-masthead" role="banner" aria-label="IBM">
+    <div id="ibm-mast-options">
+        <ul role="toolbar" aria-labelledby="ibm-masthead">
+            <li id="ibm-geo" role="presentation"><a href="http://www.ibm.com/planetwide/select/selector.html" role="button" aria-label="United States selected - Choose a country">United States</a></li>
+        </ul>
+    </div>
+    <div id="ibm-universal-nav">    
+  
+        <nav role="navigation" aria-label="IBM">
+            <div id="ibm-home"><a href="http://www.ibm.com/us/en/">IBM®</a></div>
+            <ul id="ibm-menu-links" role="toolbar" aria-label="Site map">
+                <li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+            </ul> 
+        </nav>
+  
+        <div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+            <form id="ibm-search-form" action="https://www.ibm.com/developerworks/search/" method="get">
+                <p>
+                    <label for="q">IBM</label>
+                    <input type="text" maxlength="100" value="" placeholder="Search" name="q" id="q" aria-label="Search developerWorks"/>
+                    <input type="hidden" value="utf" name="en"/>
+                    <input type="hidden" value="en" name="lang"/>
+                    <input type="hidden" value="20" name="nr"/>
+                    <input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+                </p>
+            </form>
+        </div>
+       
+    </div>
+</div><!-- MASTHEAD_END -->
+	    
+<!-- LAYOUT -->
+<div id="ibm-content-wrapper">
+    <!-- LEADSPACE_BEGIN -->
+    <header role="banner" aria-labelledby="ibm-pagetitle-h1">
+        
+        <!-- MASTHEAD_SITENAV_BEGIN -->
+        <div class="ibm-sitenav-menu-container">
+    <div class="ibm-sitenav-menu-name">
+        <a href="//www.ibm.com/developerworks/">
+            <img width="186" height="24" alt="developerWorks®" src="//dw1.s81c.com/developerworks/i/mf/dw-mf-wordmark.svg"/>
+        </a>
+    </div>
+    <div class="ibm-sitenav-menu-list">
+        <ul role="menubar">
+                            <li class="dw-navpage-learn" role="presentation">
+                    <a href="//www.ibm.com/developerworks/learn/">Learn</a>
+                </li>
+                    
+                <li role="presentation" class="dw-navpage-develop">
+                   <a href="//www.ibm.com/developerworks/develop/">Develop</a>
+                </li>
+                <li role="presentation" class="dw-navpage-connect">
+                    <a href="//www.ibm.com/developerworks/connect/">Connect</a>
+                </li>
+                    
+                <!-- <li role="presentation" class="dw-navpage-devcenter"><a role="menuitem" href="//www.ibm.com/developerworks/learn/cognitive/">AI</a></li>
+                <li role="presentation" class="dw-navpage-devcenter"><a role="menuitem" href="//www.ibm.com/developerworks/learn/cloud/">Cloud</a></li>
+                <li role="presentation" class="dw-navpage-devcenter"><a role="menuitem" href="//www.ibm.com/developerworks/learn/analytics/">Data</a></li>
+                <li role="presentation" class="dw-navpage-devcenter"><a role="menuitem" href="//www.ibm.com/developerworks/learn/iot/">Internet of Things</a></li>
+                <li role="presentation" class="dw-navpage-devcenter"><a role="menuitem" href="//www.ibm.com/developerworks/learn/java/">Java</a></li>
+                <li role="presentation" class="dw-navpage-devcenter"><a role="menuitem" href="//www.ibm.com/developerworks/learn/">All topics</a></li>  -->             
+        </ul>
+    </div>
+</div>        <!-- MASTHEAD_SITENAV_END -->
+        
+<div id="dw-home-subscribe-bar" class="dhsb-show">
+    <div class="dhsb-container">
+        <div class="dhsb-link">
+            <div class="ibm-small">
+                <p class="ibm-ind-link"><a class="ibm-email-mono-link" href="//www.ibm.com/developerworks/newsletter/">Subscribe</a></p>
+            </div>
+        </div>
+        <div class="dhsb-minimized" style="display: none;">
+            <!-- <div class="ibm-close-link"></div> -->
+            <div>
+                <p class="ibm-ind-link ibm-icononly"><a class="ibm-email-mono-link" href="#" onclick="return false;" alt="Subscribe"></a></p>
+            </div>
+        </div>
+    </div>
+</div>        
+        <!-- LEADSPACE_HEAD_BEGIN -->
+<div id="ibm-leadspace-head" class="ibm-alternate ibm-alternate-background" style="background: url(//dw1.s81c.com/developerworks/i/dw-home-alt-leadspace-tint.jpg) no-repeat center 34% / cover #215668; min-height: 360px;" >     
+    <div id="ibm-leadspace-body" class="ibm-padding-top-r1 ibm-padding-bottom-r1">
+        <div class="ibm-columns">
+            <div class="ibm-col-1-1 dw-home-leadspace">        
+                <h1 id="ibm-pagetitle-h1" class="ibm-access">IBM developerWorks.  Learn.  Develop.  Connect.</h1>
+                <h2 class="ibm-h2 ibm-center">Welcome to developerWorks</h2>
+                <h3 class="ibm-h1 ibm-light ibm-center">Find tutorials, tools, and communities for developers</h3>
+                <form id="dw-home-leadspace-search-form" action="https://www.ibm.com/developerworks/search/" method="get">
+                    <p>
+                        <label for="dw-home-q">developerWorks Search</label>
+                        <input id="dw-home-q" type="text" name="q" placeholder="Search developerWorks" value="" maxlength="100"/>
+                        <button id="dw-search-submit" class="ibm-search-link" value="Submit" type="submit" aria-label="Submit" role="button">
+                            <span>Search</span>
+                        </button>
+                        <input type="hidden" value="utf" name="en"/>
+                        <input type="hidden" value="en" name="lang"/>
+                        <input type="hidden" value="20" name="nr"/>
+                        <!-- <input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/> -->
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script> 
+$(document).ready(function(){
+            $(".dw-home-annc-a").css("display","block");
+});
+</script>
+<div id="dw-home-announcement" class="ibm-band" style="background-color:#e9e03d;padding:16px 0;">
+    <div class="ibm-columns">
+        <div class="ibm-col-1-1 ibm-center dw-home-annc-a" style="display:none;">
+            <p class="ibm-h4" style="padding:8px 0 0;"><span style="color:#666;margin-right:12px;">In the news:</span><a href="https://developer.ibm.com/code/2018/03/20/think-2018-democratization-artificial-intelligence/?cm_sp=dw-_-think2018-_-dwribbon" style="color:#00619f">Explore 
+                AI tool and assets announced at Think</a>
+            </p>
+        </div>
+        <div class="ibm-col-1-1 ibm-center dw-home-annc-b" style="display:none;">
+            <p class="ibm-h4" style="padding:8px 0 0;"><span style="color:#666;margin-right:12px;">In the news:</span><a href="https://developer.ibm.com/code/2018/03/20/think-2018-democratization-artificial-intelligence/?cm_sp=dw-_-think2018-_-dwribbon" style="color:#00619f">Explore 
+                AI tool and assets announced at Think</a>
+            </p>
+        </div>
+    </div>    
+</div> -->
+<!-- <div id="dw-home-announcement" class="ibm-band" style="background-color:#e9e03d;padding:16px 0;">
+    <div class="ibm-columns">
+        <div class="ibm-col-1-1 ibm-center">
+            <p class="ibm-h4" style="padding:8px 0 0;"><span style="color:#666;margin-right:12px;">Call for Code:</span>
+                <a href="https://developer.ibm.com/callforcode/?cm_sp=dw-_-callforcode-_-dwribbon" style="color:#00619f">Create 
+                    apps to improve global disaster preparedness. Start Building.</a>
+            </p>
+        </div>
+    </div>    
+</div> -->        <!-- LEADSPACE_HEAD_END -->
+       
+    </header>
+    <!-- LEADSPACE_END -->
+    
+    <!-- MAIN_CONTENT_BEGIN -->
+    <main role="main" aria-labelledby="ibm-pagetitle-h1"> 
+        <div id="ibm-pcon">
+            <!-- BEGIN_IBM-CONTENT -->
+            <div id="ibm-content">
+                <!-- BEGIN_IBM-CONTENT-BODY -->
+                <div id="ibm-content-body">
+                    <!-- BEGIN_IBM-CONTENT-MAIN -->
+                    <div id="ibm-content-main" class="dw-home-alt">                        
+                        <!-- BEGIN_INTERIOR-COLUMNS -->
+<div class="ibm-columns dw-home-categories" role="navigation" aria-label="popular technical topics">
+    <div class="ibm-col-6-2">
+        <ul>
+            <li>
+                <a href="//www.ibm.com/developerworks/learn/cognitive/">
+                    <div class="dw-home-category-icon">
+                        <img class="ibm-downsize" src="//dw1.s81c.com/developerworks/i/dw-home-navbar-cognitive.png" width="75" height="75" alt="" aria-hidden="true" />
+                    </div>
+                    <p>AI</p>
+                </a>
+            </li>
+            <li>
+                <a href="//www.ibm.com/developerworks/learn/cloud/">
+                    <div class="dw-home-category-icon">
+                        <img class="ibm-downsize" src="//dw1.s81c.com/developerworks/i/dw-home-navbar-cloud.png" width="75" height="75" alt="" aria-hidden="true" />
+                    </div>
+                    <p>Cloud</p>
+                </a>
+            </li>
+        </ul>       
+    </div>
+    <div class="ibm-col-6-2">
+        <ul>
+            <li>
+                <a href="//developer.ibm.com/blockchain/">
+                    <div class="dw-home-category-icon">
+                        <img class="ibm-downsize" src="//dw1.s81c.com/developerworks/i/dw-home-navbar-blockchain.png" width="75" height="75" alt="" aria-hidden="true" />
+                    </div>
+                    <p>Blockchain</p>
+                </a>
+            </li>
+            <li>
+                <a href="//www.ibm.com/developerworks/learn/analytics/">
+                    <div class="dw-home-category-icon">
+                        <img class="ibm-downsize" src="//dw1.s81c.com/developerworks/i/dw-home-navbar-analytics.png" width="75" height="75" alt="" aria-hidden="true" />
+                    </div>
+                    <p>Analytics</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="ibm-col-6-2">
+        <ul>
+            <li>
+                <a href="//www.ibm.com/developerworks/learn/java/">
+                    <div class="dw-home-category-icon">
+                        <img class="ibm-downsize" src="//dw1.s81c.com/developerworks/i/dw-home-navbar-java.png" width="75" height="75" alt="" aria-hidden="true" />
+                    </div>
+                    <p>Java&#8482;</p>
+                </a>
+            </li>
+            <li>
+                <a href="//www.ibm.com/developerworks/learn/">
+                    <div class="dw-home-category-icon">
+                        <img class="ibm-downsize" src="//dw1.s81c.com/developerworks/i/dw-home-navbar-alltopics.jpg" width="75" height="75" alt="" aria-hidden="true" />
+                    </div>
+                    <p>All topics</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<style>
+.dwhomebanner-btn.ibm-btn-pri {
+    background: #92c1e9 none repeat scroll 0 0;
+    border-color: #92c1e9;
+    color: #000000;
+    font-size: 1.5rem;
+    line-height: 2.0rem; 
+}
+.dwhomebanner-body { font-size: 1.25rem; line-height: 2.0rem; padding: 0 12%; }
+@media only screen and (max-width:999px) {
+    #dw-home-promotion img { width: 70%; }
+}
+@media only screen and (max-width:759px) {
+    .dwhomebanner-body { font-size: 1.25rem; line-height: 2.0rem; padding: 0; }
+    .dwhomebanner-btn.ibm-btn-pri { font-size: 1.125rem; line-height: 1.5rem; }   
+}
+@media only screen and (max-width:579px) {
+    .dwhomebanner-body { font-size: 1.125rem; line-height: 1.5rem; }
+    .dwhomebanner-btn.ibm-btn-pri { font-size: 1rem; line-height: 1.25rem; }
+}
+}
+</style>
+<div id="dw-home-promotion" class="ibm-band" style="background: url('//dw1.s81c.com/developerworks/i/dw-home-callforcode-banner-bkg.jpg') no-repeat center 0 / cover #747474; min-height: 280px;">
+    <div class="ibm-columns ibm-alternate-background ibm-padding-top-r1">
+        <div class="ibm-col-1-1 ibm-center">
+            <p class="ibm-center-block">
+                <img class="ibm-downsize" src="//dw1.s81c.com/developerworks/i/dw-home-callforcode-takeover-wordmark.png" alt="Call for Code" height="45%" width="45%"/>
+            </p>
+            <p class="dwhomebanner-body ibm-center-block ibm-center">The Call for Code Challenge for 2018 asks developers to outthink natural disasters
+                and build the solutions that will significantly improve the current state of disaster preparedness in their community and around the world.</p>
+        </div>
+    </div>
+    <div class="ibm-columns ibm-alternate-background ibm-padding-top-r1">
+        <div class="ibm-col-1-1 ibm-center">
+            <p class="ibm-button-link ibm-center">
+                <a href="https://developer.ibm.com/callforcode/?cm_sp=DevWorks-_-Homepage-_-CallforCode" class="dwhomebanner-btn ibm-btn-pri ibm-btn-small">Start building</a>
+            </p>   
+        </div>
+    </div>    
+</div>
+<div id="dw-home-promotion" class="ibm-band" style="background: #0F8672 url(//dw1.s81c.com/developerworks/i/dw-home-alt-promo-code-mod.jpg) center center / cover no-repeat; min-height: 280px;">
+    <div class="ibm-columns ibm-alternate-background ibm-padding-top-2">
+        <div class="ibm-col-1-1 ibm-center">
+            <h2 class="ibm-h1 ibm-bold">Go deeper with IBM Code</h2>
+            <p class="ibm-h4 ibm-bold">Access the code, join the community, and start solving your programming challenges.</p>
+        </div>
+    </div>
+    <div class="ibm-columns ibm-alternate-background ibm-padding-top-2">
+        <div class="ibm-col-1-1 ibm-center">
+            <p>
+                <a id="dw-home-promotion-cta" class="ibm-btn-sec" href="//developer.ibm.com/code/?cm_sp=DevWorks-_-Homepage-_-CodeBanner">Learn more</a>
+            </p>
+        </div>
+    </div>    
+</div>
+<div class="ibm-columns dw-home-content">
+    <div class="ibm-col-1-1 ibm-padding-bottom-r1 ibm-padding-top-r2">
+        <div class="ibm-columns" data-widget="setsameheight" data-items=".ibm-card" data-always="true">          
+            <div class="ibm-col-6-2 ibm-col-medium-1-1 dw-home-data-feed">
+                <div class="dw-home-data-feed-container">
+                    <h2 class="ibm-h2 ibm-light">Latest tutorials</h2>
+                    <!-- RSS feed display widget -->                    <div data-widget="rssdisplay" data-feedurl="https://www.ibm.com/developerworks/views/global/rss/libraryview.jsp?site_id=1&amp;contentarea_by=global&amp;type_by=Articles"></div>
+                     <!--include "dw-home-static-tutorial-feed.ftl"--> 
+                    <ul class="ibm-link-list dw-home-data-feed-more">
+                        <li><!--<a class="ibm-forward-link" href="https://www.ibm.com/developerworks/library/?show_abstract=true&amp;contentarea_by=All+Zones&amp;type_by=Articles&amp;ibm-search=Search">All tutorials</a>-->
+                        <a class="ibm-forward-link" href="//www.ibm.com/developerworks/library/">All tutorials</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ibm-col-6-2 ibm-col-medium-6-3 dw-home-data-feed">
+                <div class="dw-home-data-feed-container">
+                    <h2 class="ibm-h2 ibm-light">Latest videos</h2>
+                    <!-- RSS feed display widget -->
+                    <div data-widget="rssdisplay" data-feedurl="https://developer.ibm.com/tv/category/featured/feed/"></div>
+                    <!--include "dw-home-static-video-feed.ftl"-->
+                    <ul class="ibm-link-list dw-home-data-feed-more">
+                        <li><a class="ibm-forward-link" href="https://developer.ibm.com/tv/">All videos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ibm-col-6-2 ibm-col-medium-6-3">
+                <h2 class="ibm-h2 ibm-light">Get started today</h2>
+                <p>Get up and running quickly with these fundamental technologies:</p>
+                <!-- Bluemix trial link -->
+                <!-- <ul class="ibm-link-list">
+                    <li><a class="ibm-forward-link" href="https://developer.ibm.com/sso/bmregistration/?lang=en_US&amp;ca=dw-_-bluemix-_-dwhome-_-link">Build and run apps in the cloud with Bluemix. Try it for free.</a></li>
+                </ul> -->
+                <!-- <div class="ibm-rule ibm-alternate" style="margin-top:0;border-color:#c7c7c7;"><hr></div> -->
+                <ul class="ibm-link-list">
+                    <li><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/cloud/library/cl-ibm-blockchain-101-quick-start-guide-for-developers-bluemix-trs/index.html">Get started with Blockchain</a></li>
+                    <li><a class="ibm-forward-link" href="https://developer.ibm.com/courses/all-courses/bluemix-essentials/">Get started with Cloud (IBM Cloud)</a></li>
+                    <li><a class="ibm-forward-link" href="https://console.bluemix.net/docs/services/watson/index.html#about">Get started with AI</a></li>
+                    <li><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/library/iot-mobile-phone-iot-device-bluemix-apps-trs/">Get started with IoT</a></li>
+                    <li><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/learn/java/intro-to-java-course/">Get started with Java</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div><div class="ibm-band ibm-padding-bottom-r1 ibm-background-blue-80 dw-home-devcenter">
+    <div class="ibm-columns">    
+        <div class="ibm-col-1-1 ibm-padding-top-r1">
+            <h2 class="ibm-h2 ibm-light ibm-center ibm-alternate-background">Connect with developer communities</h2>
+        </div>
+    </div>
+    <div class="ibm-columns">
+        <div class="ibm-col-1-1">
+            <div class="ibm-columns">
+                <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/data/db2/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-newtech-db2.png" aria-hidden="true"/>  
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">Db2 Community</h3>
+                        </div>
+                    </a>
+                </div>
+                <!-- <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/blockchain/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-newtech-blockchain.png" aria-hidden="true"/>  
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">Blockchain</h3>
+                        </div>
+                    </a>
+                </div> -->
+                <!-- <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/clouddataservices/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-devcenter-cloud-data.png" aria-hidden="true"/>
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">Cloud Data Services</h3>
+                        </div>
+                    </a>
+                </div> -->
+                <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/code/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-newtech-code.png" aria-hidden="true"/>
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">IBM Code</h3>
+                        </div>
+                    </a>
+                </div>
+                <!-- <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/open/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-newtech-dwopen.png" aria-hidden="true"/>
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">developerWorks Open</h3>
+                        </div>
+                    </a>
+                </div> -->
+                <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/iotplatform/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-newtech-watsoniot.png" aria-hidden="true"/>
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">Watson IoT Platform</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ibm-columns">
+        <div class="ibm-col-1-1">
+            <div class="ibm-columns">
+                <div class="ibm-col-6-2">
+                    <a href="//www.ibm.com/watson/developer/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-devcenter-watson.png" aria-hidden="true"/>    
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">Watson</h3>
+                        </div>
+                    </a>
+                </div>
+                <!-- <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/watsonhealth/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-devcenter-watson.png" aria-hidden="true"/>
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">Watson Health</h3>
+                        </div>
+                    </a>
+                </div> -->
+                <!-- <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/finance/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-newtech-finance.png" aria-hidden="true"/>
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">IBM Cloud for Financial Services</h3>
+                        </div>
+                    </a>
+                </div> -->
+                <div class="ibm-col-6-2">
+                    <a href="//developer.ibm.com/wasdev/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-newtech-wasdev.png" aria-hidden="true"/>
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">Watson Application Server</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="ibm-col-6-2">
+                    <a href="//www.ibm.com/developerworks/connect/">
+                        <div class="ibm-center">
+                            <img width="70" height="70" alt="" src="//dw1.s81c.com/developerworks/i/dw-home-devcenter-arrow.png" aria-hidden="true"/>
+                        </div>
+                        <div class="ibm-center">
+                            <h3 class="ibm-h4 ibm-light ibm-alternate-background">All community resources</h3> 
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><div class="ibm-band ibm-background-gray-10 ibm-padding-bottom-r1 dw-home-carousel">   
+    <div class="ibm-columns">        
+
+        <!-- CAROUSEL CONTAINER START -->
+        <div class="dw-home-carousel-container" data-widget="carousel">
+        <!-- PANEL 1 -->
+<div class="ibm-columns">
+    <div class="ibm-col-1-1 ibm-padding-top-r1 ibm-padding-bottom-r1 dw-hbc-head1">
+        <h2 class="ibm-h2 ibm-light ibm-center">Learn and innovate with the latest technologies</h2>
+    </div>
+    <div class="ibm-col-1-1">
+        <div class="ibm-columns" data-widget="setsameheight" data-items=".ibm-card" data-always="true">
+            
+            <!-- PANEL 1: CONTENT START -->
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/code/2018/05/23/answering-a-call-elevating-a-profession/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-cfc.jpg" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Call for Code</h3>
+                            <p class="ibm-h4 ibm-light">Developers, answer the call to harness your talent and expertise to solve the world’s most pressing issues.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>   
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="http://developer.ibm.com/code/2018/03/20/fabric-for-deep-learning/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-FfDL.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Fabric for Deep Learning</h3>
+                            <p class="ibm-h4 ibm-light">Delivering deep learning capabilities to the hands of data scientists and AI developers</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="http://developer.ibm.com/code/2018/03/20/igniting-a-community-around-deep-learning-models-with-model-asset-exchange-max/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-assetexchange.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Deep Learning Models</h3>
+                            <p class="ibm-h4 ibm-light">Igniting a community around deep learning models with Model Asset eXchange (MAX)</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="http://developer.ibm.com/code/2018/03/20/creating-a-center-of-gravity-around-open-source-data-and-ai-technologies/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-codait.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">AI Lifecycle</h3>
+                            <p class="ibm-h4 ibm-light">Creating a center of gravity around open source data and AI technologies</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div> -->           
+            
+            <!-- <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/tv/dwmailbag/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/dw-mailbag-home-carousel-600x245.jpg" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">developerWorks Mailbag</h3>
+                            <p class="ibm-h4 ibm-light">Engineer and Developer Advocate Doug Tidwell answers your most pressing questions.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Ask Doug anything</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>   
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://www.ibm.com/blogs/bluemix/2017/12/ibm-pivotal-advance-development-spring-community/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-pivotalspring.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Advancing Spring development</h3>
+                            <p class="ibm-h4 ibm-light">IBM and Pivotal clear the way for Spring developers to use IBM software and IBM Cloud services.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div> 
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/dwblog/2017/websphere-liberty-java-open-source/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-openlibertyannounce.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Open Liberty</h3>
+                            <p class="ibm-h4 ibm-light">Open source project to support Java microservices and cloud-native apps.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div> -->       
+            <!-- PANEL 1: CONTENT END -->
+            
+        </div>
+    </div>
+</div>
+
+<!-- PANEL 2 -->
+<div class="ibm-columns">
+    <div class="ibm-col-1-1 ibm-padding-top-r1 ibm-padding-bottom-r1 dw-hbc-head2">
+        <h2 class="ibm-h2 ibm-light ibm-center">Learn and innovate with the latest technologies</h2>
+    </div>
+    <div class="ibm-col-1-1">
+        <div class="ibm-columns" data-widget="setsameheight" data-items=".ibm-card" data-always="true">
+            
+            <!-- PANEL 2: CONTENT START -->
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/tv/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-dwtv.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">dW TV</h3>
+                            <p class="ibm-h4 ibm-light">Demos, insights, and tutorials on the hottest technologies for developers.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Watch and learn</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>  
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/answers/index.html?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-answers.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">dW Answers</h3>
+                            <p class="ibm-h4 ibm-light">An open Q &amp; A system covering technology topics and IBM products.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Ask, answer, discuss</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ibm-col-6-2">
+                <!-- <a class="ibm-blocklink ibm-highlight-light" href="https://www.ibm.com/watson/developercloud/discovery.html?cm_sp=dw-_-homepage-_-carousel"> -->
+                <a class="ibm-blocklink ibm-highlight-light" href="https://www.ibm.com/cloud/watson-discovery/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-watsondiscovery.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Watson Discovery</h3>
+                            <p class="ibm-h4 ibm-light">Rapidly build a cognitive search and content analytics engine, and add it to existing apps with minimal effort.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Explore Watson Discovery</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://www.ibm.com/analytics/us/en/watson-data-platform/platform.html?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-watsondataplatform.png" width="300" height="100" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Watson Data Platform</h3>
+                            <p class="ibm-h4 ibm-light">Put data to work with cognitive capabilities, and quickly find new insights that deliver business-changing results.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Explore Watson Data Platform</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+            <!-- PANEL 2: CONTENT END -->
+            
+        </div>
+    </div>
+</div>
+            
+<!-- PANEL 3 -->
+<div class="ibm-columns">
+    <div class="ibm-col-1-1 ibm-padding-top-r1 ibm-padding-bottom-r1 dw-hbc-head3">
+        <h2 class="ibm-h2 ibm-light ibm-center">Learn and innovate with the latest technologies</h2>
+    </div>
+    <div class="ibm-col-1-1">
+        <div class="ibm-columns" data-widget="setsameheight" data-items=".ibm-card" data-always="true">
+            
+            <!-- PANEL 3: CONTENT START -->
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/accelerate/topics/chatbot/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-chatbotjourney.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Chatbot scenarios</h3>
+                            <p class="ibm-h4 ibm-light">Quickly create your own IBM Watson-powered conversational robot with our prebuilt scenarios.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Create your own chatbot</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink" href="https://developer.ibm.com/data/db2/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-datadevcenter.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">IBM Data for developers</h3>
+                            <p class="ibm-h4 ibm-light">Community, education, downloads, and support: Everything you need to get started today!</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/dwblog/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-dwblog.png" width="300" height="100" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">dW Blog</h3>
+                            <p class="ibm-h4 ibm-light">The latest news and insights for developers, by developers.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Stay in touch</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- PANEL 3: CONTENT END -->
+            
+        </div>
+    </div>
+</div>        </div>
+        <!-- CAROUSEL CONTAINER END -->
+        
+        <!-- MOBILE CONTAINER START -->
+        <div class="dw-home-mobile-container">
+<!-- PANEL 1 -->
+<div class="ibm-columns">
+    <div class="ibm-col-1-1 ibm-padding-top-r1 ibm-padding-bottom-r1 dw-hbc-head1">
+        <h2 class="ibm-h2 ibm-light ibm-center">Learn and innovate with the latest technologies</h2>
+    </div>
+    <div class="ibm-col-1-1">
+        <div class="ibm-columns" data-widget="setsameheight" data-items=".ibm-card" data-always="true">
+            
+            <!-- PANEL 1: CONTENT START -->
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/code/2018/05/23/answering-a-call-elevating-a-profession/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-cfc.jpg" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Call for Code</h3>
+                            <p class="ibm-h4 ibm-light">Developers, answer the call to harness your talent and expertise to solve the world’s most pressing issues.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>   
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="http://developer.ibm.com/code/2018/03/20/fabric-for-deep-learning/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-FfDL.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Fabric for Deep Learning</h3>
+                            <p class="ibm-h4 ibm-light">Delivering deep learning capabilities to the hands of data scientists and AI developers</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="http://developer.ibm.com/code/2018/03/20/igniting-a-community-around-deep-learning-models-with-model-asset-exchange-max/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-assetexchange.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Deep Learning Models</h3>
+                            <p class="ibm-h4 ibm-light">Igniting a community around deep learning models with Model Asset eXchange (MAX)</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="http://developer.ibm.com/code/2018/03/20/creating-a-center-of-gravity-around-open-source-data-and-ai-technologies/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-codait.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">AI Lifecycle</h3>
+                            <p class="ibm-h4 ibm-light">Creating a center of gravity around open source data and AI technologies</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div> -->           
+            
+            <!-- <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/tv/dwmailbag/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/dw-mailbag-home-carousel-600x245.jpg" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">developerWorks Mailbag</h3>
+                            <p class="ibm-h4 ibm-light">Engineer and Developer Advocate Doug Tidwell answers your most pressing questions.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Ask Doug anything</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>   
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://www.ibm.com/blogs/bluemix/2017/12/ibm-pivotal-advance-development-spring-community/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-pivotalspring.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Advancing Spring development</h3>
+                            <p class="ibm-h4 ibm-light">IBM and Pivotal clear the way for Spring developers to use IBM software and IBM Cloud services.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div> 
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/dwblog/2017/websphere-liberty-java-open-source/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-openlibertyannounce.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Open Liberty</h3>
+                            <p class="ibm-h4 ibm-light">Open source project to support Java microservices and cloud-native apps.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div> -->       
+            <!-- PANEL 1: CONTENT END -->
+            
+        </div>
+    </div>
+</div>
+
+<!-- PANEL 2 -->
+<div class="ibm-columns">
+    <div class="ibm-col-1-1 ibm-padding-top-r1 ibm-padding-bottom-r1 dw-hbc-head2">
+        <h2 class="ibm-h2 ibm-light ibm-center">Learn and innovate with the latest technologies</h2>
+    </div>
+    <div class="ibm-col-1-1">
+        <div class="ibm-columns" data-widget="setsameheight" data-items=".ibm-card" data-always="true">
+            
+            <!-- PANEL 2: CONTENT START -->
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/tv/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-dwtv.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">dW TV</h3>
+                            <p class="ibm-h4 ibm-light">Demos, insights, and tutorials on the hottest technologies for developers.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Watch and learn</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>  
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/answers/index.html?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-answers.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">dW Answers</h3>
+                            <p class="ibm-h4 ibm-light">An open Q &amp; A system covering technology topics and IBM products.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Ask, answer, discuss</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ibm-col-6-2">
+                <!-- <a class="ibm-blocklink ibm-highlight-light" href="https://www.ibm.com/watson/developercloud/discovery.html?cm_sp=dw-_-homepage-_-carousel"> -->
+                <a class="ibm-blocklink ibm-highlight-light" href="https://www.ibm.com/cloud/watson-discovery/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-watsondiscovery.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Watson Discovery</h3>
+                            <p class="ibm-h4 ibm-light">Rapidly build a cognitive search and content analytics engine, and add it to existing apps with minimal effort.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Explore Watson Discovery</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://www.ibm.com/analytics/us/en/watson-data-platform/platform.html?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-watsondataplatform.png" width="300" height="100" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Watson Data Platform</h3>
+                            <p class="ibm-h4 ibm-light">Put data to work with cognitive capabilities, and quickly find new insights that deliver business-changing results.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Explore Watson Data Platform</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div> -->
+            <!-- PANEL 2: CONTENT END -->
+            
+        </div>
+    </div>
+</div>
+            
+<!-- PANEL 3 -->
+<div class="ibm-columns">
+    <div class="ibm-col-1-1 ibm-padding-top-r1 ibm-padding-bottom-r1 dw-hbc-head3">
+        <h2 class="ibm-h2 ibm-light ibm-center">Learn and innovate with the latest technologies</h2>
+    </div>
+    <div class="ibm-col-1-1">
+        <div class="ibm-columns" data-widget="setsameheight" data-items=".ibm-card" data-always="true">
+            
+            <!-- PANEL 3: CONTENT START -->
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/accelerate/topics/chatbot/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-chatbotjourney.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">Chatbot scenarios</h3>
+                            <p class="ibm-h4 ibm-light">Quickly create your own IBM Watson-powered conversational robot with our prebuilt scenarios.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Create your own chatbot</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink" href="https://developer.ibm.com/data/db2/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-datadevcenter.png" width="300" height="170" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">IBM Data for developers</h3>
+                            <p class="ibm-h4 ibm-light">Community, education, downloads, and support: Everything you need to get started today!</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Learn more</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="ibm-col-6-2">
+                <a class="ibm-blocklink ibm-highlight-light" href="https://developer.ibm.com/dwblog/?cm_sp=dw-_-homepage-_-carousel">
+                    <div class="ibm-card">
+                        <div class="ibm-card__image">
+                            <img class="ibm-resize" src="//dw1.s81c.com/developerworks/i/f-dw17-dwblog.png" width="300" height="100" alt="" />
+                        </div>
+                        <div class="ibm-card__content">
+                            <h3 class="ibm-h3 ibm-light">dW Blog</h3>
+                            <p class="ibm-h4 ibm-light">The latest news and insights for developers, by developers.</p>
+                        </div>
+                        <div class="ibm-card__bottom">
+                            <p class="ibm-icon-nolink ibm-linkcolor-default ibm-h4 ibm-light">
+                                <span class="ibm-forward-link">Stay in touch</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- PANEL 3: CONTENT END -->
+            
+        </div>
+    </div>
+</div>        </div>
+        <!-- MOBILE CONTAINER END -->
+
+    </div>    
+</div>                    </div>
+                    <!-- END_IBM-CONTENT-MAIN -->
+                </div>
+                <!-- END_IBM-CONTENT-BODY -->
+            </div>
+            <!-- END_IBM-CONTENT -->
+        </div>
+        <!-- END_IBM-PCON -->
+    </main>
+    <!-- MAIN_CONTENT_END -->
+    
+    <!-- END_CONTENT-WRAPPER -->	
+</div>
+<!-- FOOTER_BEGIN -->
+<footer role="contentinfo" aria-label="IBM developerWorks">
+    <div id="dw-footer-module" class="dw-footer-home">
+        <section aria-label="Resources" role="contentinfo">
+            <div class="ibm-columns">
+                <div class="ibm-col-6-1 dw-footer-col-1">
+                    <ul>
+                        <li class="dw-footer-heading" aria-label="developerWorks">developerWorks</li>
+                        <li><a href="//www.ibm.com/developerworks/aboutdw/">About</a></li>
+                        <li><a href="//www.ibm.com/developerworks/feedback">Help</a></li>
+                        <li class="dw-footer-newline"><a href="//www.ibm.com/developerworks/ideas">Submit content</a></li>
+                        <li class="dw-footer-newline"><a href="//www.ibm.com/developerworks/secure/report/">Report abuse</a></li>
+                        <li class="dw-footer-newline"><a href="//www.ibm.com/developerworks/community/terms/thirdparty/">Third-party notice</a></li>
+                    </ul>
+                    <ul>
+                        <li class="dw-footer-heading" aria-label="Community">Community</li> 
+                        <li class="dw-footer-newline"><a href="//www.ibm.com/developerworks/rfe/">Product feedback</a></li>
+                        <li class="dw-footer-newline"><a href="//www.ibm.com/developerworks/connect/">Developer Centers</a></li>
+                    </ul>
+                    <ul>
+                        <li class="dw-footer-heading dw-follow-us" aria-label="Follow us">Follow us</li>
+                    </ul>
+                    <p class="dw-footer-social">
+                        <a href="//twitter.com/developerWorks">
+                            <img width="28" height="27" alt="Twitter" src="//dw1.s81c.com/developerworks/i/mf/dw-footer-icon-twitter.png"/>
+                        </a>
+                    </p>
+                    <p class="dw-footer-social-right">
+                        <a href="//www.facebook.com/developerworks">
+                            <img width="28" height="27" alt="Facebook" src="//dw1.s81c.com/developerworks/i/mf/dw-footer-icon-facebook.png"/>
+                        </a>
+                    </p>
+                    <br/>
+                    <p class="dw-footer-social">
+                        <a href="//www.linkedin.com/groups/IBM-developerWorks-8137234">
+                            <img width="28" height="27" alt="LinkedIn" src="//dw1.s81c.com/developerworks/i/mf/dw-footer-icon-linkedin.png"/>
+                        </a>
+                    </p>
+                    <p class="dw-footer-social-right">
+                        <a href="//www.youtube.com/user/developerworks">
+                            <img width="28" height="27" alt="YouTube" src="//dw1.s81c.com/developerworks/i/mf/dw-footer-icon-youtube.png"/>
+                        </a>
+                    </p>
+                </div>
+                <div class="ibm-col-6-1 dw-footer-col-2">
+                    <ul>
+                        <li class="dw-footer-heading" aria-label="Join">Join</li>
+                        <li><a href="//developer.ibm.com/academic/">Faculty</a></li>
+                        <li><a href="//developer.ibm.com/students/">Students</a></li>
+                        <li><a href="//developer.ibm.com/startups/">Startups</a></li>
+                        <li class="dw-footer-newline"><a href="//www.ibm.com/isv/">Business Partners</a></li>
+                    </ul>
+                    <ul class="dw-footer-lang" aria-label="Select a language">
+                        <li class="dw-footer-heading">Select a language</li>
+                        <li><a href="//www.ibm.com/developerworks/">English</a></li>
+                        <li><a href="//www.ibm.com/developerworks/cn/" lang="zh">中文</a></li>
+                        <li><a href="//www.ibm.com/developerworks/jp/" lang="ja">日本語</a></li>
+                        <li><a href="//www.ibm.com/developerworks/ru/" lang="ru">Русский</a></li>
+                        <li class="dw-footer-newline"><a href="//www.ibm.com/developerworks/br/" lang="pt">Português (Brasil)</a></li>
+                        <li><a href="//www.ibm.com/developerworks/ssa/" lang="es">Español</a></li>
+                        <li><a href="//developer.ibm.com/kr/" lang="kr">한글</a></li>
+                    </ul>
+                </div>
+                <div class="ibm-col-6-1 dw-footer-col-3"> </div>
+                <div class="ibm-col-6-1 dw-footer-col-4">
+                    <ul class="dw-footer-categories">
+                        <li class="dw-footer-category">
+                            <a href="//www.ibm.com/developerworks/learn/">Tutorials &amp; training</a>
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/accelerate/">Demos &amp; sample code</a>
+                        </li>                      
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/answers">Q&amp;A forums</a>  
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/dwblog/">dW Blog</a>  
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/events/">Events</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ibm-col-6-1 dw-footer-col-5">
+                    <ul class="dw-footer-categories">
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/courses/">Courses</a>  
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/open/">Open source projects</a>  
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/tv/">Videos</a>  
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/recipes/">Recipes</a>  
+                        </li>
+                    </ul>
+                </div>
+                <div class="ibm-col-6-1 dw-footer-col-6">
+                    <ul class="dw-footer-categories">
+                        <li class="dw-footer-category">
+                            <a href="//www.ibm.com/developerworks/develop/">Downloads</a>  
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//developer.ibm.com/api/">APIs</a>  
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//www.ibm.com/developerworks/newsletter/">Newsletters</a>  
+                        </li>
+                        <li class="dw-footer-category">
+                            <a href="//www.ibm.com/developerworks/feeds/">Feeds</a>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="dw-footer" class="ibm-padding-normal ibm-alternate">
+        <div class="ibm-columns">
+            <div class="ibm-col-1-1">
+                <div class="dw-footer-corporate-links">
+                    <ul>
+                        <li><a href="//www.ibm.com/developerworks/aboutdw/contacts.html">Contact</a></li>
+                        <li><a href="//www.ibm.com/privacy/us/en/">Privacy</a></li>
+                        <li><a href="//www.ibm.com/developerworks/community/terms/use/">Terms of use</a></li>
+                        <li><a href="//www.ibm.com/accessibility/us/en/">Accessibility</a></li>
+                        <li class="ibm-feedbacklink"><a href="#">Feedback</a></li>
+                        <li id="ibm-truste-cp"><a onclick="truste.eu.clickListener();return false;" href="#">Cookie Preferences</a></li>
+                    </ul>                 
+                </div>
+                <div id="ibm-footer-locale-selector"></div>
+            </div>
+        </div>
+    </div>        
+</footer> <!-- FOOTER_END -->
+
+<!-- END_IBM-TOP -->
+</div>
+
+<!-- SCRIPTS_INCLUDE_BEGIN -->
+
+<!-- SCRIPTS_INCLUDE_END -->
+
+</body>
+</html>

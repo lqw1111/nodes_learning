@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta name="description" content="Get insights on building with Watson APIs and implementing Watson apps in your business">
+    <meta name="Keywords" content="watson app webinars, deep learning tutorials, ibm watson insights">
+    <meta content="© Copyright IBM Corp. 2016" name="DC.Rights">
+    <meta content="Public" name="Security">
+    <meta content="T3310" scheme="IBM_SubjectTaxonomy" name="DC.Subject">
+    <meta content="en-US" scheme="rfc1766" name="DC.Language">
+    <meta content="US" name="IBM.Country">
+    <meta content="index,follow" name="Robots">
+    <meta content="CT004" scheme="IBM_ContentClassTaxonomy" name="DC.Type">
+    <meta name="IBM.WTMSite" content="WATSONMKT">
+	<title>Deep Learning Tutorials and Webinars with IBM Watson</title>
+	<!-- Open Graph data -->
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="http://www.ibm.com/watson/assets/img/cloud/hero_cloud.jpg">
+    <meta property="og:description" content="">
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@IBMWatson">
+    <meta name="twitter:creator" content="@IBMWatson">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <link href="https://www.ibm.com/watson/webinars/" rel="canonical">
+
+    <!-- this line escapes the IBM mobile proxy in case a user comes to the site from an existing proxied page-->
+    <link rel="IBM.Mobile.redirect" href="self">
+
+    <link href="http://purl.org/DC/elements/1.0/" rel="schema.DC">
+    <link href="http://www.ibm.com/favicon.ico" rel="SHORTCUT ICON">
+    <link rel="IBM.Mobile.redirect" href="self">
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+	 <script>
+      digitalData = {
+        "page": {
+          "category": {
+            "primaryCategory": "general"
+          },
+          "pageInfo": {
+            "effectiveDate": "2016-01-01",
+            "expiryDate": "2022-01-01",
+            "language": "en-US",
+            "publishDate": "2017-02-01",
+            "publisher": "IBM Corporation",
+            "version": "v18",
+			"pageID": "",
+            "ibm": {
+              "contentDelivery": "HTML",
+              "contentProducer": "HTML v18",
+              "siteID": "WATSONMKT",
+              "country": "US",
+              "industry": "ZZ",
+              "owner": "Jeremy Hodge/New York/IBM",
+              "subject": "Watson",
+              "type": "Watson"
+            }
+          }
+        }
+      };
+    </script>
+	<script src="//www.ibm.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet">
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+	<script type="text/javascript" src="//www.ibm.com/software/info/js/tactic.js"></script>
+	<script type="text/javascript" src="//www.ibm.com/software/info/js/tacticbindlinks.js"></script>
+	<script src="//1.www.s81c.com/common/v18/js/mustache.js"></script>
+	<script src="//1.www.s81c.com/common/v18/js/masonry.js"></script>
+	<link href="https://www.ibm.com/standards/web/brands/watson/web-assets/watson_northstar-v0_latest-plex.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    IBMCore.common.util.config.set({
+        masthead: {
+            type: "alternate"
+        },
+        footer: {
+            type: "alternate"
+        }
+    });
+    </script>
+	<!-- v18 form files -->
+	<link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet" />
+	<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+    <script>
+      IBMCore.common.util.config.set({
+        masthead: {
+          type: "alternate"
+        },
+        footer: {
+          type: "alternate"
+        },
+        scrolltracker: {
+          enabled: true
+        },
+        backtotop: {
+          enabled: true,
+          container: '#ibm-content-body'
+        }
+      });
+    </script>
+	<style>
+		
+	</style>
+	</head>
+	<body id="ibm-com" class="ibm-type">
+		<div id="ibm-top" class="ibm-landing-page">
+		<!-- MASTHEAD_BEGIN -->
+		<div id="ibm-masthead" role="banner" aria-label="IBM">
+            <div id="ibm-mast-options">
+                <ul role="toolbar" aria-labelledby="ibm-masthead">
+                    <li id="ibm-geo" role="presentation"><a href="http://www.ibm.com/planetwide/select/selector.html" role="button" aria-label="United States selected - Choose a country">United States</a></li>
+                    <li id="ibm-language" role="presentation"><span class="ibm-active" role="button" aria-disabled="true">English</span> <a href="http://www.ibm.com/" lang="en-US" role="button">English</a></li>
+                </ul>
+            </div>
+            <div id="ibm-universal-nav">
+                <nav role="navigation" aria-label="IBM">
+                    <div id="ibm-home"><a href="http://www.ibm.com/">IBM®</a></div>
+                    <ul id="ibm-menu-links" role="toolbar" aria-label="Site map">
+                        <li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
+                    </ul>
+                </nav>
+                <div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+                    <form id="ibm-search-form" action="https://www.ibm.com/Search/" method="get">
+                        <p>
+                            <label for="q">IBM</label>
+                            <input type="text" maxlength="100" value="" placeholder="Search" name="q" id="q" aria-label="Search">
+                            <input type="hidden" value="18" name="v">
+                            <input type="hidden" value="utf" name="en">
+                            <input type="hidden" value="en" name="lang">
+                            <input type="hidden" value="us" name="cc">
+                            <input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+			<div class="ibm-sitenav-menu-container">
+          <div class="ibm-sitenav-menu-name"><a href="../index.html">Watson</a></div>
+          <div class="ibm-sitenav-menu-list">
+              <ul role="menubar">
+                <li role="presentation">
+                  <a role="menuitem"  href="/watson/products.html">Products and Services</a>
+                </li>
+                <li role="presentation" class="ibm-haschildlist">
+                  <span role="menuitem">Developers</span>
+                  <ul role="menu">
+                    <li role="presentation"><a role="menuitem" href="/watson/developercloud/">Overview</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/developercloud/doc/index.html">Documentation</a></li>
+                    <li role="presentation"><a role="menuitem" href="https://developer.ibm.com/watson/">Community</a></li>
+                  </ul>
+                </li>
+                <li role="presentation" class="ibm-haschildlist">
+                  <span role="menuitem">Focus areas</span>
+                  <ul role="menu">
+                    <li role="presentation"><a role="menuitem" href="/watson/commerce/index.html">Commerce</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/education/index.html">Education</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/financial-services/index.html">Financial&nbsp;Services</a></li>
+                    <li role="presentation"><a role="menuitem" href="http://www.ibm.com/watson/health/">Health</a></li>
+                    <li role="presentation"><a role="menuitem" href="http://www.ibm.com/internet-of-things/">IoT</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/marketing/index.html">Marketing</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/supply-chain/index.html">Supply&nbsp;Chain</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/talent/index.html">Talent</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/work/index.html">Work</a></li>
+                  </ul>
+                </li>
+                <li role="presentation">
+                  <a role="menuitem" href="https://www.ibm.com/blogs/watson/">Blog</a>
+                </li>
+                <li>
+                    <a href="https://console.ng.bluemix.net/registration/?target=/catalog/%3fcategory=watson" class="ibm-btn-pri rounded-btn ibm-btn-blue-50 navbar-button" tabindex="0">Get Started Free</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+			<!-- MASTHEAD_END -->
+			<div id="ibm-content-wrapper">
+				<!-- LEADSPACE_BEGIN -->
+				<div id="ibm-leadspace-head" class="" data-widget="parallaxscroll" style="border-bottom:none;">
+				  <div class="ibm-band ibm-background-teal-80 ibm-padding-top-r2 ibm-padding-bottom-r1">
+					<div id="ibm-leadspace-body">
+					  <div class="ibm-fluid">
+						<div class="ibm-col-12-1"></div>
+						<div class="ibm-col-12-8">
+							<div class="ibm-padding-content ibm-padding-bottom-0 ibm-padding-top-0">
+							  <h1 class="ibm-h1 ibm-light ibm-padding-bottom-2 ibm-textcolor-teal-30">Watson webinars</h1>
+							  <p class="ibm-h3 ibm-light ibm-padding-bottom-1 ibm-textcolor-white-core">Get insights on building with Watson APIs and implementing Watson apps in your business</p>
+							  <p class="ibm-ind-link">
+								<!-- <a class="ibm-btn-pri ibm-anchor-down-link ibm-btn-teal-50 ibm-textcolor-teal-30 rounded-btn" href="http://event.on24.com/wcc/r/1325599/09EC7C031D2EB4AF59459430043A4F77?partnerref=BWWLP"><span class="ibm-textcolor-gray-80 ibm-btn-keylink">Explore webinar</span></a> -->
+							  </p>
+							</div>
+						</div>
+						<div class="ibm-col-12-2"><img src="img/webinar-master.gif" class="ibm-downsize" /></div>
+						<div class="ibm-col-12-1"></div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<div id="ibm-content">
+					<div id="ibm-content-body" class="ibm-nospacing">
+						<div id="ibm-content-main">
+						
+						
+						<!-- Upcoming webinars -->
+							<section data-widget="setsameheight" data-always="true" data-items=".ibm-title-box" data-excludesmallgrid="true">
+								<div class="ibm-fluid ibm-fullwidth ibm-seamless ibm-band ibm-padding-top-2 ibm-padding-bottom-0">
+									<div class="ibm-padding-content ibm-padding-bottom-0 ibm-padding-top-2">	
+										<h2 class="ibm-h2 ibm-light">Upcoming webinars</h2>
+									</div>
+								</div>
+								<div class="ibm-fluid ibm-band ibm-downsize ibm-padding-top-0 ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-sameheight"> 
+									<div class="ibm-card__content">
+										<!-- <div class="ibm-padding-top-0 ibm-padding-bottom-0">
+												<p class="ibm-padding-bottom-0">No upcoming event</p>
+										</div> -->
+									    <div class="ibm-col-12-3 ibm-col-medium-12-6">
+											<div class="ibm-card ibm-card--noborder">
+												<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+													<div class="ibm-card__content">
+														<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+															<p class="ibm-light ibm-h4 ibm-title-box">Teach Watson to understand your data: A Technical Introduction to Watson Knowledge Studio</p>
+															<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+														</div>
+													</div>
+													<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2">
+														<a href="http://ibm.biz/dwlive022-promo" target="_blank" class="ibm-textcolor-gray-80 ibm-btn-keylink">Register for January 24, 1:00 ET</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!-- END of Upcoming Webinars -->
+							<!-- Block Previous Webinars -->
+							<section data-widget="setsameheight" data-always="true" data-items=".webinars-title" data-excludesmallgrid="true"> 
+								<div class="ibm-band ibm-fluid ibm-fullwidth ibm-padding-top-1 ibm-padding-bottom-0">	
+									<div class="ibm-padding-content ibm-padding-bottom-0 ibm-padding-top-0">	
+										<h2 class="ibm-h2 ibm-light ibm-padding-bottom-0 ibm-padding-top-0">Webinars replays</h2>
+									</div>
+								</div>
+								<div class="ibm-band ibm-fluid ibm-fullwidth ibm-nospacing ibm-padding-top-0 ibm-padding-bottom-0" data-widget="setsameheight" data-items=".ibm-sameheight"> 
+									<div class="ibm-padding-content">
+										<form id="__REPLACE_ME__01__" class="ibm-column-form" method="" action="">
+											<div class="ibm-padding-bottom-0 ibm-padding-top-0">
+												<p class="ibm-form-elem-grp ibm-padding-bottom-0 ibm-padding-top-0">
+													<span class="ibm-nospacing">
+														<select id="topics-categories">
+															<option value="" selected>Filter by topic</option>
+															<option value="conversational" class="">Conversational Apps</option>
+															<option value="discovery" class="">Discovery</option>
+															<option value="featured" class="">Featured webinars</option>
+															<option value="partners" class="">Partners</option>
+															<option value="social" class="">Social Media Monitoring</option>
+															<option value="speech" class="">Speech and Vision Services</option>
+															<option value="training" class="">Training Watson</option>
+														</select>
+													</span>
+												</p>
+											</div>
+										</form>
+									</div>
+								</div>
+							<!-- END Block See more -->
+						
+							<!-- Blocks content -->
+								<div id="webinars-grid-container" class="ibm-fluid ibm-fullwidth ibm-seamless ibm-band ibm-padding-top-0 ibm-padding-bottom-2 ibm-simple-show-hide" data-widget="showhide">
+									<div class="webinars-container ibm-container-body ibm-padding-content" data-widget="setsameheight" data-items=".ibm-sameheight">
+										<div class="webinars-sizer"></div>
+										<!-- 1st block -->
+										<!-- <div data-webinars="conversational" class="webinars conversational">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-background-white-core ibm-padding-content ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversation">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Serverless Conversation Applications Built with Open Whisk</h4></div>
+																<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																	<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="http://event.on24.com/wcc/r/1379230/65D381158E88BEA9086AABFCA7BC774F?partnerref=BWWLP&cm_mc_uid=65545369953414888190298&cm_mc_sid_50200000=1490797166" target="_blank" class="ibm-textcolor-gray-80 ibm-btn-keylink">Register for May 31, 10:00 PT</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div> -->
+										<!-- 1st block -->
+										<div class="ibm-col-12-3 ibm-col-medium-12-6">
+											<div class="ibm-card ibm-card--noborder">
+												<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+													<div class="ibm-card__content">
+														<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+														  <div class="webinars-title"><h4 class="ibm-light ibm-h4">Create a cognitive search application with Watson Discovery</h4></div>
+															<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+														</div>
+													</div>
+													<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+														<a href="#" onclick="IBMCore.common.widget.overlay.show('cognitiveSearchApplication'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+													</div>
+													<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="cognitiveSearchApplication">
+														<div class="ibm-padding-bottom-1">
+															<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+														</div>
+														<h3 class="ibm-h3 ibm-light">Create a cognitive search application with Watson Discovery</h3>
+														<div class="ibm-fluid ibm-nospacing">
+															<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="rlWvyV7vGc8" data-videotype="youtube"><a href="https://youtu.be/rlWvyV7vGc8">Watch the video</a></div>
+														</div>
+														<div class="ibm-fluid padding-content ibm-light">
+															<p><span class="ibm-bold">Duration:</span> 59 minutes
+															<p><span class="ibm-bold">Description:</span><br>
+																Watson Discovery provides powerful capabilities for enabling natural language search and interaction experiences. This webcast replay covers how these capabilities can be used in a new application or migrated from a previously built application on the Watson Retrieve and Rank service.
+															</p>
+															<p><span class="ibm-bold">Speaker:</span><br>
+															  Anish Mathur, Offering Manager, Watson Discovery, IBM
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 1st block -->
+										<!-- 1st block -->
+										<div class="ibm-col-12-3 ibm-col-medium-12-6">
+											<div class="ibm-card ibm-card--noborder">
+												<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+													<div class="ibm-card__content">
+														<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+														  <div class="webinars-title"><h4 class="ibm-light ibm-h4">Make the most with Watson Discovery: A Technical Introduction</h4></div>	
+															<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+														</div>
+													</div>
+													<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+														<a href="#" onclick="IBMCore.common.widget.overlay.show('technicalIntroduction'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+													</div>
+													<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="technicalIntroduction">
+														<div class="ibm-padding-bottom-1">
+															<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+														</div>
+														<h3 class="ibm-h3 ibm-light">Make the most with Watson Discovery: A Technical Introduction</h3>
+														<div class="ibm-fluid ibm-nospacing">
+															<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="icg-FrywTbk" data-videotype="youtube"><a href="https://youtu.be/icg-FrywTbk">Watch the video</a></div>
+														</div>
+														<div class="ibm-fluid padding-content ibm-light">
+															<p><span class="ibm-bold">Duration:</span> 1 hour 2 minutes
+															<p><span class="ibm-bold">Description:</span><br>
+																Learn how to use the out-of-the-box AI capabilities with Watson Discovery to extract insights from your unstructured data with this introductory tutorial. We’ll cover how to get started, latest features, using the UI and the SDK, and some advanced tips and tricks. No prior Watson experience needed.
+															</p>
+															<p><span class="ibm-bold">Speaker:</span><br>
+															  Jean Lange, Watson Engineer, Watson Discovery, IBM
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 1st block -->
+										<!-- 1st block -->
+										<div class="ibm-col-12-3 ibm-col-medium-12-6">
+											<div class="ibm-card ibm-card--noborder">
+												<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+													<div class="ibm-card__content">
+														<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+															<div class="webinars-title"><h4 class="ibm-light ibm-h4">Visualize unstructured content with Watson NLU</h4></div>
+															<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+														</div>
+													</div>
+													<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+														<a href="#" onclick="IBMCore.common.widget.overlay.show('visualizeUnstructured'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+													</div>
+													<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="visualizeUnstructured">
+														<div class="ibm-padding-bottom-1">
+															<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+														</div>
+														<h3 class="ibm-h3 ibm-light">Visualize unstructured content with Watson NLU</h3>
+														<div class="ibm-fluid ibm-nospacing">
+															<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="rqKPQNyl6Xk" data-videotype="youtube"><a href="https://youtu.be/rqKPQNyl6Xk">Watch the video</a></div>
+														</div>
+														<div class="ibm-fluid padding-content ibm-light">
+															<p><span class="ibm-bold">Duration:</span> 37 minutes
+															<p><span class="ibm-bold">Description:</span><br>
+																In 30 mins, learn to build an app which can process data from multiple file formats and use Watson NLU to visually summarize the content. We will leverage Watson NLU's concepts, keywords, entities and other enrichments to deliver insights on unstructured content.
+															</p>
+															<p><span class="ibm-bold">Speaker:</span><br>
+															  Pavan Tummala, Offering Manager
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 1st block -->
+										<div class="ibm-col-12-3 ibm-col-medium-12-6">
+											<div class="ibm-card ibm-card--noborder">
+												<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-speech">
+													<div class="ibm-card__content">
+														<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+															<div class="webinars-title"><h4 class="ibm-light ibm-h4">Visual Recognition Overview and Updates</h4></div>
+															<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+															</div>
+														</div>
+													</div>
+													<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+														<a href="#" onclick="IBMCore.common.widget.overlay.show('visualizeRecognitionOverview'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+													</div>
+													<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="visualizeRecognitionOverview">
+														<div class="ibm-padding-bottom-1">
+															<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+														</div>
+														<h3 class="ibm-h3 ibm-light">Visual Recognition Overview and Updates</h3>
+														<div class="ibm-fluid ibm-nospacing">
+															<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="zi9CnPZn8j0" data-videotype="youtube"><a href="https://youtu.be/zi9CnPZn8j0">Watch the video</a></div>
+														</div>
+														<div class="ibm-fluid padding-content ibm-light">
+															<p><span class="ibm-bold">Duration:</span> 23 minutes
+															<p><span class="ibm-bold">Description:</span><br>
+																Gain a basic overview of Watson Visual Recognition, including tagging images, finding faces, custom training, and similar image search. Kevin Gong, IBM Watson Offering Manager, will also discuss updates made to the service, as well as creative ways our customers have been using Visual Recognition.
+															</p>
+															<p><span class="ibm-bold">Speaker:</span><br>
+															  Kevin Gong, Offering Manager
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 1st block -->
+										<div data-webinars="discovery" class="webinars featured">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-featured">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">What’s new for understanding personality, emotion and tone with Watson</h4></div>
+																<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																	<span class="ibm-featured ibm-category ibm-textcolor-gray-40">Featured webinars</span>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('whatsNew'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="whatsNew">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-featured ibm-category ibm-textcolor-gray-40">Featured webinars</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">What’s new for understanding personality, emotion and tone with Watson</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="TK5JN69zWnQ" data-videotype="youtube"><a href="https://youtu.be/TK5JN69zWnQ">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 40 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																Join us to learn about what’s new with Watson Personality Insights and Watson Tone Analyzer. We’ll talk through our latest features, customer examples, and where we see these services going in the future!</p>
+																<p><span class="ibm-bold">Speaker:</span><br>
+																  Jeff Arn, Technical Marketing Lead
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- 1st block -->
+										<!-- 2nd block -->
+										<div data-webinars="discovery" class="webinars discovery">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Accelerate WKS model development with a rule-based approach</h4></div>
+																<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																	<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('accelerateWKS'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="accelerateWKS">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Accelerate WKS model development with a rule-based approach</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="xBF0k0VTPUU" data-videotype="youtube"><a href="https://youtu.be/xBF0k0VTPUU">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 55 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																Machine learning is a powerful approach for teaching Watson the language of your domain, especially when you need to scale expertise. However, building type systems and annotation of training documents can be time consuming with a pure machine learning approach.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																  Stefan Tzanev, Offering Manager<br>
+																  Randy Haven, Solution Architect - Watson and Cloud Adoption Leader
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- 1st block -->
+										<!-- 2nd block -->
+										<div data-webinars="conversational" class="webinars conversational">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Connecting tone analyzer to conversation</h4></div>
+																<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																	<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('connectingTone'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="connectingTone">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Connecting tone analyzer to conversation</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="ueQU0AfSmWk" data-videotype="youtube"><a href="https://youtu.be/ueQU0AfSmWk">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 34 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																Come find out how easy it is to build a Bot with Watson Services which not only can perform tasks for the user but also understand the user's tone. During this Webinar we will explain how Conversational apps can be constructed to allow for the easy interpretation of tone from the user, and also how to easily integrate with other Watson services and back end systems.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																  Dan O'Connor, Software Engineer, Watson Core Technology
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- 1st block -->
+										<!-- 1st block -->
+										<div data-webinars="discovery conversational" class="webinars discovery conversational">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Leveraging the long tail to build chatbots for a more engaging user experience</h4></div>
+																<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																	<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Conversational Apps, Discovery</span>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('leveraging'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="leveraging">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Conversational Apps, Discovery</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Leveraging the long tail to build chatbots for a more engaging user experience</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="0zMM0lfIdnI" data-videotype="youtube"><a href="https://youtu.be/0zMM0lfIdnI">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 32 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																In this technical webinar you’ll learn how to build a chatbot using Watson Conversation and extend its function using Watson Discovery’s cognitive search to answer questions beyond modeled intents. The app lets users ask about Conversation’s technical documentation and returns answers and relevant technical documents using the language and context of questions to retrieve the most appropriate answers for the more complex inquiries. Find out how to use Watson Conversation with Watson Discovery together to build chatbots that create more engaging user experiences.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																  Chris Desmarais, Offering Manager, Watson Conversation
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- 1st block -->
+										<!-- 2nd block -->
+										<div data-webinars="speech" class="webinars speech ibm-hideable">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-speech">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Visual Recognition GUI tool for building custom image classifiers</h4></div>
+																<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																	<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('visualRecognitionGUI'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="visualRecognitionGUI">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Visual Recognition GUI tool for building custom image classifiers</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="VXezXAzOnUE" data-videotype="youtube"><a href="https://youtu.be/VXezXAzOnUE">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 47 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																Training Watson to see specialized images for your industry just got a whole lot easier. And Watson Visual Recognition just keeps getting smarter. Take advantage of color recognition and higher accuracies for general tagging. There’s more, so join this webcast to see how to use the latest features in your apps.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																  Matthew Hill, Senior Software Engineer<br>
+																  Kevin Gong, Offering Manager
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- 2nd block -->
+										<div data-webinars="social" class="webinars discovery ibm-hideable">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+															<div class="ibm-card__content">
+																<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																	<div class="webinars-title"><h4 class="ibm-light ibm-h4">Passage Retrieval & Relevancy Training with Watson Discovery</h4></div>
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+																	</div>
+																</div>
+															</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2">
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('passage-retrieval'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="passage-retrieval">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Passage Retrieval & Relevancy Training with Watson Discovery</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="8BiuQKPQZJk" data-videotype="youtube"><a href="https://youtu.be/8BiuQKPQZJk">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 47 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																Knowledge workers can spend up to a quarter of the time struggling to find relevant information.</p><p>With the new Passage Retrieval and Relevancy Training beta capabilities of Watson Discovery, you can build applications to shrink this time and help users get to the information they need quickly. Passage Retrieval beta dynamically selects snippets from within larger documents based on an input query to present users with easily to display and consume results.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																  Anish Mathur, Offering Manager 
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div data-webinars="training discovery" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">How to Connect the Dots in your Domain Specific Content</h4></div>
+																<div class="ibm-padding-top-1 ibm-padding-bottom-1 ibm-textcolor-gray-60">
+																	<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson, Discovery</span>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('howToConnect'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="howToConnect">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson, Discovery</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">How to Connect the Dots in your Domain Specific Content</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="iZcO0pAHYlE" data-videotype="youtube"><a href="https://youtu.be/iZcO0pAHYlE">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 41 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																Without writing a single line of code, you will learn how to create custom models with Watson Knowledge Studio that can be used by Watson to understand text. You will then learn how to use the custom models with Watson Discovery Service and Watson Natural Language Understanding.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Jean Lange, Developer 
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- 2nd block -->
+										<div data-webinars="discovery" class="webinars discovery ibm-hideable">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+													<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Introduction to Natural Language Understanding</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1 ibm-textcolor-gray-60">
+																		<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('easilyDeploy'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="easilyDeploy">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Introduction to Natural Language Understanding</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="daRJTpV8xqs" data-videotype="youtube"><a href="https://youtu.be/daRJTpV8xqs">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 47 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	In this Building with Watson webinar, IBM Watson developer Joshua Elliott demonstrates how Watson's Natural Language Understanding service works by analyzing text to extract meta-data from content and provides some common use cases. For more information on NLU, visit <a href="https://ibm.co/2oLMVLV" class="ibm-textcolor-blue-50">https://ibm.co/2oLMVLV</a>.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Joshua Elliott, IBM Watson developer 
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 3rd block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Easily Deploy your Chat Bot to Multiple Channels with Stamplay</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1 ibm-textcolor-gray-60">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('easilyDeploy'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="easilyDeploy">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Easily Deploy your Chat Bot to Multiple Channels with Stamplay</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="bTvr8QqAP_4" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=bTvr8QqAP_4">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 39 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Stamplay makes it easy to chain services and deploy to messaging platforms with little to no code. See how Watson Conversation can be quickly integrated into chat platforms such as Facebook Messenger and Slack.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Giuliano Iacobelli, CEO & Co-founder, Stamplay
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- 4th block -->
+										<div data-webinars="speech" class="webinars speech ibm-hideable">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-speech">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Advanced Audio Transcription with Watson Speech-to-Text</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="webinars-link ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="http://event.on24.com/wcc/r/1325599/09EC7C031D2EB4AF59459430043A4F77?partnerref=BWWLP" target="_blank" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+													</div>
+												</div>
+												</div>
+											</div>
+										</div>
+										<!-- 5th block -->
+										<div data-webinars="training" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">PubNub BLOCKS: Streaming Data Enhanced with Watson</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('pubnub'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="pubnub">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">PubNub BLOCKS: Streaming Data Enhanced with Watson</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="KN4iYtYmEzY" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=KN4iYtYmEzY">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 40 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	PubNub helps you manage your streaming data, and now it is easy to add Watson-powered machine intelligence to those streams with BLOCKS. Josh Marinacci, Head of Developer Relations at PubNub, will demonstrate how he used the Watson Conversation PubNub BLOCK to build a geology themed chatbot, Mr. Rockbot.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Josh Marinacci, Head of Developer Relations, PubNub
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 6th block -->
+										<div data-webinars="discovery" class="webinars discovery ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Network Visualizations with Watson Discovery Service</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('networkVisualizations'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="networkVisualizations">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Network Visualizations with Watson Discovery Service</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="pcNwV9prfmY" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=pcNwV9prfmY">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 46 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	In this webinar, we'll be demonstrating an application built on Watson Discovery Service and D3.js that helps you explore your data using a network map built on NLP metadata.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Zach Walchuk, Developer Evangelist, IBM Watson 
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 7th block -->
+										<div data-webinars="discovery" class="webinars discovery ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-discovery">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+															<div class="webinars-title"><h4 class="ibm-light ibm-h4">Watson Discovery Service: A Technical Introduction</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1 ibm-textcolor-gray-60">
+																		<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('technicalIntroduction'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="technicalIntroduction">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-discovery ibm-category ibm-textcolor-gray-40">Discovery</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Watson Discovery Service: A Technical Introduction</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="FikHwoJ6_FE" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=FikHwoJ6_FE">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 42 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Learn how the Watson Discovery Service can help you find insights in your unstructured data with this basic tutorial. We'll cover how to get started, major features, and some advanced tips and tricks.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Ryan Whitnah, Technical Lead, Watson Discovery Service
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 8th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Advanced Integrations with Watson Conversation</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('overlayExampleLarge'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="overlayExampleLarge">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Advanced Integrations with Watson Conversation</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="0rnt54ONtQw" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=0rnt54ONtQw">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 33 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Watson Conversation provides the engine for your chat bots, and it's most powerful when integrated with messaging and chat platforms. In this webinar, we'll talk about the best practices for connecting your Conversation setup with third-party interfaces, with a deep-dive into a Watson-powered Slack bot.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Ashima Arora, Software Engineer, Watson Conversation Service,<br> Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 8th block -->
+										<div data-webinars="training" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Learning Labs to Ignite Your Next Application</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('learningLabsToIgnite'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="learningLabsToIgnite">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Learning Labs to Ignite Your Next Application</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="7ypsHuSYaY4" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=7ypsHuSYaY4">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 61 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Do you want to grow your app-development skills? Or get inspired to build your next application? Discover the latest tool at your disposal, the Learning Lab, which features 91 curated online courses to help you hone your skills and 33 relevant use cases to spark your imagination.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Vineet Mahadik, Cloud App Developer<br>
+																	Benjamin Hunsaker, Front-End Engineer<br>
+																	Hayley Yudelman, Digital Innovations Lab
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 9th block -->
+										<div data-webinars="training" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">The Watson Bot Competition: Everything You Need to Know</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('watsonBots'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="watsonBots">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">The Watson Bot Competition: Everything You Need to Know</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="pRYIY8E7Nr8" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=pRYIY8E7Nr8">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 31 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	In conjunction with our first-ever Watson Developer Conference, we are running a bot competition with $8500 in cash prizes (no need to attend to participate). Join us to hear all about the rules, technical requirements, what the judging will look like and how you can get involved.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 8th block -->
+										<!-- 9th block -->
+										<div data-webinars="training" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Application Starter Kits for Developers</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('overlayApplicationStarterKits'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="overlayApplicationStarterKits">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Application Starter Kits for Developers</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="gummBmfn6tw" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=gummBmfn6tw">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 40 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																		Get a demonstration of two new Application Starter Kits, pre-built sample applications aimed at giving you a headstart on approaching specific business applications of Watson services.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 9th block -->
+										<!-- 10th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Training Watson Conversation to Detect User Intent</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('trainingWatson'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="trainingWatson">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Training Watson Conversation to Detect User Intent</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="uYw4Tv1Y5tc" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=uYw4Tv1Y5tc">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 46 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	A new user interface simplifies the process of training to recognize user intents and managing the currently trained intents. See how it works with a live demo of an application built by Zach Walchuk, a developer evangelist for Watson Developer Cloud.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 10th block -->
+										<!-- 11th block -->
+										<div data-webinars="speech" class="webinars speech ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-speech">
+														  <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Enhanced NLP APIs with Watson Knowledge Studio</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('enhancedNPLAPI'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="enhancedNPLAPI">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Enhanced NLP APIs with Watson Knowledge Studio</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="6JMdIvsgTkE" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=6JMdIvsgTkE">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 33 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Until now, the AlchemyLanguage suite of NLP APIs has been available as an entirely pre-trained, out-of-the-box solution. Learn how Watson Knowledge Studio will allow you to customize these services for the first time ever in this Building with Watson webinar.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Josh Elliot<br>
+																	Tanmay Sinhah
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 11th block -->
+										<!-- 12th block -->
+										<div data-webinars="speech" class="webinars speech ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-speech">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Custom Image Classifier with Visual Recognition</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('customImage'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="customImage">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Custom Image Classifier with Visual Recognition</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="vnWblT50w1Y" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=vnWblT50w1Y">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 50 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Train a classifier to identify images relevant to you and your company. Join us for a live demonstration and a Q&A with one of our Watson Vision engineers.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Devin Harper, Development Lead, Alchemy Vision<br>
+																	Matt Hill, Software Engineer, IBM Watson
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 12th block -->
+										<!-- 13th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														 <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Conversational Systems - What They are and Where They're Going</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('conversationalSystems'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="conversationalSystems">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Conversational Systems - What They are and Where They're Going</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="w4w4G_ty5H8" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=w4w4G_ty5H8">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 50 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Watson has dedicated themselves to improving the technology available and the experience around building conversational applications. In this webinar, see Nick Bourdakos share his food ordering app, Fetch, and hear some of the challenges involved in building conversational applications.  Learn from Brian Loveys and Dan O'Connor, Offering Managers for Watson Conversation, on how to get started and configure the new service. You'll also discover how it can ease the pain points involved when automating user interactions.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Dan O'Connor, Software Engineer<br>
+																	Brian Loveys, Offering Management
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 13th block -->
+										<!-- 14th block -->
+										<div data-webinars="training" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">The Watson Certification Program for Application Developers</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('watsonCertificationLanguage'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="watsonCertificationLanguage">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">The Watson Certification Program for Application Developers</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="qOc3TQWlkJ0" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=qOc3TQWlkJ0">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 30 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Learn about IBM Watson's new certification program. This program is designed to help developers make it known that they are proficient in the Watson technologies. Hear from Richard Rodts about what the program will entail, and get all your questions answered.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Richard Rodts, Program Director of Watson University Engagement
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 14th block -->
+										<!-- 15th block -->
+										<div data-webinars="social" class="webinars social ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-social">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Social Media Monitoring Enhanced with Watson APIs</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-social ibm-category ibm-textcolor-gray-40">Social Media Monitoring</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('socialMediaMonitoring'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="socialMediaMonitoring">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-social ibm-category ibm-textcolor-gray-40">Social Media Monitoring</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Social Media Monitoring Enhanced with Watson APIs</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="GHHRuxQN75k" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=GHHRuxQN75k">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 38 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Learn how the Watson Developer Cloud services can help you gain insights into the conversation around your brand. We'll discuss the AlchemyLanguage, AlchemyData News, Emotion Analysis and Tone Analyzer APIs and how they can be applied to social media monitoring use cases. </p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Alexis Plair, Product Manager for Watson Emotion Analysis<br>
+																   Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 15th block -->
+										<!-- 16th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														  <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Conversational Application Showcase</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('conversationalApplicationShowcase'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="conversationalApplicationShowcase">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Conversational Application Showcase</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="7bBo-UbFPcE" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=7bBo-UbFPcE">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 38 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Now that you know the technical aspects behind building a conversational application, get a glimpse into successful applications that use the Watson services to allow your app to converse with its users.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 16th block -->
+										<!-- 17th block -->
+										<div data-webinars="training" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Deploying Your Watson App to Bluemix</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('deployingYourWatson'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="deployingYourWatson">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Deploying Your Watson App to Bluemix</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="9M86BfL9KX0" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=9M86BfL9KX0">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 48 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Need help with deploying your application to Bluemix? This webinar will provide an advanced guide for getting your app up and running on Bluemix, including GitHub integration and deploying from your local instance. Don't miss these time saver tricks from Watson experts.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 17th block -->
+										<!-- 18th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														   <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Beyond the Basics for Conversational Apps</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('beyondTheBasics'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="beyondTheBasics">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Beyond the Basics for Conversational Apps</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="9M86BfL9KX0" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=9M86BfL9KX0">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 48 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Need help with deploying your application to Bluemix? This webinar will provide an advanced guide for getting your app up and running on Bluemix, including GitHub integration and deploying from your local instance. Don't miss these time saver tricks from Watson experts.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 18th block -->
+										<!-- 19th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Training and Preparing Your Conversational System</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('trainingAndPreparing'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="trainingAndPreparing">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Training and Preparing Your Conversational System</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="1e_TOuvVbhs" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=1e_TOuvVbhs">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 46 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Interested in building a conversational app? Before doing so, you'll want to understand the work required to getting that app up and running. Let this webinar and our product experts be your guide. During the webcast, our product experts will join to answer your technical questions and to walk you through live demos for the Natural Language Classifier, Dialog, Retriever & Rank and Document Conversion APIs.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Ashima Arora, Software Engineer, Watson Conversation Service,<br> Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 19th block -->
+										<!-- 20th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Conversational Apps Built with Watson Language APIs</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a class="ibm-textcolor-gray-80 ibm-btn-keylink" href="http://event.on24.com/wcc/r/1107697/A56FA5C2E0A6CC69BF4D85DF23863B6F" target="_blank">Learn more</a>
+														</div>
+													</div>
+												 </div>
+												</div>
+											</div>
+										</div>
+										<!-- 20th block -->
+										<!-- 21th block -->
+										<div data-webinars="training" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+														<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Optimize Conflicting Decisions with the Tradeoff Analytics API</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('optimizeConflictingDecisions'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="optimizeConflictingDecisions">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Optimize Conflicting Decisions with the Tradeoff Analytics API</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="MtIdBInOE24" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=MtIdBInOE24">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 32 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Watson Conversation provides the engine for your chat bots, and it's most powerful when integrated with messaging and chat platforms. In this webinar, we'll talk about the best practices for connecting your Conversation setup with third-party interfaces, with a deep-dive into a Watson-powered Slack bot.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																  Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 21th block -->
+										<!-- 22th block -->
+										<div data-webinars="speech" class="webinars speech ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-speech">
+														   <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Interpreting Language Using the Natural Language Classifier</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+																	</div>
+																</div>
+															</div>
+														</div>														
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('InterpretingLanguage'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="InterpretingLanguage">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Interpreting Language Using the Natural Language Classifier</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="KP3RS-ugYus" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=KP3RS-ugYus">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 36 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	What is the Natural Language Classifier API? How can it enhance my current app development efforts? Join Rahul Garg, a Strategy and Offering Manager focused on NLC, for a discussion around this unique API. Then receive specific examples on how to train and call the classifier and get your use case or technical questions answered.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 22th block -->
+										<!-- 23th block -->
+										<div data-webinars="speech" class="webinars speech ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-speech">
+														  <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Taking Speech to a New Level of Intelligence with NLP</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('takingSpeech'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="takingSpeech">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Taking Speech to a New Level of Intelligence with NLP</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="ZSP6sNhEK-c" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=ZSP6sNhEK-c">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 45 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Get an overview of three of Watson's most popular Natural Language Processing APIs: Speech to Text, Text to Speech and Language Translation. Discover the capabilities of each individual API, along with the unique power of combining them.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																   Michael Ludden, Developer Advocate
+																   Watson Developer Cloud, IBM Watson
+																   Aroop Pandya, STSM/Senior Certified IT Architect
+																   IBM Watson
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 23th block -->
+										<!-- 24th block -->
+										<div data-webinars="training" class="webinars training ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-training">
+														  <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Building an App using the News API</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('buildingAnApp'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="buildingAnApp">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-training ibm-category ibm-textcolor-gray-40">Training Watson</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Building an App using the News API</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="EXG1UayQ9Go" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=EXG1UayQ9Go">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 30 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Text here</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 24th block -->
+										<!-- 25th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														  <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">New Tools for Easy Dialog Scripting</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('overlayExampleLarge'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="overlayExampleLarge">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">New Tools for Easy Dialog Scripting</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="QuR54--vD5o" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=QuR54--vD5o">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 32 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Managing a conversational flow gets complicated quickly. The new Watson Conversation service includes a graphical interface so you can easily visualize the structure of your dialog.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Ashima Arora, Software Engineer, Watson Conversation<br>
+																	Steven Oh, Software Engineer, IBM Watson
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 25th block -->
+										<!-- 26th block -->
+										<div data-webinars="partners" class="webinars partners ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-partners">
+														  <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Get More from Your Messages with Twilio + Watson Add-ons</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-partners ibm-category ibm-textcolor-gray-40">Partners</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('getMoreFromYourMessages'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="getMoreFromYourMessages">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-partners ibm-category ibm-textcolor-gray-40">Partners</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Get More from Your Messages with Twilio + Watson Add-ons</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="UwaXQcEhIQI" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=UwaXQcEhIQI">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 37 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Learn how the Message Insights and Message Sentiment Add-ons, available from the Twilio marketplace, can streamline your mobile application building process. The natural language processing capabilities tied with the SMS messaging capabilities of Twilio make it easier than ever to understand input from your customers.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Billy Chia, Senior Product Manager, Twilio Marketplace<br>
+																	Anna Chaney, Watson Applied Research<br>
+																	Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 26th block -->
+										<!-- 27th block -->
+										<div data-webinars="speech" class="webinars social ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-speech">
+														  <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Enhancing the Results of Your BI Dashboard</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('enhancingTheResults'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="enhancingTheResults">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-speech ibm-category ibm-textcolor-gray-40">Speech and Vision Services</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Enhancing the Results of Your BI Dashboard</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="2KtcpY4JZaA" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=2KtcpY4JZaA">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 39 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	In this webinar, get a deep dive into the code behind integrating Twitter and the Watson Vision APIs into a BI Dashboard for Social Media Monitoring. Featuring Zach Walchuk, an IBM Watson Developer Evangelist and Alyssa Simpson, the Offering Manager for Watson's Vision APIs.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Zach Walchuk, Developer Evangelist<br>
+																	Alyssa Simpson, Offering Manager for Watson's Vision APIs.
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 27th block -->
+										<!-- 28th block -->
+										<div data-webinars="social" class="webinars social ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-social">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Social Media Monitoring APIs in a BI Dashboard</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-social ibm-category ibm-textcolor-gray-40">Social Media Monitoring</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('biDashboard'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="biDashboard">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-social ibm-category ibm-textcolor-gray-40">Social Media Monitoring</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Social Media Monitoring APIs in a BI Dashboard</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="XEL_XYD4cIE" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=XEL_XYD4cIE">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 45 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	Take a deep-dive into the BI Dashboard Application Starter kit. See how you can connect the AlchemyLanguage, AlchemyData News and Tone Analyzer APIs to display the results of dynamic social media analysis.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 28th block -->
+										<!-- 29th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+															<div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Building a Conversational App Using Watson Language APIs</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('biDashboard'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="biDashboard">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-social ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Building a Conversational App Using Watson Language APIs</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="QWEFDjw3B34" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=QWEFDjw3B34">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 42 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	 Throughout 2015, we saw tremendous growth in the creation of and interest in conversational apps. As such, we're kicking off the year by providing an overview of the four services that can help you build a conversational interface for your application: Natural Language Classifier, Dialog, Retrieve & Rank and Document Conversion.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 28th block -->
+										<!-- 30th block -->
+										<div data-webinars="conversational" class="webinars conversational ibm-hideable">
+											<div class="webinars-item-wrapper">	
+												<div class="ibm-col-12-3 ibm-col-medium-12-6">
+													<div class="ibm-card ibm-card--noborder">
+														<div class="ibm-padding-top-1 ibm-padding-bottom-2 ibm-block ibm-block-conversational">
+														 <div class="ibm-card__content">
+															<div class="ibm-sameheight ibm-padding-bottom-1 ibm-top-bottom-1">
+																<div class="webinars-title"><h4 class="ibm-light ibm-h4">Conversational Applications in Everyday Life</h4></div>
+																<div class="webinars-description">
+																	<div class="ibm-padding-top-1 ibm-padding-bottom-1">
+																		<span class="ibm-conversational ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="ibm-card__bottom ibm-padding-bottom-2 ibm-padding-top-2" >
+															<a href="#" onclick="IBMCore.common.widget.overlay.show('biDashboard'); return false;" class="ibm-textcolor-gray-80 ibm-btn-keylink">Learn more</a>
+														</div>
+														<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="biDashboard">
+															<div class="ibm-padding-bottom-1">
+																<span class="ibm-social ibm-category ibm-textcolor-gray-40">Conversational Apps</span>
+															</div>
+															<h3 class="ibm-h3 ibm-light">Conversational Applications in Everyday Life</h3>
+															<div class="ibm-fluid ibm-nospacing">
+																<div id="ytp1test" data-ibmevent_ibmevname="abc123" data-showvideotitle="false" data-showvideoduration= "false" data-ibmevent_ibmevaction="test action" data-widget="videoplayer" data-videoid="QWEFDjw3B34" data-videotype="youtube"><a href="https://www.youtube.com/watch?v=QWEFDjw3B34">Watch the video</a></div>
+															</div>
+															<div class="ibm-fluid padding-content ibm-light">
+																<p><span class="ibm-bold">Duration:</span> 36 minutes
+																<p><span class="ibm-bold">Description:</span><br>
+																	 Now that you know the technical aspects behind building a conversational application, get a glimpse into successful applications that use the Watson services to allow your app to converse with its users.</p>
+																<p><span class="ibm-bold">Speakers:</span><br>
+																	Zach Walchuk, Developer Evangelist
+																</p>
+															</div>
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- 30th block -->
+									</div>
+									<!-- Block See more -->
+										<div class="ibm-band ibm-padding-top-0 ibm-padding-bottom-2">
+											<div class="ibm-fluid">
+												<div class="ibm-padding-top-1 ibm-col-12-12">
+													<p class="ibm-show-hide-controls ibm-center ibm-col-12-12">
+														<a href="#show" class="" title="">Show more</a> 
+														<a href="#hide" class="ibm-active" title="">Show less</a>
+													</p>
+												</div>
+											</div>
+										</div>
+										</div>
+									</section>
+									<!--END of Block See more -->
+							<!--END of List of Webinars -->
+							<!-- Video block -->
+								<section class="ibm-fluid ibm-band ibm-background-gray-10 ibm-downsize ibm-padding-top-2 ibm-padding-bottom-2" data-widget="setsameheight" data-items=".ibm-video-title">
+									<div class="ibm-padding-content">
+										<div class="ibm-col-12-1 col-hidden-small"></div>
+										<div class="ibm-col-12-5 ibm-col-sm-12-12">
+											<div class="ibm-padding-content">
+												<h2 class="ibm-h3 ibm-light ibm-video-title">Application Starter Kits for Developers</h2>
+												<div data-widget="videoplayer" data-videodisplay="overlayandtrigger" data-titledisplaytype="overlay" data-overlayplayersize="large" data-videoid="gummBmfn6tw" data-videotype="youtube" data-showimageplaybutton="false"  href="https://www.youtube.com/watch?v=gummBmfn6tw">Default content here.</div>
+												<p class="ibm-padding-bottom-1 ibm-light">In the episode of Building with Watson, get a demonstration of new Application Starter Kits, pre-built sample applications aimed at giving you a headstart on approaching specific business applications of Watson services.</p>
+											</div>
+										</div>
+										<div class="ibm-col-12-5 ibm-col-sm-12-12">
+											<div class="ibm-padding-content">
+												<h2 class="ibm-h3 ibm-light ibm-video-title">Watson Conversational Systems - What We've Learned and Where We're Going</h2>
+												<div data-widget="videoplayer" data-videodisplay="overlayandtrigger" data-titledisplaytype="overlay" data-overlayplayersize="large" data-videoid="w4w4G_ty5H8" data-videotype="youtube" data-showimageplaybutton="false"  href="https://www.youtube.com/watch?v=w4w4G_ty5H8">Default content here.</div>
+												<p class="ibm-padding-bottom-1 ibm-light">In this webinar, learn from developers who have worked with the services about the challenges involved in building a conversational application and get a look at some of the breakthroughs in conversation technology, that are removing the roadblocks in this process.</p>
+											</div>
+										</div>
+										<div class="ibm-col-12-1 col-hidden-small"></div>
+									</div>
+								</section>
+						<!-- END Video block -->
+							<!-- Block of Social Media -->
+							<section class="ibm-band ibm-fluid ibm-downsize ibm-padding-bottom-r2 ibm-padding-top-r2">
+								<div class="ibm-padding-content">
+									<div class="ibm-col-12-1 col-hidden-small"></div>
+									<div class="ibm-col-12-4 ibm-padding-content">
+										<h2 class="ibm-h2 ibm-light ibm-padding-bottom-r1">Learn more about Watson</h2>
+										<ul class="ibm-plain-list">
+											<li>
+												<a href="https://www.ibm.com/blogs/watson/" class="ibm-textcolor-gray-80">Blog</a><br>
+											</li>
+											<li>
+												<a href="https://developer.ibm.com/watson/" class="ibm-textcolor-gray-80">IBM Watson Developer Community</a><br>
+											</li>
+											<li>
+												<a href="https://www.ibm.com/watson/developercloud/developer-tools.html" class="ibm-textcolor-gray-80">Developer Tools</a>
+											</li>
+										</ul>
+										<p class="ibm-light ibm-h4 ibm-padding-top-2">Follow us</p>
+										<p class="ibm-icononly">
+											<a href="https://twitter.com/IBMWatson" class="ibm-twitter-mono-link">Twitter</a> 
+											<a href="https://www.facebook.com/ibmwatson" class="ibm-facebook-mono-link">Facebook</a> 
+											<a href="https://www.linkedin.com/showcase/9249740/" class="ibm-linkedin-mono-link">Linkedin</a> 
+											<a href="https://plus.google.com/explore/IBMWatson" class="ibm-googleplus-mono-link">Google Plus</a>
+											<!-- <a href="#" class="ibm-email-encircled-link">Email</a> -->
+										</p>
+									</div>
+									<div class="ibm-col-12-1 col-hidden-small"></div>
+									<div class="ibm-col-12-4 ibm-padding-content">
+									</div>
+									<div class="ibm-col-12-1 col-hidden-small"></div>
+								</div>
+							</section>
+					   </div>
+					</div>
+				</div>
+			</div>
+			<footer aria-label="IBM">
+				<div id="ibm-footer">
+				  <ul>...{footer links here}...</ul>
+				</div>
+			</footer>
+		</div>
+		<script src="javascript/scripts.js"></script>
+	</body>
+</html>

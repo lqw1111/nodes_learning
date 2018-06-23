@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Build with Watson</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.country" content="US">
+    <meta name="dcterms.rights" content="© Copyright IBM Corp. 2017">
+    <meta name="dcterms.date" content="2017-10-15">
+    <meta name="author" content="IBM">
+    <meta name="description" content="Learn how to bring the world’s most powerful AI into your applications and store, train and manage your data in the most secure cloud.">
+    <meta name="keywords" content="ibm watson developer cloud,watson developer cloud, cognitive services, watson services">
+    <link rel="canonical" href="https://www.ibm.com/watson/developer/">
+    <meta name="twitter:card" content="">
+    <meta name="twitter:site" content="@IBMWatson">
+    <meta name="twitter:creator" content="IBM">
+    <meta name="twitter:title" content="Build with Watson">
+    <meta name="twitter:description" content="Learn how to bring the world’s most powerful AI into your applications and store, train and manage your data in the most secure cloud.">
+    <meta name="twitter:image:src" content="">
+    <meta property="og:url" content="https://www.ibm.com/watson/developer/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Build with Watson">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Learn how to bring the world’s most powerful AI into your applications and store, train and manage your data in the most secure cloud.">
+    <meta property="og:site_name" content="Build with Watson">
+    <meta property="article:author" content="">
+    <meta property="article:publisher" content="">
+    <meta itemprop="name" content="Build with Watson">
+    <meta itemprop="description" content="Learn how to bring the world’s most powerful AI into your applications and store, train and manage your data in the most secure cloud.">
+    <meta itemprop="image" content="">
+    <script>
+      digitalData = {
+      "page":{
+        "category":{
+          "primaryCategory":"IBM_Watson_WatsonGroup"
+        },
+        "pageInfo":{
+          "effectiveDate":"2017-10-15",
+          "expiryDate":"2025-10-15",
+          "language":"en-US",
+          "publishDate":"2017-10-15",
+          "publisher":"IBM Corporation",
+          "version":"v18",
+          "ibm":{
+            "contentDelivery":"HTML",
+            "contentProducer":"IBM Northstar Template Generator 2.0",
+            "contactModuleConfiguration": {
+              "contactInformationBundleKey": {
+                 "focusArea": "WCP - Watson Data and AI",
+                 "languageCode": "en",
+                 "regionCode": "US"
+              },
+              "contactModuleTranslationKey": {
+                 "languageCode": "en",
+                 "regionCode": "US"
+              }
+            },
+               "country":"US",
+               "industry":"ZZ",
+               "owner":"Jeremy Hodge/New York/IBM",
+               "siteID":"IBM_Watson",
+               "subject":"",
+               "type":""
+            },
+          }
+        }
+      };
+    </script>
+    <script src="https://www.ibm.com/common/digitaladvisor/cm-app/latest/cm-app.min.js" defer></script>
+    <script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+    <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet">
+    <link href="/watson/assets/duo/css/ibm-type.min.css" rel="stylesheet">
+    <link href="/watson/assets/duo/css/ibm-grid.min.css" rel="stylesheet">
+    <link href="/watson/assets/duo/css/site.css" rel="stylesheet"><!-- Current Page Required CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
+<!-- END Current Page Required CSS -->
+    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    
+	  <script src="//www.ibm.com/software/cn/js/carryover_V18.js" type="text/javascript"></script>
+
+<script src="//www.ibm.com/software/info/js/tacticbindlinks.js" type="text/javascript"></script>
+<noscript>
+
+</noscript>
+
+<script src="//www.ibm.com/software/info/js/tactic.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      IBMCore.common.util.config.set({
+        backtotop: {
+          enabled: true
+        },
+        "masthead":{
+          "type":"alternate"
+        },
+        survey: {
+          global_percent: 0 
+        },
+        "footer":{
+          "type":"alternate",
+          "socialLinks":{
+            "enabled":false
+          }
+        }
+      });
+      
+    </script>
+  </head>
+  <body class="ibm-type" id="ibm-com">
+    <div class="ibm-landing-page" id="ibm-top">
+      <div id="ibm-masthead" role="banner" aria-label="IBM">
+        <div id="ibm-mast-options">
+          <ul role="toolbar" aria-labelledby="ibm-masthead">
+            <li id="ibm-geo" role="presentation"><a href="//www.ibm.com/planetwide/select/selector.html">United States</a></li>
+          </ul>
+        </div>
+        <div id="ibm-universal-nav">
+          <div id="ibm-home"><a href="//www.ibm.com/us-en/">IBM®</a></div>
+          <ul id="ibm-menu-links" role="toolbar" aria-label="Site map">
+            <li><a href="//www.ibm.com/sitemap/us/en/">Site map</a></li>
+          </ul>
+          <div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead">
+            <form id="ibm-search-form" action="//www.ibm.com/Search/" method="get">
+              <p>
+                <label for="q"><span class="ibm-access">Search</span></label>
+                <input id="q" type="text" maxlength="100" value="" name="q">
+                <input type="hidden" value="17" name="v">
+                <input type="hidden" value="utf" name="en">
+                <input type="hidden" value="en" name="lang">
+                <input type="hidden" value="us" name="cc">
+                <input class="ibm-btn-search" id="ibm-search" type="submit" value="Submit">
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="ibm-content-wrapper">
+        <header>
+          <div class="ibm-sitenav-menu-container">
+            <div class="ibm-sitenav-menu-name"><a href="/watson/index.html">Watson</a></div>
+            <!-- local navigation-->
+            <div class="ibm-sitenav-menu-list">
+              <ul role="menubar">
+                <li role="presentation"><a role="menuitem" href="/watson/ai-stories/index.html" tabindex="-1">Stories</a></li>
+                <li role="presentation"><a role="menuitem" href="/watson/about/index.html" tabindex="-1">About</a></li>
+                <li class="ibm-haschildlist" role="presentation">
+                  <button role="menuitem" data-altlabel="Developers" tabindex="0">Developers</button>
+                  <ul role="menu" aria-label="Developers">
+                    <li role="presentation"><a role="menuitem" href="/watson/developer/" tabindex="-1">Overview</a></li>
+                    <li role="presentation"><a role="menuitem" href="https://console.bluemix.net/developer/watson/documentation" target="_blank" tabindex="-1">Documentation</a></li>
+                    <li role="presentation"><a role="menuitem" href="https://www.ibm.com/watson/developer-resources/" target="_blank" tabindex="-1">Developer tools</a></li>
+                  </ul>
+                </li>
+                <li class="ibm-haschildlist" role="presentation">
+                  <button role="menuitem" data-altlabel="Products &amp; Services" tabindex="-1">Products &amp; Services</button>
+                  <ul id="cloud-mega" role="menu">
+                    <li class="ibm ibm-marketing cloud-mega" role="presentation">
+                      <div class="ibm-col-group ibm-col-bleed duo-subnav duo-background-gray-100 ibm-alternate-background">
+                        <div class="ibm-col-group ibm-col-md-4 ibm-col-lg-8">
+                          <div class="ibm-col-md-1 duo-border-right duo-border-bottom duo-border-gray-70">
+                            <p class="ibm-type-a duo-textcolor-gray-40 duo-margin-bottom-0">AI Assistant</p><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/conversation/">Watson Assistant</a>
+                          </div>
+                          <div class="ibm-col-md-1 duo-border-right duo-border-bottom duo-border-gray-70">
+                            <p class="ibm-type-a duo-textcolor-gray-40 duo-margin-bottom-0">Discovery</p><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/discovery/">Discovery</a><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/natural-language-understanding/">Natural Language Understanding</a><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/discovery-news/">Discovery News</a><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/knowledge-studio/">Knowledge Studio</a>
+                          </div>
+                          <div class="ibm-col-md-1 duo-border-right duo-border-bottom duo-border-gray-70">
+                            <p class="ibm-type-a duo-textcolor-gray-40 duo-margin-bottom-0">Language</p><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/language-translator/">Language Translator</a><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/natural-language-classifier/">Natural Language Classifier</a>
+                          </div>
+                          <div class="ibm-col-md-1 duo-border-bottom duo-border-gray-70"><a class="ibm-type-c duo-textcolor-white-core" href="/watson/products-services/">View all Products &amp; Services</a></div>
+                          <div class="ibm-col-md-1 duo-border-right duo-border-gray-70">
+                            <p class="ibm-type-a duo-textcolor-gray-40 duo-margin-bottom-0">Empathy</p><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/personality-insights/">Personality Insights</a><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/tone-analyzer/">Tone Analyzer</a>
+                          </div>
+                          <div class="ibm-col-md-1 duo-border-right duo-border-gray-70">
+                            <p class="ibm-type-a duo-textcolor-gray-40 duo-margin-bottom-0">Vision</p><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/visual-recognition/">Visual Recognition</a>
+                          </div>
+                          <div class="ibm-col-md-1 duo-border-right duo-border-gray-70">
+                            <p class="ibm-type-a duo-textcolor-gray-40 duo-margin-bottom-0">Speech</p><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/speech-to-text/">Speech to Text</a><a class="ibm-type-c duo-textcolor-white-core" href="/watson/services/text-to-speech/">Text to Speech</a>
+                          </div>
+                          <div class="ibm-col-md-1 duo-border-gray-70">
+                            <p class="ibm-type-a duo-textcolor-gray-40 duo-margin-bottom-0">Data</p><a class="ibm-type-c duo-textcolor-white-core" href="https://www.ibm.com/cloud/watson-studio">Watson Studio</a><a class="ibm-type-c duo-textcolor-white-core" href="https://www.ibm.com/cloud/machine-learning">Watson Machine Learning</a><a class="ibm-type-c duo-textcolor-white-core" href="http://www.ibm.com/cloud/watson-knowledge-catalog">Watson Knowledge Catalog</a>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="cloud-mega-mobile">
+                      <ul class="cloud-mega-mobile" role="menu">
+                        <li role="presentation"><a role="menuitem" href="/watson/products-services/" tabindex="-1">View all Products &amp; Services</a></li>
+                        <li role="presentation">
+                          <p><strong>AI Assistant</strong></p>
+                        </li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/conversation/" tabindex="-1">Watson Assistant</a></li>
+                        <li role="presentation">
+                          <p><strong>Discovery</strong></p>
+                        </li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/discovery/" tabindex="-1">Discovery</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/natural-language-understanding/" tabindex="-1">Natural Language Understanding</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/discovery-news/" tabindex="-1">Discovery News</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/knowledge-studio/" tabindex="-1">Knowledge Studio</a></li>
+                        <li role="presentation">
+                          <p><strong>Language</strong></p>
+                        </li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/language-translator/" tabindex="-1">Language Translator</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/natural-language-classifier/" tabindex="-1">Natural Language Classifier</a></li>
+                        <li role="presentation">
+                          <p><strong>Empathy</strong></p>
+                        </li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/personality-insights/" tabindex="-1">Personality Insights</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/tone-analyzer/" tabindex="-1">Tone Analyzer</a></li>
+                        <li role="presentation">
+                          <p><strong>Vision</strong></p>
+                        </li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/visual-recognition/" tabindex="-1">Visual Recognition</a></li>
+                        <li role="presentation">
+                          <p><strong>Speech</strong></p>
+                        </li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/speech-to-text/" tabindex="-1">Speech to Text</a></li>
+                        <li role="presentation"><a role="menuitem" href="/watson/services/text-to-speech/" tabindex="-1">Text to Speech</a>
+                          <p><strong>Data</strong></p>
+                        </li>
+                        <li role="presentation"><a role="menuitem" href="/https://www.ibm.com/cloud/watson-studio" tabindex="-1">Watson Studio</a></li>
+                        <li role="presentation"><a role="menuitem" href="https://www.ibm.com/cloud/machine-learning" tabindex="-1">Watson Machine Learning</a></li>
+                        <li role="presentation"><a role="menuitem" href="http://www.ibm.com/cloud/watson-knowledge-catalog" tabindex="-1">Watson Knowledge Catalog</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="ibm-haschildlist" role="presentation">
+                  <button role="menuitem" data-altlabel="Use Cases" tabindex="0">Use Cases</button>
+                  <ul role="menu">
+                    <li role="presentation"><a role="menuitem" href="/watson/how-to-build-a-chatbot/index.html" tabindex="-1">Build a chatbot</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/contract-governance/" tabindex="-1">Contract governance  </a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/insight-engine/" tabindex="-1">Create an insight engine</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/sales-intelligence/" tabindex="-1">Sales intelligence</a></li>
+                    <li role="presentation"><a role="menuitem" href="/watson/call-center-ai/index.html" target="_blank" tabindex="-1">Transform your call center</a></li>
+                  </ul>
+                </li>
+                <li role="presentation"><a class="duo-btn-pri ibm-btn-small rounded-btn duo-btn-blue-60 navbar-button" role="menuitem" href="https://console.bluemix.net/registration?target=%2Fdeveloper%2Fwatson%3FhideTours%3Dtrue" target="_blank" tabindex="-1">Get started free</a><a role="menuitem" href="https://console.bluemix.net/registration?target=%2Fdeveloper%2Fwatson%3FhideTours%3Dtrue" target="_blank" tabindex="-1">Get started free</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+        <main role="main" aria-labelledby="ibm-pagetitle-h1">
+          <div class="ibm ibm-marketing">
+            <section class="duo-leadspace ibm-col-sm-0-only ibm-col-group ibm-col-bleed  duo-background-gray-10 sr-reveal">
+              <div class="ibm-col-md-2 ibm-col-lg-3 ibm-col-bleed-left">
+                <div class="flex flex-column">
+                  <div>
+                    <h1 class="ibm-type-j duo-leadspace-anim">Build on the AI platform for business.</h1>
+                    <p class="ibm-type-d duo-leadspace-anim duo-leadspace-anim-desc">Watson on the IBM Cloud allows you to integrate the world's most powerful AI into your application and store, train and manage your data in the most secure cloud.</p>
+                    <div class="ibm-btn-row duo-leadspace-anim duo-leadspace-anim-desc"><a class="duo-btn-blue-60 duo-btn-pri" href="https://console.bluemix.net/registration?target=%2Fdeveloper%2Fwatson%3FhideTours%3Dtrue" target="_blank">Get started free</a>
+                    </div>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+              </div>
+              <div class="ibm-col-md-0-only ibm-col-lg-1"></div>
+              <div class="ibm-col-md-2 ibm-col-lg-4 ibm-col-ratio-md-8 ibm-col-ratio-lg-6 ibm-col-bleed-right">
+                <div class="ibm-col-ratio_content"></div>
+                <div class="duo-leadspace-background" style="width:100%;background-image: url(/watson/assets/duo/img/hero/hero-mobile-phone.png);background-size:contain;background-position:right bottom;"></div>
+              </div>
+            </section>
+            <section class="duo-leadspace ibm-col-group ibm-col-md-0-only ibm-col-lg-0-only  sr-reveal">
+              <div class="ibm-col-sm-2 ibm-col-ratio-sm-4 duo-leadspace-background-sm  duo-background-gray-10" style="background-image: url(/watson/assets/duo/img/hero/hero-mobile-phone.png); background-size:contain; ;"></div>
+              <div class="ibm-col-sm-2">
+                <div class="flex flex-column">
+                  <div>
+                    <h1 class="ibm-type-j duo-leadspace-anim">Build on the AI platform for business.</h1>
+                    <p class="ibm-type-d duo-leadspace-anim duo-leadspace-anim-desc">Watson on the IBM Cloud allows you to integrate the world's most powerful AI into your application and store, train and manage your data in the most secure cloud.</p>
+                    <div class="ibm-btn-row duo-leadspace-anim duo-leadspace-anim-desc"><a class="duo-btn-blue-60 duo-btn-pri" href="https://console.bluemix.net/registration?target=%2Fdeveloper%2Fwatson%3FhideTours%3Dtrue" target="_blank">Get started free</a>
+                    </div>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="ibm-col-bleed ibm-col-sm-0 ibm-col-md-4 duo-padding-top-0 duo-padding-bottom-0 duo-border-bottom sr-reveal duo-border-gray-20"></div>
+            <section class="ibm-col-group ibm-col-bleed true">
+              <div class="ibm-col-md-1 ibm-col-lg-2 duo-border-bottom ibm-col-bleed-left duo-padding-bottom-0 true duo-border-gray-20">
+                <h2 class="ibm-type-g duo-textcolor-black-core">Featured<br class="ibm-col-sm-0-only"/> services</h2>
+              </div>
+              <div class="ibm-col-md-1 ibm-col-lg-2 duo-border-left duo-border-left-md-none duo-border-bottom duo-border-gray-20"><a class="duo-blocklink flex flex-column" href="https://www.ibm.com/watson/services/discovery/">
+                  <div>
+                    <div class="duo-blocklink-img duo-margin-bottom-1"><img class="duo-img-resize" src="/watson/assets/duo/img/developer/Discovery_thumb.jpg" alt="Try Watson Discovery"/></div>
+                    <p class="ibm-type-d duo-textcolor-black-core">Unlock hidden value in data to find answers, monitor trends and surface patterns.</p>
+                  </div>
+                  <p class="ibm-type-d duo-padding-top-1 duo-margin-bottom-0">Try Watson Discovery →</p></a>
+              </div>
+              <div class="ibm-col-md-1 ibm-col-lg-2 duo-border-left duo-border-left-md-none duo-border-bottom duo-border-gray-20"><a class="duo-blocklink flex flex-column" href="https://www.ibm.com/watson/services/conversation/">
+                  <div>
+                    <div class="duo-blocklink-img duo-margin-bottom-1"><img class="duo-img-resize" src="/watson/assets/duo/img/developer/Conversation_thumb.jpg" alt="Try Watson Assistant"/></div>
+                    <p class="ibm-type-d duo-textcolor-black-core">Quickly build and deploy chatbots and virtual agents across a variety of channels.</p>
+                  </div>
+                  <p class="ibm-type-d duo-padding-top-1 duo-margin-bottom-0">Try Watson Assistant →</p></a>
+              </div>
+              <div class="ibm-col-md-1 ibm-col-lg-2 duo-border-left duo-border-left-md-none duo-border-bottom duo-border-gray-20 ibm-col-bleed-right"><a class="duo-blocklink flex flex-column" href="https://www.ibm.com/watson/services/visual-recognition/">
+                  <div>
+                    <div class="duo-blocklink-img duo-margin-bottom-1"><img class="duo-img-resize" src="/watson/assets/duo/img/developer/Visrec_thumb.jpg" alt="Try Visual Recognition"/></div>
+                    <p class="ibm-type-d duo-textcolor-black-core">Tag and classify visual content using machine learning.</p>
+                  </div>
+                  <p class="ibm-type-d duo-padding-top-1 duo-margin-bottom-0">Try Watson Visual Recognition →</p></a>
+              </div>
+            </section>
+            <section class="ibm-col-group ibm-col-bleed duo-padding-bottom-3 duo-alternate-background duo-background-gray-90">
+              <div class="ibm-col-md-1 ibm-col-lg-2 sr-reveal">
+                <h2 class="ibm-type-g">Get started</h2>
+              </div>
+              <div class="ibm-col-md-2 ibm-col-lg-3">
+                <p class="ibm-type-d sr-reveal">Access Watson services on the IBM Cloud.<br>Read our getting started guide.</p>
+              </div>
+              <div class="ibm-col-group duo-link-list-detailed">
+                <div class="ibm-col-sm-0 ibm-col-md-1 ibm-col-lg-2"></div>
+                <div class="ibm-col-md-2 ibm-col-lg-4"><a class="ibm-col-group duo-blocklink ibm-col-md-2 ibm-col-lg-4 sr-reveal" href="https://console.bluemix.net/docs/services/watson/index.html" target="_blank">
+                    <div class="flex flex-row duo-border-top duo-padding-right-0 duo-padding-left-0 duo-border-gray-70">
+                      <h3 class="ibm-type-f duo-padding-bottom-0 duo-margin-bottom-0 duo-textcolor-blue-50">Read the starter guide</h3><span class="ibm-type-f duo-textcolor-blue-50 icon-ibm-duo-forward"></span>
+                    </div></a><a class="ibm-col-group duo-blocklink ibm-col-md-2 ibm-col-lg-4 sr-reveal" href="https://console.bluemix.net/developer/watson/documentation" target="">
+                    <div class="flex flex-row duo-border-top duo-padding-right-0 duo-padding-left-0 duo-border-gray-70">
+                      <h3 class="ibm-type-f duo-padding-bottom-0 duo-margin-bottom-0 duo-textcolor-blue-50">See all<br class="ibm-col-md-0-only ibm-col-lg-0-only"/> documentation</h3><span class="ibm-type-f duo-textcolor-blue-50 icon-ibm-duo-forward"></span>
+                    </div></a><a class="ibm-col-group duo-blocklink ibm-col-md-2 ibm-col-lg-4 sr-reveal" href="https://github.com/watson-developer-cloud" target="_blank">
+                    <div class="flex flex-row duo-border-top duo-padding-right-0 duo-padding-left-0 duo-border-gray-70">
+                      <h3 class="ibm-type-f duo-padding-bottom-0 duo-margin-bottom-0 duo-textcolor-blue-50">Download SDKs on GitHub</h3><span class="ibm-type-f duo-textcolor-blue-50 icon-ibm-duo-forward"></span>
+                    </div></a><a class="ibm-col-group duo-blocklink ibm-col-md-2 ibm-col-lg-4 sr-reveal" href="https://watson-api-explorer.mybluemix.net/" target="_blank">
+                    <div class="flex flex-row duo-border-top duo-padding-right-0 duo-padding-left-0 duo-border-gray-70">
+                      <h3 class="ibm-type-f duo-padding-bottom-0 duo-margin-bottom-0 duo-textcolor-blue-50">Test an API call</h3><span class="ibm-type-f duo-textcolor-blue-50 icon-ibm-duo-forward"></span>
+                    </div></a><a class="ibm-col-group duo-blocklink ibm-col-md-2 ibm-col-lg-4 sr-reveal" href="https://www.ibm.com/watson/developer-resources/" target="">
+                    <div class="flex flex-row duo-border-top duo-padding-right-0 duo-padding-left-0 duo-border-gray-70">
+                      <h3 class="ibm-type-f duo-padding-bottom-0 duo-margin-bottom-0 duo-textcolor-blue-50">View all developer tools</h3><span class="ibm-type-f duo-textcolor-blue-50 icon-ibm-duo-forward"></span>
+                    </div></a>
+                </div>
+              </div>
+            </section>
+            <section class="ibm-col-group ibm-col-bleed duo-border-top duo-padding-bottom-3 duo-alternate-background duo-background-black-core duo-border-gray-70">
+              <div class="ibm-col-md-1 ibm-col-lg-2">
+                <h2 class="ibm-type-g duo-textcolor-white-core">Get support<br /> and news</h2>
+              </div>
+              <div class="ibm-col-md-3 ibm-col-lg-6 ibm-col-group"><a class="duo-blocklink ibm-col-md-1 ibm-col-lg-2 ibm-col-ratio-md-4 ibm-col-full duo-border-bottom duo-padding-bottom-1 duo-border-gray-70" href="https://www.youtube.com/user/IBMWatsonSolutions">
+                  <div class="ibm-col-full_padding flex flex-column">
+                    <div>
+                      <h3 class="ibm-type-g duo-padding-bottom-1 duo-margin-bottom-0 duo-textcolor-white-core">YouTube<br /> Channel</h3>
+                      <p class="ibm-type-d duo-textcolor-blue-50"> Watch tutorials and other <nobr>videos →</nobr></p>
+                    </div><img class="duo-max-width-sm" src="/watson/assets/duo/img/developer/youtube.png" alt="YouTube Channel thumbnail"/>
+                  </div></a><a class="duo-blocklink ibm-col-md-1 ibm-col-lg-2 ibm-col-ratio-md-4 ibm-col-full duo-border-bottom duo-padding-bottom-1 duo-border-gray-70" href="https://www.ibm.com/blogs/watson">
+                  <div class="ibm-col-full_padding flex flex-column">
+                    <div>
+                      <h3 class="ibm-type-g duo-padding-bottom-1 duo-margin-bottom-0 duo-textcolor-white-core">Watson<br /> Blog</h3>
+                      <p class="ibm-type-d duo-textcolor-blue-50">Catch up on the latest <nobr>developments →</nobr></p>
+                    </div><img class="duo-max-width-sm" src="/watson/assets/duo/img/developer/bluemix.png" alt="Watson Blog thumbnail"/>
+                  </div></a><a class="duo-blocklink ibm-col-md-1 ibm-col-lg-2 ibm-col-ratio-md-4 ibm-col-full duo-border-bottom duo-padding-bottom-1 duo-border-gray-70" href="https://www.ibm.com/watson/webinars/">
+                  <div class="ibm-col-full_padding flex flex-column">
+                    <div>
+                      <h3 class="ibm-type-g duo-padding-bottom-1 duo-margin-bottom-0 duo-textcolor-white-core">Webinars <br/><br/></h3>
+                      <p class="ibm-type-d duo-textcolor-blue-50">Watch the <nobr>latest →</nobr></p>
+                    </div><img class="duo-max-width-sm" src="/watson/assets/duo/img/developer/webinar.png" alt="Webinars thumbnail"/>
+                  </div></a>
+              </div>
+              <div class="ibm-col-md-1 ibm-col-lg-2 ibm-col-sm-0"></div>
+              <div class="ibm-col-md-3 ibm-col-lg-6 ibm-col-group"><a class="duo-blocklink ibm-col-md-1 ibm-col-lg-2 ibm-col-ratio-md-4 ibm-col-full duo-border-bottom duo-padding-bottom-1 duo-border-gray-70" href="https://stackoverflow.com/questions/tagged/ibm-watson-cognitive">
+                  <div class="ibm-col-full_padding flex flex-column">
+                    <div>
+                      <h3 class="ibm-type-g duo-padding-bottom-1 duo-margin-bottom-0 duo-textcolor-white-core">Stack<br /> Overflow</h3>
+                      <p class="ibm-type-d duo-textcolor-blue-50">Join the <nobr>community →</nobr></p>
+                    </div><img class="duo-max-width-sm" src="/watson/assets/duo/img/developer/stackoverflow.png" alt=" Stack Overflow thumbnail"/>
+                  </div></a><a class="duo-blocklink ibm-col-md-1 ibm-col-lg-2 ibm-col-ratio-md-4 ibm-col-full duo-border-bottom duo-padding-bottom-1 duo-border-gray-70" href="https://developer.ibm.com/answers/topics/watson/">
+                  <div class="ibm-col-full_padding flex flex-column">
+                    <div>
+                      <h3 class="ibm-type-g duo-padding-bottom-1 duo-margin-bottom-0 duo-textcolor-white-core">developerWorks<br /> forums</h3>
+                      <p class="ibm-type-d duo-textcolor-blue-50">Ask a <nobr>question →</nobr></p>
+                    </div><img class="duo-max-width-sm" src="/watson/assets/duo/img/developer/devworks.png" alt="developerWorks thumbnail"/>
+                  </div></a><a class="duo-blocklink ibm-col-md-1 ibm-col-lg-2 ibm-col-ratio-md-4 ibm-col-full duo-border-bottom duo-padding-bottom-1 duo-border-gray-70" href="http://wdc-slack-inviter.mybluemix.net/">
+                  <div class="ibm-col-full_padding flex flex-column">
+                    <div>
+                      <h3 class="ibm-type-g duo-padding-bottom-1 duo-margin-bottom-0 duo-textcolor-white-core">Slack <br/><br/></h3>
+                      <p class="ibm-type-d duo-textcolor-blue-50">Join the <nobr>community →</nobr></p>
+                    </div><img class="duo-max-width-sm" src="/watson/assets/duo/img/developer/slack.png" alt="slack thumbnail"/>
+                  </div></a>
+              </div>
+            </section>
+            <section class="ibm-col-group ibm-col-bleed sr-reveal">
+              <div class="ibm-col-group ibm-col-full">
+                <div class="ibm-col-sm-0 ibm-col-md-1 duo-padding-bottom-1">
+                  <h2 class="ibm-type-g">Updates<br class="ibm-col-sm-0-only"/> from the blog</h2>
+                </div>
+                <div class="ibm-col-full ibm-col-sm-2 ibm-col-md-3 ibm-col-bleed-right duo-padding-top-1">
+                  <div class="duo-carousel" data-slick="">
+                    <div class="ibm-col-group">
+                      <div class="ibm-col-sm-0 ibm-col-md-3 duo-padding-bottom-1"></div>
+                      <div class="ibm-col-sm-2 ibm-col-md-2 ibm-col-lg-4 duo-padding-bottom-0 ibm-col-sm-0-only"><a href="https://www.ibm.com/mobile/apple-partnership"><img class="duo-img-resize" src="/watson/assets/duo/img/developer/Blog_3_WatsonConversation_x2.jpg" alt="Watson Assistant"/></a>
+                      </div>
+                      <div class="ibm-col-sm-2 ibm-col-md-2 ibm-col-lg-4 ibm-col-sm-0-only">
+                        <h2 class="ibm-type-d duo-margin-bottom-0"><strong>Watson Services for Core ML</strong></h2>
+                        <p class="ibm-type-d duo-margin-bottom-0">Build iOS apps that run Watson on your device, even when you're offline. Watson and Core ML lets your apps quickly analyze images, accurately classify visual content, and easily train models using Watson.</p><a class="ibm-type-d duo-textcolor-blue-60" href="https://www.ibm.com/mobile/apple-partnership">Learn more →</a>
+                      </div>
+                      <div class="ibm-col-group ibm-col-sm-2 ibm-col-md-0-only ibm-col-lg-0-only">
+                        <h2 class="ibm-type-g duo-padding-bottom-0 duo-padding-top-0">Updates<br class="ibm-col-sm-0-only"/> from the blog</h2>
+                        <div class="ibm-col-sm-2 ibm-col-full"><a href="https://www.ibm.com/mobile/apple-partnership"><img class="sm-carousel-img duo-img-resize" src="/watson/assets/duo/img/developer/Blog_3_WatsonConversation_x2.jpg" alt="Watson Assistant"/></a></div>
+                        <div class="ibm-col-sm-2">
+                          <h2 class="ibm-type-d duo-margin-bottom-0"><strong>Watson Services for Core ML</strong></h2>
+                          <p class="ibm-type-d duo-margin-bottom-0">Build iOS apps that run Watson on your device, even when you're offline. Watson and Core ML lets your apps quickly analyze images, accurately classify visual content, and easily train models using Watson.</p><a class="ibm-type-d duo-textcolor-blue-60" href="https://www.ibm.com/mobile/apple-partnership">Learn more →</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ibm-col-group">
+                      <div class="ibm-col-sm-0 ibm-col-md-3 duo-padding-bottom-1"></div>
+                      <div class="ibm-col-sm-2 ibm-col-md-2 ibm-col-lg-4 duo-padding-bottom-0 ibm-col-sm-0-only"><a href="https://developer.ibm.com/dwblog/2017/watson-apex-sdk-salesforce-applications/"><img class="duo-img-resize" src="/watson/assets/duo/img/developer/Blog_1_WatsonToneAnalyzer_x2.jpg" alt="Watson Tone Analyzer"/></a>
+                      </div>
+                      <div class="ibm-col-sm-2 ibm-col-md-2 ibm-col-lg-4 ibm-col-sm-0-only">
+                        <h2 class="ibm-type-d duo-margin-bottom-0"><strong>A better way to add Watson to your latest Salesforce app</strong></h2>
+                        <p class="ibm-type-d duo-margin-bottom-0">Today we’re excited to announce the official availability of Watson’s Salesforce SDK. The Watson Apex kit has been developed specifically to support developers who are seeking a simpler way to embed Watson within their Salesforce-based apps. Here’s a quick look at the three key benefits you can get today by tapping into the SDK.</p><a class="ibm-type-d duo-textcolor-blue-60" href="https://developer.ibm.com/dwblog/2017/watson-apex-sdk-salesforce-applications/">Read more →</a>
+                      </div>
+                      <div class="ibm-col-group ibm-col-sm-2 ibm-col-md-0-only ibm-col-lg-0-only">
+                        <h2 class="ibm-type-g duo-padding-bottom-0 duo-padding-top-0">Updates<br class="ibm-col-sm-0-only"/> from the blog</h2>
+                        <div class="ibm-col-sm-2 ibm-col-full"><a href="https://developer.ibm.com/dwblog/2017/watson-apex-sdk-salesforce-applications/"><img class="sm-carousel-img duo-img-resize" src="/watson/assets/duo/img/developer/Blog_1_WatsonToneAnalyzer_x2.jpg" alt="Watson Tone Analyzer"/></a></div>
+                        <div class="ibm-col-sm-2">
+                          <h2 class="ibm-type-d duo-margin-bottom-0"><strong>A better way to add Watson to your latest Salesforce app</strong></h2>
+                          <p class="ibm-type-d duo-margin-bottom-0">Today we’re excited to announce the official availability of Watson’s Salesforce SDK. The Watson Apex kit has been developed specifically to support developers who are seeking a simpler way to embed Watson within their Salesforce-based apps. Here’s a quick look at the three key benefits you can get today by tapping into the SDK.</p><a class="ibm-type-d duo-textcolor-blue-60" href="https://developer.ibm.com/dwblog/2017/watson-apex-sdk-salesforce-applications/">Read more →</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ibm-col-group">
+                      <div class="ibm-col-sm-0 ibm-col-md-3 duo-padding-bottom-1"></div>
+                      <div class="ibm-col-sm-2 ibm-col-md-2 ibm-col-lg-4 duo-padding-bottom-0 ibm-col-sm-0-only"><a href="https://www.ibm.com/blogs/watson/2017/09/new-service-changes-and-updates-to-watson-tone-analyzer/"><img class="duo-img-resize" src="/watson/assets/duo/img/developer/Blog_2_WatsonDiscoveryNLU_x2.jpg" alt="Watson Discovery"/></a>
+                      </div>
+                      <div class="ibm-col-sm-2 ibm-col-md-2 ibm-col-lg-4 ibm-col-sm-0-only">
+                        <h2 class="ibm-type-d duo-margin-bottom-0"><strong>Security? Languages? Regions? Get it all with Watson Discovery and NLU</strong></h2>
+                        <p class="ibm-type-d duo-margin-bottom-0">We have made several recent advances with two of our key Watson services – Watson Discovery and Watson Natural Language Understanding (NLU) to help users expand their footprint with Watson around the globe.</p><a class="ibm-type-d duo-textcolor-blue-60" href="https://www.ibm.com/blogs/watson/2017/09/new-service-changes-and-updates-to-watson-tone-analyzer/">Read more →</a>
+                      </div>
+                      <div class="ibm-col-group ibm-col-sm-2 ibm-col-md-0-only ibm-col-lg-0-only">
+                        <h2 class="ibm-type-g duo-padding-bottom-0 duo-padding-top-0">Updates<br class="ibm-col-sm-0-only"/> from the blog</h2>
+                        <div class="ibm-col-sm-2 ibm-col-full"><a href="https://www.ibm.com/blogs/watson/2017/09/new-service-changes-and-updates-to-watson-tone-analyzer/"><img class="sm-carousel-img duo-img-resize" src="/watson/assets/duo/img/developer/Blog_2_WatsonDiscoveryNLU_x2.jpg" alt="Watson Discovery"/></a></div>
+                        <div class="ibm-col-sm-2">
+                          <h2 class="ibm-type-d duo-margin-bottom-0"><strong>Security? Languages? Regions? Get it all with Watson Discovery and NLU</strong></h2>
+                          <p class="ibm-type-d duo-margin-bottom-0">We have made several recent advances with two of our key Watson services – Watson Discovery and Watson Natural Language Understanding (NLU) to help users expand their footprint with Watson around the globe.</p><a class="ibm-type-d duo-textcolor-blue-60" href="https://www.ibm.com/blogs/watson/2017/09/new-service-changes-and-updates-to-watson-tone-analyzer/">Read more →</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+      <div id="ibm-footer-module"></div>
+      <div class="ibm ibm-marketing" id="footerSliddeContainer" style="background-color: #eaeaea;">
+        <section class="ibm-col-group ibm-col-bleed ibm-padding-bottom-r2 duo-border-gray-10 duo-border-bottom duo-background-gray-10">
+          <div class="ibm-col-group ibm-col-sm-0-only duo-padding-top-1">
+            <div class="ibm-col-md-1"><img class="logo-watson-avatar" src="/watson/assets/duo/img/common/avatar_blueteal_01.png" alt="ibm watson avatar" width="40%"></div>
+            <div class="ibm-col-md-1">
+              <p>Industry Solutions</p>
+              <ul class="ibm-plain-list">
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="http://watsonadvertising.ibm.com/">Advertising</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/customer-engagement/">Customer Engagement</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/education/">Education</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/financial-services/">Financial Services</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/health/">Health</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/internet-of-things/">IoT</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/watson/media/">Media</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/watson/talent/">Talent</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/watson/work/">Work</a></li>
+              </ul>
+            </div>
+            <div class="ibm-col-md-1">
+              <p>Developers</p>
+              <ul class="ibm-plain-list">
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://console.bluemix.net/developer/watson/documentation">Documentation</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/developer-resources/">Developer tools</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://github.com/watson-developer-cloud">SDKs</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://stackoverflow.com/questions/tagged/ibm-watson-cognitive">Stack Overflow</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://developer.ibm.com/answers/topics/watson/">developerWorks</a></li>
+              </ul>
+            </div>
+            <div class="ibm-col-md-1">
+              <p>Company</p>
+              <ul class="ibm-plain-list">
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/watson/with-watson/">With Watson</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/blogs/watson/">Watson Blog</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/webinars/">Watson webinars</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www-01.ibm.com/marketing/iwm/dre/signup?source=MAIL-watson">Contact sales</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="ibm-col-group ibm-col-md-0-only ibm-col-lg-0-only">
+            <div class="ibm-col-md-1 duo-padding-top-3 duo-padding-bottom-0"><img src="/watson/assets/duo/img/common/avatar_blueteal_01.png" alt="ibm watson avatar" width="25%"></div>
+            <div class="ibm-col-md-1">
+              <p class="duo-padding-top-1 duo-border-top duo-border-gray-40">Industry Solutions</p>
+              <ul class="ibm-plain-list">
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/customer-engagement/">Customer Engagement</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/education/">Education</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/financial-services/">Financial Services</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/health/">Health</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/internet-of-things/">IoT</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/watson/media/">Media</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/watson/talent/">Talent</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/watson/work/">Work</a></li>
+              </ul>
+            </div>
+            <div class="ibm-col-md-1">
+              <p class="duo-padding-top-1 duo-border-top duo-border-gray-40">Developers</p>
+              <ul class="ibm-plain-list">
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://console.bluemix.net/developer/watson/documentation">Documentation</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/developer-resources/">Developer tools</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://github.com/watson-developer-cloud">SDKs</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://stackoverflow.com/questions/tagged/ibm-watson-cognitive">Stack Overflow</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://developer.ibm.com/answers/topics/watson/">developerWorks</a></li>
+              </ul>
+            </div>
+            <div class="ibm-col-md-1">
+              <p class="duo-padding-top-1 duo-border-top duo-border-gray-40">Company</p>
+              <ul class="ibm-plain-list">
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/watson/with-watson/">With Watson</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www.ibm.com/blogs/watson/">Watson Blog</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="/watson/webinars/">Watson webinars</a></li>
+                <li class="duo-padding-top-0"><a class="ibm-bold ibm-textcolor-default" href="https://www-01.ibm.com/marketing/iwm/dre/signup?source=MAIL-watson">Contact sales</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <footer class="ibm-col-group ibm-col-bleed duo-nospacing" role="contentinfo" aria-label="IBM">
+          <div id="ibm-footer">
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+
+<!-- Current Page Required Javascript -->
+    <script src="/watson/assets/duo/js/sr.js"></script>
+    <script src="/watson/assets/duo/js/main-min.js"></script>
+<!-- END Current Page Required Javascript -->
+
+
+  </body>
+</html>
