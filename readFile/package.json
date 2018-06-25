@@ -12,7 +12,9 @@
     "babel-preset-env": "^1.7.0"
   },
   "dependencies": {
+    "chance": "^1.0.16",
     "cheerio": "^1.0.0-rc.2",
+    "co": "^4.6.0",
     "request": "^2.87.0",
     "slug": "^0.9.1"
   }
